@@ -1,0 +1,25 @@
+# No unsupported drag and drop libraries
+
+Source page: https://atlassian.design/components/eslint-plugin-design-system/no-unsupported-drag-and-drop-libraries
+Source package: `@atlaskit/eslint-plugin-design-system@16.4.0`
+
+## Usage
+
+# no-unsupported-drag-and-drop-libraries
+
+We encourage the use of Pragmatic drag and drop to power all drag and drop experiences - from table
+to external files. Pragmatic drag and drop is a performance optimised drag and drop framework that
+has been designed to power any drag and drop experience on any tech stack. Please avoid using
+alternative drag and drop libraries as it will lead to poorer performance, increased maintenance
+costs, (likely) worse accessibility and fragmented user experiences. See
+https://staging.atlassian.design/components/pragmatic-drag-and-drop/
+
+## Examples
+
+Libraries such as `react-beautiful-dnd` and `@atlassian/jira-dnd` that are no longer supported, as
+well as external libraries such as `react-dnd` and `react-sortable-hoc`.
+
+### Incorrect
+
+```ts
+                                   ^^^^^^^^^^^^^^^^^^^

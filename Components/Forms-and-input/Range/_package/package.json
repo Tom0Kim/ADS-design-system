@@ -1,0 +1,101 @@
+{
+	"name": "@atlaskit/range",
+	"version": "11.1.1",
+	"description": "A range lets users choose an approximate value on a slider.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Range",
+			"category": "Forms and input"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/theme": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/checkbox": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/tooltip": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@testing-library/react": "root:*",
+		"lodash": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"react",
+		"ui"
+	],
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"design-system": "v1",
+			"dom-events": "use-bind-event-listener",
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"compiled",
+				"static"
+			]
+		}
+	},
+	"platform-feature-flags": {
+		"platform-dst-shape-theme-default": {
+			"type": "boolean"
+		}
+	},
+	"homepage": "https://atlassian.design/components/range/",
+	"exports": {
+		".": "./src/index.tsx",
+		"./range": "./src/entry-points/range.tsx",
+		"./styled": "./src/entry-points/styled.tsx"
+	}
+}

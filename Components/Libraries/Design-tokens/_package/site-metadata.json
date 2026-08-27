@@ -1,0 +1,28 @@
+{
+  "path": "/components/tokens",
+  "workspaceInfo": {
+    "title": "Design tokens",
+    "description": "Design tokens are the single source of truth to name and store design decisions.",
+    "slug": "tokens",
+    "status": null,
+    "name": "@atlaskit/tokens",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "tokens",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/tokens",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tokens/constellation/index/*",
+    "slug": "tokens",
+    "sortKey": "tokens",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tokens/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/tokens"
+  }
+}

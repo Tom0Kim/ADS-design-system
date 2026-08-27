@@ -1,0 +1,349 @@
+# Flag
+A flag is used for confirmations, alerts, and acknowledgments that require minimal user interaction, often displayed using a flag group.
+Source page: https://atlassian.design/components/flag
+Source package: `@atlaskit/flag@18.2.5`
+
+## Examples
+
+## Default
+
+All flags require a `title`. A dismiss button will auto-display on the first flag in a `FlagGroup`
+or when the `appearance` prop is set.
+
+Flags are often used within a [flag group](https://atlassian.design/components/flag/flag-group/examples).
+
+**Example source:** [flag-default.tsx](./_source/examples/constellation/flag-default.tsx)
+
+```tsx
+import React from 'react';
+
+import Flag from '@atlaskit/flag';
+
+const FlagDefaultExample = (): React.JSX.Element => {
+	return (
+		<Flag
+			title="New version published"
+			description="Scott Farquhar published a new version of this page. Refresh to see the changes."
+			id="new-version"
+		/>
+	);
+};
+
+export default FlagDefaultExample;
+```
+
+## Actions
+
+Use `actions` to show a clickable action at the bottom of the flag. For flags where the appearance
+is `normal`, the action will show as a link. For all other appearances the actions will be buttons.
+
+**Example source:** [flag-actions.tsx](./_source/examples/constellation/flag-actions.tsx)
+
+```tsx
+import React from 'react';
+
+import Flag from '@atlaskit/flag';
+import SuccessIcon from '@atlaskit/icon/core/status-success';
+import { token } from '@atlaskit/tokens';
+
+const FlagActionsExample = (): React.JSX.Element => {
+	return (
+		<Flag
+			icon={<SuccessIcon color={token('color.icon.success')} label="" />}
+			id="1"
+			key="1"
+			title="Task START-42 was created successfully"
+			actions={[
+				{
+					content: 'View task',
+					onClick: () => {
+						console.log('flag action clicked');
+					},
+				},
+				{
+					content: 'Add to next sprint',
+					href: '/components/flag/examples#actions',
+				},
+			]}
+		/>
+	);
+};
+
+export default FlagActionsExample;
+```
+
+## Icons
+
+Icons are displayed by default, but can be customized using the `icon` prop.
+
+Make sure the icon and color matches the intent of your message appearance.
+
+**Example source:** [flag-icon-override.tsx](./_source/examples/constellation/flag-icon-override.tsx)
+
+```tsx
+import React from 'react';
+
+import Flag from '@atlaskit/flag';
+import InformationIcon from '@atlaskit/icon/core/status-information';
+import { token } from '@atlaskit/tokens';
+
+const FlagDefaultExample = (): React.JSX.Element => {
+	return (
+		<Flag
+			title="New version published"
+			description="Scott Farquhar published a new version of this page. Refresh to see the changes."
+			icon={<InformationIcon color={token('color.icon.information')} label="Info" />}
+			id="new-version"
+		/>
+	);
+};
+
+export default FlagDefaultExample;
+```
+
+## Appearance
+
+Unlike normal flags, setting an `appearance` gives the flag a bold color. Bold appearance flags
+don't have a dismiss button, so they require a more direct interaction from people.
+
+### Information
+
+Information messages alert people to additional information without requiring an action. You can
+also use them for loading states.
+
+**Example source:** [flag-info.tsx](./_source/examples/constellation/flag-info.tsx)
+
+```tsx
+import React from 'react';
+
+import noop from '@atlaskit/ds-lib/noop';
+import Flag from '@atlaskit/flag';
+
+const FlagInfoExample = (): React.JSX.Element => {
+	return (
+		<Flag
+			appearance="info"
+			title="There’s no one in this project"
+			description="Add yourself or your team to get the party started."
+			id="info"
+			actions={[
+				{ content: 'Add teammates', onClick: noop },
+				{ content: 'Close', onClick: noop },
+			]}
+		/>
+	);
+};
+
+export default FlagInfoExample;
+```
+
+### Warning
+
+Warning messages appear before we request people to take action. This is usually in anticipation of
+a significant change.
+
+Never set warning flags to auto dismiss. Give people enough time to read your message and decide
+what to do.
+
+**Example source:** [flag-warning.tsx](./_source/examples/constellation/flag-warning.tsx)
+
+```tsx
+import React from 'react';
+
+import noop from '@atlaskit/ds-lib/noop';
+import Flag from '@atlaskit/flag';
+const FlagWarningExample = (): React.JSX.Element => {
+	return (
+		<Flag
+			appearance="warning"
+			title="This page is visible to people outside your organization"
+			description="Are you sure you want to publish?"
+			id="warning"
+			actions={[
+				{ content: 'Publish', onClick: noop },
+				{ content: 'Go back', onClick: noop },
+			]}
+		/>
+	);
+};
+
+export default FlagWarningExample;
+```
+
+### Error
+
+Error messages let people know that something has gone wrong after they've tried to do something or
+if there are connectivity issues.
+
+Never set error flags to auto dismiss. Give people enough time to read your message and understand
+the problem.
+
+**Example source:** [flag-error.tsx](./_source/examples/constellation/flag-error.tsx)
+
+```tsx
+import React from 'react';
+
+import noop from '@atlaskit/ds-lib/noop';
+import Flag from '@atlaskit/flag';
+
+const FlagErrorExample = (): React.JSX.Element => {
+	return (
+		<Flag
+			appearance="error"
+			title="We're having trouble connecting"
+			description="Check your internet connection and try again."
+			id="error"
+			actions={[{ content: 'Try again', onClick: noop }]}
+		/>
+	);
+};
+
+export default FlagErrorExample;
+```
+
+### Success
+
+Success messages let people know they have completed an action.
+
+**Example source:** [flag-success.tsx](./_source/examples/constellation/flag-success.tsx)
+
+```tsx
+import React from 'react';
+
+import noop from '@atlaskit/ds-lib/noop';
+import Flag from '@atlaskit/flag';
+
+const FlagSuccessExample = (): React.JSX.Element => {
+	return (
+		<Flag
+			appearance="success"
+			title="Welcome to the room"
+			description="You’re now part of Coffee Club."
+			id="success"
+			actions={[{ content: 'Join the conversation', onClick: noop }]}
+		/>
+	);
+};
+
+export default FlagSuccessExample;
+```
+
+## Usage
+
+Flags appear at the bottom left of the screen and overlay any content.
+
+There are two types of flags: default and bold.
+
+Default flags are for general, event-driven messages that are dismissible. For example, as
+notifications for recent activity. This lets people jump into a conversation or activity feed to get
+a quick update. In these cases, use an avatar instead of the icon.
+
+![An example flag notifying the user that Justine Case has added the "global-icons.jpg" attachment. It has a call-to-action to "view attachment".](images/flag-avatar-attachment.png)
+
+Bold flags are not dismissible and use [color](https://atlassian.design/foundations/color) to reinforce the severity or
+importance of a message. They are reserved for messages about success, loading, warnings, and
+errors. They can't be dismissed until the issue is resolved or the message has expired (in the case
+of a success message). A collapsed and expanded state exists so additional information can be
+shared.
+
+## Parts
+
+![The flag component is made up of four parts inside a container: the icon and title, a description, actions, and a dismiss icon in the top-right corner of the flag container.](images/flag-anatomy.png)
+
+1. **Icon (or avatar) and title:** The title should always summarize the reason for the flag. Titles
+   longer than the width of the flag will wrap. Include an appropriate icon color or user avatar.
+2. **Message (optional):** Provide additional information that will help users understand the flag,
+   such as what went wrong or why this is important. Text longer than 5 lines will scroll. Try to
+   make text as short as possible.
+3. **Actions (optional):** A maximum of two links that enable users to act on the flag's content.
+4. **Dismiss:** Used to close the flag. This is for default flags only.
+
+## Accessibility
+
+- Keep flag titles and messages concise so people who increase zoom or those reading in languages
+  with longer words can easily read the flag.
+- Use an h2 heading level for the title. This will help people using assistive technologies navigate
+  to the flag.
+- Never use dismissible and non-dismissible flags in a stack. Flags that automatically dismiss will
+  no longer be visible to people.
+- Don't rely on color alone to convey the severity of the flag. Ensure that the accompanying text
+  clearly explains when there is a warning or error.
+- For warning and error messages, always try to avoid dead ends and provide people with information
+  on how to proceed to resolve the issue.
+- Keep in mind that some people require more time to read and make decisions about your message.
+  Never use auto dismiss flags for any critical warning or error messages, or anything else where
+  it's important that people don't miss the message.
+- Ensure that links accurately describe the destination. For example, say "About user permissions"
+  rather than "Learn more".
+
+## Best practices
+
+- Use the [color system](https://atlassian.design/foundations/color) to indicate the theme and severity of the flags.
+- When there are multiple flags, they will stack on top of one another with the most recent flag on
+  top. When a user dismisses a flag, any older flags below will come to the top. Careful
+  consideration should be taken to take into account the ordering and priority of flags in the
+  stack.
+- When a modal is active, flags should always be visible above the modal.
+- If a long message is needed, consider linking to an additional page for more information or using
+  an alternative component such as [banner](https://atlassian.design/components/banner),
+  [inline mesage](https://atlassian.design/components/inline-message), or [modal](https://atlassian.design/components/modal-dialog).
+
+## Content guidelines
+
+### Information
+
+Information messages alert people to additional information without requiring an action. Let them
+know about something that might help or impact them. Then, let them get back to work. Information
+messages are also used for loading states.
+
+![The example information flag content is: "Are you still there? You've been gone for a while, so we logged you out." Followed by a "log in" action button.](images/flag-bold-info-expanded.png)
+
+### Warning
+
+Warning messages appear before we request people to take action. This is usually in anticipation of
+a significant change. Have empathy for the user. Inform, but don't alarm. If the warning comes
+before an action, clearly communicate what will happen if they proceed, and provide an alternative
+where possible.
+
+Make sure you're not talking about something that has already occurred (this should be an error
+message instead).
+
+### Error
+
+Explain the problem and provide people with a next step or an alternative. Keep the message simple
+and direct, and avoid confusing people with technical details.
+
+Avoid blame and accept if something is our fault - "we're having trouble connecting" rather than
+"you're having connection issues." Be clear and conversational by thinking about how you might
+explain a technical error to your non-technical friends.
+
+![The example error flag content is: "Your internet may be off. It looks like you're not connected to the internet. Check your network connection." Followed by a "try again" action button.](images/flag-bold-error-expanded.png)
+
+### Success
+
+Success messages let people know they have completed an action. For these messages, it's best to
+confirm the outcome and let people continue. If they have just created something, give them an
+option to view it.
+
+Messages that appear more frequently should be more concise. Messages that appear after a bigger or
+more infrequent action can be more playful.
+
+![The example success flag content is: "Welcome to the room. You're now part of "Coffee Club"." Followed by a "Join the conversation" action button.](images/flag-bold-success-expanded.png)
+
+## Data Center apps
+
+For all new features, we recommend using Atlassian Design System and other
+[Atlaskit components](https://atlaskit.atlassian.com/). For existing code, you can continue to use
+[Atlassian User Interface (AUI)](https://aui.atlassian.com/).
+
+## Related
+
+- For critical messaging about loss of data or functionality use [banners](https://atlassian.design/components/banner).
+- To alert users that important information is available or an action is required use an
+  [inline message](https://atlassian.design/components/inline-message).
+- For critical messaging that requires immediate action, use a
+  [modal dialog](https://atlassian.design/components/modal-dialog).
+
+## Changelog
+
+The complete package changelog is preserved at [CHANGELOG.md](_package/CHANGELOG.md).

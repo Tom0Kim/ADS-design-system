@@ -1,0 +1,27 @@
+{
+  "path": "/components/pagination",
+  "workspaceInfo": {
+    "title": "Pagination",
+    "description": "Pagination allows you to divide large amounts of content into smaller chunks across multiple pages.",
+    "slug": "pagination",
+    "status": null,
+    "name": "@atlaskit/pagination",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "pagination",
+    "definition": "[{\"name\":\"analyticsContext\",\"deprecated\":false,\"required\":false,\"description\":\"Additional information to be included in the `context` of analytics events.\",\"type\":\"{ [x: string]: any; }\",\"isInternal\":false},{\"name\":\"components\",\"deprecated\":false,\"required\":false,\"description\":\"Replace the built-in page, previous, next and/ or ellipsis component\",\"type\":\"{ Page?: React.ElementType<any, keyof React.JSX.IntrinsicElements>; Previous?: React.ElementType<any, keyof React.JSX.IntrinsicElements>; Next?: React.ElementType<...>; }\",\"isInternal\":false},{\"name\":\"defaultSelectedIndex\",\"deprecated\":false,\"required\":false,\"description\":\"Index of the page to be selected by default.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"getPageLabel\",\"deprecated\":false,\"required\":false,\"description\":\"Helper function to get text displayed on the page button. This is helpful in scenarios when page the page passed in is an object.\",\"type\":\"(page: T, pageIndex: number) => string | number\",\"isInternal\":false},{\"name\":\"isDisabled\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the Paginator is disabled\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"label\",\"deprecated\":false,\"required\":false,\"description\":\"The aria-label for the pagination nav wrapper.\\nThe default value is \\\"pagination\\\".\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"max\",\"deprecated\":false,\"required\":false,\"description\":\"Maximum number of pages to be displayed in the pagination.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"nextLabel\",\"deprecated\":false,\"required\":false,\"description\":\"The aria-label for the next button.\\nThe default value is \\\"next\\\".\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"onChange\",\"deprecated\":false,\"required\":false,\"description\":\"The onChange handler which is called when the page is changed.\",\"type\":\"(event: React.SyntheticEvent<Element, Event>, page: T, analyticsEvent?: UIAnalyticsEvent) => void\",\"isInternal\":false},{\"name\":\"pageLabel\",\"deprecated\":false,\"required\":false,\"description\":\"The aria-label for the individual page numbers.\\nThe default value is \\\"page\\\".\\nThe page number is automatically appended to the pageLabel.\\nFor Example, pageLabel=\\\"página\\\" will render aria-label=\\\"página 1\\\"\\nas the label for page 1.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"pages\",\"deprecated\":false,\"required\":true,\"description\":\"Array of the pages to display.\",\"type\":\"T[]\",\"isInternal\":false},{\"name\":\"previousLabel\",\"deprecated\":false,\"required\":false,\"description\":\"The aria-label for the previous button.\\nThe default value is \\\"previous\\\".\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"type\":\"((instance: HTMLDivElement) => void) | React.RefObject<HTMLDivElement>\",\"isInternal\":false},{\"name\":\"renderEllipsis\",\"deprecated\":false,\"required\":false,\"description\":\"The react Node returned from the function is rendered instead of the default ellipsis node.\",\"type\":\"(arg: { key: string; from: number; to: number; }) => React.ReactElement<any, string | React.JSXElementConstructor<any>>\",\"isInternal\":false},{\"name\":\"selectedIndex\",\"deprecated\":false,\"required\":false,\"description\":\"Index of the selected page. This will make this pagination controlled.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"style\",\"deprecated\":false,\"required\":false,\"description\":\"Style to spread on the container element.\",\"type\":\"React.CSSProperties\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements,\\nwhich is a unique string that appears as a data attribute `data-testid`\\nin the rendered code, serving as a hook for automated tests.\\n\\nWill set data-testid on these elements when defined:\\n- Pagination nav wrapper - {testId}\\n- Page - {testId}--page-{page index}\\n- Current page - {testId}--current-page-{page index}\\n- Left navigator - {testId}--left-navigator\\n- Right navigator - {testId}--right-navigator\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/pagination",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/pagination/constellation/index/*",
+    "slug": "pagination",
+    "sortKey": "pagination",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/pagination"
+  }
+}

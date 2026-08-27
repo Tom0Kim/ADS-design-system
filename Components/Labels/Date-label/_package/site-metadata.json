@@ -1,0 +1,28 @@
+{
+  "path": "/components/date-label",
+  "workspaceInfo": {
+    "title": "Date label",
+    "description": "Date label is a non-interactive label that displays a date and optionally, visually communicates its status.",
+    "slug": "date-label",
+    "status": null,
+    "name": "@atlaskit/date-label",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-monorepo",
+    "directoryName": "date-label",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/date-label",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/date-label/constellation/index/*",
+    "slug": "date-label",
+    "sortKey": "date-label",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/date-label/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/date-label"
+  }
+}

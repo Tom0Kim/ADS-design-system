@@ -1,0 +1,91 @@
+{
+	"name": "@atlaskit/spinner",
+	"version": "20.1.1",
+	"description": "A spinner is an animated spinning icon that lets users know content is being loaded.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Spinner",
+			"category": "Loading"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/interaction-context": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/avatar": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/dynamic-table": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/lozenge": "workspace:^",
+		"@atlaskit/motion": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/select": "workspace:^",
+		"@atlaskit/visually-hidden": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@testing-library/react": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"design-system": "v1",
+			"dom-events": "use-bind-event-listener",
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"compiled",
+				"static"
+			]
+		}
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./constants": "./src/entry-points/constants.tsx",
+		"./spinner": "./src/entry-points/spinner.tsx",
+		"./types": "./src/entry-points/types.tsx"
+	},
+	"homepage": "https://atlassian.design/components/spinner/"
+}

@@ -1,0 +1,109 @@
+# use-character-counter-field
+
+Suggests using `CharacterCounterField` or `CharacterCounter` from `@atlaskit/form` when `Textfield`
+or `Textarea` components are used with `maxLength` or `minLength` props.
+
+## Why is this important?
+
+When using character limits on text inputs, it's important to provide real-time feedback to users
+about:
+
+- How many characters they can still enter
+- Whether they've met a minimum character requirement
+- Whether they're approaching or exceeding a maximum character limit
+
+The `CharacterCounterField` and `CharacterCounter` components provide this accessibility benefit out
+of the box with:
+
+- Visual character count display
+- Screen reader announcements for character count changes
+- Clear indication of when limits are approaching or exceeded
+- Proper ARIA attributes for assistive technologies
+
+## Examples
+
+### Inside Form context
+
+Use `CharacterCounterField` when your input is within a Form.
+
+#### Incorrect ❌
+
+```tsx
+import Form, { Field } from '@atlaskit/form';
+import Textfield from '@atlaskit/textfield';
+
+<Form onSubmit={handleSubmit}>
+	<Field name="name" label="Name">
+		{({ fieldProps }) => <Textfield {...fieldProps} maxLength={50} />}
+	</Field>
+</Form>;
+```
+
+#### Correct ✅
+
+```tsx
+import Form, { CharacterCounterField } from '@atlaskit/form';
+import Textfield from '@atlaskit/textfield';
+
+<Form onSubmit={handleSubmit}>
+	<CharacterCounterField name="name" label="Name" maxCharacters={50}>
+		{({ fieldProps }) => <Textfield {...fieldProps} />}
+	</CharacterCounterField>
+</Form>;
+```
+
+### Outside Form context (standalone)
+
+Use `CharacterCounter` for custom implementations outside of Form context.
+
+#### Incorrect ❌
+
+```tsx
+import Textfield from '@atlaskit/textfield';
+
+<Textfield label="Name" maxLength={50} />;
+```
+
+#### Correct ✅
+
+```tsx
+import { useState } from 'react';
+import { CharacterCounter, Label } from '@atlaskit/form';
+import Textfield from '@atlaskit/textfield';
+
+const [value, setValue] = useState('');
+const maxCharacters = 50;
+const isTooLong = value.length > maxCharacters;
+
+<>
+	<Label htmlFor="name-field">Name</Label>
+	<Textfield
+		id="name-field"
+		value={value}
+		onChange={(e) => setValue(e.currentTarget.value)}
+		aria-describedby="name-field-character-counter"
+		isInvalid={isTooLong}
+	/>
+	<CharacterCounter
+		currentValue={value}
+		maxCharacters={maxCharacters}
+		inputId="name-field"
+		shouldShowAsError={isTooLong}
+	/>
+</>;
+```
+
+## Options
+
+This rule has no options.
+
+## When Not To Use It
+
+- If you're not using character limits on your text inputs, this rule won't apply.
+
+If you are using character limits, it's strongly recommended to use `CharacterCounterField` (within
+Form) or `CharacterCounter` (standalone) for better accessibility.
+
+## Related Rules
+
+- [use-correct-field](/components/eslint-plugin-design-system/use-correct-field)

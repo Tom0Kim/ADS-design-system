@@ -1,0 +1,14 @@
+import React from 'react';
+
+import AkQuestionIcon from '@atlaskit/icon/core/question-circle';
+import { token } from '@atlaskit/tokens';
+
+export default function CheckIcon(): React.JSX.Element {
+	return (
+		<AkQuestionIcon
+			spacing="spacious"
+			label="unknown support"
+			color={token('color.icon.accent.gray')}
+		/>
+	);
+}

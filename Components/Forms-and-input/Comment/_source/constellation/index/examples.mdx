@@ -1,0 +1,67 @@
+---
+order: 0
+---
+
+import CommentDefault from '../../examples/constellation/comment-default';
+import CommentFull from '../../examples/constellation/comment-full';
+import CommentNested from '../../examples/constellation/comment-nested';
+import CommentSaving from '../../examples/constellation/comment-saving';
+import CommentEdited from '../../examples/constellation/comment-edited';
+import CommentRestricted from '../../examples/constellation/comment-restricted';
+import CommentHighlighted from '../../examples/constellation/comment-highlighted';
+import CommentCustomHeadingLevelExample from '../../examples/constellation/comment-custom-heading-level';
+
+## Default
+
+The simplest form of a comment contains an avatar and text.
+
+<Example Component={CommentDefault} packageName="@atlaskit/comment" />
+
+## Full
+
+Many features are available to customize the display of the comment. The package exports a wrapper
+component, as well as smaller components which can be passed through to display a richer comment.
+
+<Example Component={CommentFull} packageName="@atlaskit/comment" />
+
+## Nested
+
+Comments can be nested inside of each other by passing comments as `children`.
+
+<Example Component={CommentNested} packageName="@atlaskit/comment" />
+
+## Saving
+
+An "optimistic saving" mode can be enabled using `isSaving`, which hides actions and lets people
+know the comment is saving, by showing text from the `savingText` prop.
+
+Using the optimistic UI technique means that people receive a fast, responsive experience even on
+limited connections.
+
+<Example Component={CommentSaving} packageName="@atlaskit/comment" />
+
+## Edited
+
+Mark a comment as edited by passing a `CommentEdited` component to the the `edited` prop.
+
+<Example Component={CommentEdited} packageName="@atlaskit/comment" />
+
+## Restricted
+
+Display a message in the comment header by using the `restrictedTo` prop.
+
+<Example Component={CommentRestricted} packageName="@atlaskit/comment" />
+
+## Highlighted
+
+Highlight a comment using the `highlighted` prop.
+
+<Example Component={CommentHighlighted} packageName="@atlaskit/comment" />
+
+## Custom heading level
+
+Change the heading level using the `headingLevel` prop. The default heading has an `h3` tag. Make
+sure that headings are in the correct order and don’t skip levels. For example, an `h3` should
+follow an `h2` or lower, never an `h1`.
+
+<Example Component={CommentCustomHeadingLevelExample} packageName="@atlaskit/comment" />

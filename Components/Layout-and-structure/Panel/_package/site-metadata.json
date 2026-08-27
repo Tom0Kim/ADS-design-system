@@ -1,0 +1,31 @@
+{
+  "path": "/components/panel",
+  "workspaceInfo": {
+    "title": "Panel",
+    "description": "A set of UI components to standardize the display of content in panels across Atlassian products.",
+    "slug": "panel",
+    "status": {
+      "type": "beta",
+      "description": "New and ready to use. We'll provide comms and support for any major changes."
+    },
+    "name": "@atlassian/panel-system",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "panel-system",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlassian/panel-system",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/panel-system/constellation/index/*",
+    "slug": "panel",
+    "sortKey": "panel",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/panel-system/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/panel"
+  }
+}

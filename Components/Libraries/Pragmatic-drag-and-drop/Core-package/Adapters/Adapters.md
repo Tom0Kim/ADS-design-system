@@ -1,0 +1,14 @@
+# Adapters
+
+Source page: https://atlassian.design/components/pragmatic-drag-and-drop
+Source package: `@atlaskit/pragmatic-drag-and-drop-docs@2.0.2`
+
+An _adapter_ teaches Pragmatic drag and drop how to handle dragging a particular entity type:
+
+- [element adapter](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element) → handling
+  the dragging of draggable elements
+- [text selection adapter](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/text-selection)
+  → handling the dragging of text selections
+- [external adapter](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/external) → handling
+  drag operations that started outside of the current `window` (eg files and text from other
+  `window`s or applications)

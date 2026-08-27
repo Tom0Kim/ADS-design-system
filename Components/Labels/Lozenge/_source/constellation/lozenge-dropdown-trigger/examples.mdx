@@ -1,0 +1,95 @@
+---
+order: 0
+title: Lozenge dropdown trigger
+description:
+  Lozenge dropdown trigger enables a lozenge to be interactive, and opens a dropdown to update the
+  selection.
+---
+
+import LozengeDropdownTriggerBasic from '../../examples/constellation/lozenge-dropdown-trigger-basic';
+import LozengeDropdownTriggerWithIcon from '../../examples/constellation/lozenge-dropdown-trigger-with-icon';
+import LozengeDropdownTriggerWithDropdown from '../../examples/constellation/lozenge-dropdown-trigger-with-dropdown';
+import LozengeDropdownTriggerSelected from '../../examples/constellation/lozenge-dropdown-trigger-selected';
+import LozengeDropdownTriggerLoading from '../../examples/constellation/lozenge-dropdown-trigger-loading';
+import LozengeDropdownTriggerSemantic from '../../examples/constellation/lozenge-dropdown-trigger-semantic';
+import LozengeDropdownTriggerAccent from '../../examples/constellation/lozenge-dropdown-trigger-accent';
+import LozengeDropdownTriggerMaxWidth from '../../examples/constellation/lozenge-dropdown-trigger-max-width';
+import LozengeDropdownTriggerSpacing from '../../examples/constellation/lozenge-dropdown-trigger-spacing';
+import LozengeDropdownTriggerMetric from '../../examples/constellation/lozenge-dropdown-trigger-metric';
+
+## Basic
+
+The lozenge dropdown trigger combines the visual design of a lozenge with dropdown interaction
+patterns. It includes a chevron icon to indicate it can be clicked to open a menu.
+
+<Example Component={LozengeDropdownTriggerBasic} packageName="@atlaskit/lozenge" />
+
+## With dropdown menu
+
+Use the lozenge dropdown trigger with the ADS [dropdown menu](/components/dropdown-menu) or
+[popup](/components/popup) component to create interactive status selectors. The trigger shows a
+chevron and supports a selected state when the dropdown is open.
+
+<Example
+	Component={LozengeDropdownTriggerWithDropdown}
+	packageName="@atlaskit/lozenge"
+	featureFlagDefaults={{
+		'platform-dst-motion-uplift-popup': true,
+	}}
+/>
+
+## Selected state
+
+The `isSelected` prop visually indicates when the dropdown is open. This provides clear feedback
+about the component's state.
+
+<Example Component={LozengeDropdownTriggerSelected} packageName="@atlaskit/lozenge" />
+
+## Loading
+
+Use `isLoading` to indicate an in-progress state (for example, while saving a change triggered from
+within the dropdown menu).
+
+<Example Component={LozengeDropdownTriggerLoading} packageName="@atlaskit/lozenge" />
+
+## With icon
+
+Add an icon before the text using the `iconBefore` prop to provide additional visual context.
+
+<Example Component={LozengeDropdownTriggerWithIcon} packageName="@atlaskit/lozenge" />
+
+## Semantic colors
+
+Lozenge dropdown triggers support all semantic colors to indicate different states or categories.
+
+<Example Component={LozengeDropdownTriggerSemantic} packageName="@atlaskit/lozenge" />
+
+## Accent colors
+
+In addition to semantic colors, lozenge dropdown triggers support accent colors for categorical
+labeling and visual organization.
+
+<Example Component={LozengeDropdownTriggerAccent} packageName="@atlaskit/lozenge" />
+
+## Trailing metric
+
+Use `trailingMetric` to display a numeric score as a badge inside the lozenge.
+
+<Example Component={LozengeDropdownTriggerMetric} packageName="@atlaskit/lozenge" />
+
+## Spacing
+
+Use `spacing="spacious"` to increase padding and trigger height (32px).
+
+<Example Component={LozengeDropdownTriggerSpacing} packageName="@atlaskit/lozenge" />
+
+## Max width
+
+When the text in the lozenge exceeds the maximum width, it will be truncated with an ellipsis. By
+default, the maximum width of a lozenge is `200px`. You can use the `maxWidth` prop to customize the
+width of the lozenge.
+
+Avoid truncation wherever possible by using shorter text in lozenges. The truncated text is not
+focusable or accessible.
+
+<Example Component={LozengeDropdownTriggerMaxWidth} packageName="@atlaskit/lozenge" />

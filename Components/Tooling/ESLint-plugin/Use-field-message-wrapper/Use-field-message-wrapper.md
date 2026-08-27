@@ -1,0 +1,70 @@
+# Use field message wrapper
+
+Source page: https://atlassian.design/components/eslint-plugin-design-system/use-field-message-wrapper
+Source package: `@atlaskit/eslint-plugin-design-system@16.4.0`
+
+## Usage
+
+# use-field-message-wrapper
+
+Messaging components in the field from the form package must be wrapped using the message wrapper
+component.
+
+## Examples
+
+This rule marks code as violations when it finds form messaging components inside the field
+component that are not wrapped by a message wrapper component.
+
+### Incorrect
+
+```jsx
+
+<Field
+	name="password"
+	label="Password"
+	defaultValue=""
+	isRequired
+	validate={(value) => (value && value.length < 8 ? 'TOO_SHORT' : undefined)}
+>
+	{({ fieldProps, error, valid, meta }) => (
+		<Fragment>
+			<TextField type="password" {...fieldProps} />
+			{error && !valid && (
+				<HelperMessage>
+					Use 8 or more characters with a mix of letters, numbers & symbols.
+				</HelperMessage>
+			)}
+			{error && <ErrorMessage>Enter a password that's longer than 8 characters.</ErrorMessage>}
+			{valid && meta.dirty ? <ValidMessage>Awesome password!</ValidMessage> : null}
+		</Fragment>
+	)}
+</Field>;
+```
+
+### Correct
+
+```jsx
+
+<Field
+	name="password"
+	label="Password"
+	defaultValue=""
+	isRequired
+	validate={(value) => (value && value.length < 8 ? 'TOO_SHORT' : undefined)}
+>
+	{({ fieldProps, error, valid, meta }) => (
+		<Fragment>
+			<TextField type="password" {...fieldProps} />
+			<MessageWrapper>
+				{error && !valid && (
+					<HelperMessage>
+						Use 8 or more characters with a mix of letters, numbers & symbols.
+					</HelperMessage>
+				)}
+				{error && <ErrorMessage>Enter a password that's longer than 8 characters.</ErrorMessage>}
+				{valid && meta.dirty ? <ValidMessage>Awesome password!</ValidMessage> : null}
+			</MessageWrapper>
+		</Fragment>
+	)}
+</Field>;
+```

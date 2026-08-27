@@ -1,0 +1,28 @@
+{
+  "path": "/components/textfield",
+  "workspaceInfo": {
+    "title": "Text field",
+    "description": "A text field is an input that allows a user to write or edit text.",
+    "slug": "textfield",
+    "status": null,
+    "name": "@atlaskit/textfield",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "textfield",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/textfield",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/textfield/constellation/index/*",
+    "slug": "textfield",
+    "sortKey": "textfield",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/textfield/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/textfield"
+  }
+}

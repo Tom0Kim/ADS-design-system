@@ -1,0 +1,218 @@
+---
+order: 3
+---
+
+import SectionMessage from '@atlaskit/section-message';
+import PremiumIcon from '@atlaskit/icon/core/premium';
+
+import settingsDo from './images/settings-do-light.png';
+import settingsDoDark from './images/settings-do-dark.png';
+import settingsDont from './images/settings-dont-light.png';
+import settingsDontDark from './images/settings-dont-dark.png';
+import menuDo from './images/menu-do-light.png';
+import menuDoDark from './images/menu-do-dark.png';
+import menuDont from './images/menu-dont-light.png';
+import menuDontDark from './images/menu-dont-dark.png';
+import iconTileLight from './images/icon-tile-light.png';
+import iconTileDark from './images/icon-tile-dark.png';
+import iconSpacing from './images/icon-spacing-light.png';
+import iconSpacingDark from './images/icon-spacing-dark.png';
+import iconSmall from './images/small-icons-light.png';
+import iconSmallDark from './images/small-icons-dark.png';
+
+import Image from '@atlaskit/image';
+
+## Usage
+
+Clear and consistent icon use should help people complete tasks, providing more affordance for
+certain actions and features across Atlassian apps. Use icons following these guidelines.
+
+For more on Atlassian's icon style and how icons are drawn, see the
+[iconography foundation](/foundations/iconography).
+
+### Use clear, recognizable icons
+
+There are very few icons that have clear associations across cultures and contexts. Use icons with
+clear and established associations to across the web wherever possible.
+
+<DoDontGrid>
+	<DoDont
+		type="do"
+		image={{
+			url: settingsDo,
+			urlDarkMode: settingsDoDark,
+			alt: 'A gear icon, meant to represent settings.',
+		}}
+	>
+		Use symbols that clearly represent a concept. Use metaphors with clear and established
+		associations across apps and industries.
+	</DoDont>
+	<DoDont
+		type="dont"
+		image={{
+			url: settingsDont,
+			urlDarkMode: settingsDontDark,
+			alt: 'A wrench and screwdriver crossed as an icon.',
+		}}
+	>
+		Don't use uncommon icons. Be careful when creating or using new symbols as icons. They may be
+		confused with other concepts or misunderstood.
+	</DoDont>
+</DoDontGrid>
+
+### Icon types: Use icons consistently across Atlassian experiences
+
+We organize our icons in categories to help with consistency across apps and features:
+
+- **Single purpose:** Icons that represent a single feature or concept. Avoid using these icons
+  outside of their intended purpose.
+- **Multi-purpose:** Icons that can be used to represent multiple different things, depending on
+  context.
+
+Check the usage description of the icon for details on where it's typically used. You can find these
+descriptions in the [icon explorer](/components/icon/icon-explorer) or in Figma.
+
+### Don't overuse icons
+
+Does the icon aid comprehension or detract? Sometimes having an icon on every single menu item can
+take away from the overall clarity of a page.
+
+If you're struggling to choose a clear icon for every item in a view or menu, reconsider whether the
+icons are needed at all.
+
+<DoDontGrid>
+	<DoDont
+		type="do"
+		image={{
+			url: menuDo,
+			urlDarkMode: menuDoDark,
+			alt: 'A more actions menu where each menu item is simple text label.',
+		}}
+	>
+		Use an icon to aid navigation and provide clarity.
+	</DoDont>
+	<DoDont
+		type="dont"
+		image={{
+			url: menuDont,
+			urlDarkMode: menuDontDark,
+			alt: 'A more actions menu where each menu item has a different icon preceding the text label. Other icon buttons surround the menu.',
+		}}
+	>
+		Don't use too many icons in an area. This can create visual noise and make things harder to
+		find.
+	</DoDont>
+</DoDontGrid>
+
+## Accessibility
+
+Make sure any meaningful icons are legible and understandable, including to people using assistive
+technologies.
+
+### Use text labels to support comprehension
+
+Very few icons are clear to all users. Use text labels to clarify what a feature or button is for.
+
+If a UI element has a text label, there’s usually no need to provide an accessible label for the
+icon as well. The visible text label should communicate the same idea as the icon, and repeating
+this info to assistive technologies isn’t necessary.
+
+### Provide accessible labels for icons that communicate additional information
+
+Most of the time, icons are associated with text labels on buttons or other elements. In these
+cases, don’t provide alternative text for the icon, because the label describes the meaning of the
+icon already. In code, this can be done by setting the required `label` prop to an empty string
+(`""`).
+
+If an icon doesn’t have an existing text label or accessible text, provide a clear label with the
+`label` prop.
+
+Sometimes an icon communicates additional information about a feature, such as a warning status or
+external link icon. In these cases, make sure that information is available to people using
+assistive technologies, either through the icon label or through other methods.
+
+### Target size
+
+When icons are placed inside interactive elements, such as buttons and links, the size of the target
+for pointer inputs should be a minimum of 24 by 24 pixels, unless exempt from
+[Target Size (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html).
+
+Using [icon button](/components/button/icon-button) will ensure the target is large enough, but use
+caution when composing custom selectable elements with icons.
+
+## Spacing and sizing
+
+<SectionMessage appearance="warning">
+	<p>
+		Icons are intentionally spacing-neutral. Whitespace around an icon should be defined by the
+		composition it sits within, not baked into the icon itself. This keeps layouts flexible,
+		debuggable, and consistent with how the rest of ADS handles spacing.
+	</p>
+	<p>
+		The spacing prop was introduced as a migration shortcut and is now deprecated. It will be
+		removed in a future release. Where possible, move the spacing into the surrounding component. In
+		code, wrap icons in a Flex primitive with explicit padding tokens for a quick 1:1 migration.
+	</p>
+	<p>
+		See the <a href="/components/icon/examples#spacing-props">examples page</a> for migration
+		guidance.
+	</p>
+</SectionMessage>
+
+### Don't scale or resize icons
+
+Our icons were designed to work in harmony with the typography and spacing systems across Atlassian
+apps. Don't scale or resize the icons. Instead, use existing sizes and components.
+
+### Medium 16px icons (default)
+
+The majority of icons in Atlassian apps are 16 by 16px.
+
+Icons have no padding by default, allowing the buttons or other components to control the whitespace
+between icons and other elements. Use center-alignment to position icons in larger spaces.
+
+<Image src={iconSpacing} srcDark={iconSpacingDark} alt="Icon with two different sizes." />
+
+### Small 12px icons
+
+<SectionMessage appearance="discovery" title="New" icon={PremiumIcon}>
+	Small icons are now available, providing a fully downscaled set of icons.{' '}
+	<strong>These replace utility icons</strong>, which are deprecated.
+</SectionMessage>
+
+Icons are also available at a smaller size for visual alignment in small spaces. Because the size is
+smaller and harder to read, they should be used sparingly, such as for chevrons in buttons and
+menus.
+
+<Image
+	src={iconSmall}
+	srcDark={iconSmallDark}
+	alt="Diagram of 12 pixel small icons in components. The chevron icon in the select field and the drag handle dots icon are both 12 px."
+/>
+
+### Larger than 16px icons — consider icon tile
+
+We don't offer regular icons larger than 16px.
+
+However, Icon tile comes in varying sizes for specific use cases that require more emphasis or
+color. Consider using [icon tile](/components/icon/icon-tile/usage) for icons larger than 16px.
+
+<Image
+	src={iconTileLight}
+	srcDark={iconTileDark}
+	alt="Icon tiles appearing from smallest to largest. There's a 20, 24, 32, 40, and 48 pixel tile."
+/>
+
+## Data Center apps
+
+For all new features, we recommend using [Atlassian Design System](/components) and other
+[Atlaskit components](https://atlaskit.atlassian.com/). For existing code, you can continue to use
+[Atlassian User Interface (AUI)](https://aui.atlassian.com/).
+
+## Related
+
+- For more on icon design, go to the [iconography foundation](/foundations/iconography).
+- To add a new icon to the system,
+  [contribute an icon](/foundations/iconography#contribution-and-adding-new-icons).
+- For icons with colored backgrounds, use [icon tile](/components/icon/icon-tile).
+- For buttons with icons, use [icon button](/components/button/icon-button).

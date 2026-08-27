@@ -1,0 +1,28 @@
+{
+  "path": "/components/tile",
+  "workspaceInfo": {
+    "title": "Tile",
+    "description": "A tile is a rounded square that takes an asset and represents a noun.",
+    "slug": "tile",
+    "status": null,
+    "name": "@atlaskit/tile",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "tile",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/tile",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tile/constellation/index/*",
+    "slug": "tile",
+    "sortKey": "tile",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tile/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/tile"
+  }
+}

@@ -1,0 +1,96 @@
+{
+	"name": "@atlaskit/table",
+	"version": "1.1.5",
+	"description": "A table is used to display data.",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"homepage": "https://atlassian.design/components/table",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Table",
+			"category": "Text and data display",
+			"status": {
+				"type": "intent-to-deprecate",
+				"description": "This package was an experiment, and is currently deprioritized. It is not recommended for use in production, and we are not providing support for it at this time. Consider using [@atlaskit/dynamic-table](/components/dynamic-table) instead."
+			}
+		}
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": "./src/index.tsx",
+		"./primitives": "./src/ui/index.tsx",
+		"./table": "./src/entry-points/table.tsx",
+		"./body": "./src/entry-points/body.tsx",
+		"./row": "./src/entry-points/row.tsx",
+		"./td": "./src/entry-points/td.tsx",
+		"./expandable-cell": "./src/entry-points/expandable-cell.tsx",
+		"./expandable-row": "./src/entry-points/expandable-row.tsx",
+		"./expandable-row-content": "./src/entry-points/expandable-row-content.tsx",
+		"./head-cell": "./src/entry-points/head-cell.tsx",
+		"./sortable-column": "./src/entry-points/sortable-column.tsx",
+		"./thead": "./src/entry-points/thead.tsx",
+		"./primitives/table": "./src/entry-points/primitives-table.tsx",
+		"./primitives/tbody": "./src/entry-points/primitives-tbody.tsx",
+		"./primitives/tr": "./src/entry-points/primitives-tr.tsx",
+		"./primitives/td": "./src/entry-points/primitives-td.tsx",
+		"./primitives/th": "./src/entry-points/primitives-th.tsx",
+		"./primitives/selectable-cell": "./src/entry-points/primitives-selectable-cell.tsx",
+		"./primitives/expandable-cell": "./src/entry-points/primitives-expandable-cell.tsx",
+		"./primitives/expand-icon": "./src/entry-points/primitives-expand-icon.tsx",
+		"./primitives/thead": "./src/entry-points/primitives-thead.tsx",
+		"./primitives/bulk-action-overlay": "./src/entry-points/primitives-bulk-action-overlay.tsx",
+		"./primitives/sort-icon": "./src/entry-points/primitives-sort-icon.tsx"
+	},
+	"dependencies": {
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/checkbox": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@atlaskit/tooltip": "workspace:^",
+		"@atlaskit/visually-hidden": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*",
+		"tiny-invariant": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@atlaskit/avatar": "workspace:^",
+		"@atlaskit/date": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/dynamic-table": "workspace:^",
+		"@atlaskit/lozenge": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@testing-library/react": "root:*",
+		"raw-loader": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	}
+}

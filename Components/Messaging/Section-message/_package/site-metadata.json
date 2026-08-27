@@ -1,0 +1,28 @@
+{
+  "path": "/components/section-message",
+  "workspaceInfo": {
+    "title": "Section message",
+    "description": "A section message is used to alert users to a particular section of the screen.",
+    "slug": "section-message",
+    "status": null,
+    "name": "@atlaskit/section-message",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "section-message",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/section-message",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/section-message/constellation/index/*",
+    "slug": "section-message",
+    "sortKey": "section-message",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/section-message/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/section-message"
+  }
+}

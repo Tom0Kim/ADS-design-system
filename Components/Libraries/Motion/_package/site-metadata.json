@@ -1,0 +1,28 @@
+{
+  "path": "/components/motion",
+  "workspaceInfo": {
+    "title": "Motion",
+    "description": "A set of utilities to apply motion in your application.",
+    "slug": "motion",
+    "status": null,
+    "name": "@atlaskit/motion",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "motion",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/motion",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/motion/constellation/index/*",
+    "slug": "motion",
+    "sortKey": "motion",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/motion/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/motion"
+  }
+}

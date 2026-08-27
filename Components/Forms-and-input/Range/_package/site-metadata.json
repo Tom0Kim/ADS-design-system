@@ -1,0 +1,27 @@
+{
+  "path": "/components/range",
+  "workspaceInfo": {
+    "title": "Range",
+    "description": "A range lets users choose an approximate value on a slider.",
+    "slug": "range",
+    "status": null,
+    "name": "@atlaskit/range",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "range",
+    "definition": "[{\"name\":\"defaultValue\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the default value if range is not set.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"isDisabled\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the field range is disabled.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"max\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the maximum value of the range.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"min\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the minimum value of the range.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"onChange\",\"deprecated\":false,\"required\":false,\"description\":\"Hook to be invoked on change of the range.\",\"type\":\"(value: number) => void\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"description\":\"Allows getting a ref to the component instance.\\nOnce the component unmounts, React will set `ref.current` to `null`\\n(or call the ref with `null` if you passed a callback ref).\\n\\n@see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}\",\"type\":\"string | Ref<HTMLInputElement>\",\"isInternal\":true},{\"name\":\"step\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the step value for the range.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specific elements. This is a unique string\\nthat appears as a data attribute `data-testid` in the rendered code and\\nserves as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"value\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the value of the range.\",\"type\":\"number\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/range",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/range/constellation/index/*",
+    "slug": "range",
+    "sortKey": "range",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/range"
+  }
+}

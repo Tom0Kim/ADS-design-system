@@ -1,0 +1,27 @@
+{
+  "path": "/components/page-header",
+  "workspaceInfo": {
+    "title": "Page header",
+    "description": "A page header defines the top of a page. It contains a title and can be optionally combined with breadcrumbs buttons, search, and filters.",
+    "slug": "page-header",
+    "status": null,
+    "name": "@atlaskit/page-header",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "page-header",
+    "definition": "[{\"name\":\"actions\",\"deprecated\":false,\"required\":false,\"description\":\"Contents of the action bar to be rendered next to the page title.\",\"type\":\"React.ReactElement<any, string | React.JSXElementConstructor<any>>\",\"isInternal\":false},{\"name\":\"bottomBar\",\"deprecated\":false,\"required\":false,\"description\":\"Contents of the action bar to be rendered next to the page title. Typically a button group.\",\"type\":\"React.ReactElement<any, string | React.JSXElementConstructor<any>>\",\"isInternal\":false},{\"name\":\"breadcrumbs\",\"deprecated\":false,\"required\":false,\"description\":\"Page breadcrumbs to be rendered above the title.\",\"type\":\"React.ReactElement<any, string | React.JSXElementConstructor<any>>\",\"isInternal\":false},{\"name\":\"children\",\"deprecated\":false,\"required\":false,\"description\":\"Contents of the bottom bar to be rendered below the page title. Typically contains a search bar and/or filters.\",\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal\",\"isInternal\":false},{\"name\":\"disableTitleStyles\",\"defaultValue\":\"false\",\"deprecated\":false,\"required\":false,\"description\":\"Content of the page title. The text wraps by default.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"id\",\"deprecated\":false,\"required\":false,\"description\":\"Used as the ID of the inner h1 tag. This is exposed so the header text can be used as label of other elements by aria-labelledby.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"innerRef\",\"deprecated\":false,\"required\":false,\"description\":\"Returns the inner ref to the DOM element of the title. This is exposed so the focus can be set.\",\"type\":\"(element: HTMLElement) => void\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A testId prop is provided for specified elements, which is a unique string that appears as a data attribute data-testid in the rendered code, serving as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"truncateTitle\",\"defaultValue\":\"false\",\"deprecated\":false,\"required\":false,\"description\":\"Prevent the title from wrapping across lines. Avoid using this wherever possible, as truncation can make page headings inaccessible.\",\"type\":\"boolean\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/page-header",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/page-header/constellation/index/*",
+    "slug": "page-header",
+    "sortKey": "page-header",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/page-header"
+  }
+}

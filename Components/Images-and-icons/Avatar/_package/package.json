@@ -1,0 +1,131 @@
+{
+	"name": "@atlaskit/avatar",
+	"version": "26.3.0",
+	"description": "An avatar is a visual representation of a user or entity.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Avatar",
+			"category": "Images and icons"
+		}
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./avatar": "./src/entry-points/avatar.tsx",
+		"./Avatar": "./src/entry-points/avatar.tsx",
+		"./avatar-content": "./src/entry-points/avatar-content.tsx",
+		"./avatar-context": "./src/entry-points/avatar-context.tsx",
+		"./avatar-item": "./src/entry-points/avatar-item.tsx",
+		"./AvatarItem": "./src/entry-points/avatar-item.tsx",
+		"./constants": "./src/entry-points/constants.tsx",
+		"./get-appearance": "./src/entry-points/get-appearance.tsx",
+		"./presence": "./src/entry-points/presence.tsx",
+		"./Presence": "./src/entry-points/presence-old.tsx",
+		"./skeleton": "./src/entry-points/skeleton.tsx",
+		"./Skeleton": "./src/entry-points/skeleton.tsx",
+		"./status": "./src/entry-points/status.tsx",
+		"./Status": "./src/entry-points/status-old.tsx",
+		"./types": "./src/entry-points/types.tsx",
+		"./use-avatar-context": "./src/entry-points/use-avatar-context.tsx"
+	},
+	"dependencies": {
+		"@atlaskit/analytics-next": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/code": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/heading": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/range": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/textfield": "workspace:^",
+		"@atlaskit/tooltip": "workspace:^",
+		"@atlassian/feature-flags-test-utils": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@atlassian/testing-library": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"jest-in-case": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"react",
+		"ui"
+	],
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"design-system": "v1",
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"styling": [
+				"static",
+				"compiled"
+			],
+			"deprecation": "no-deprecated-imports"
+		}
+	},
+	"homepage": "https://atlassian.design/components/avatar/",
+	"platform-feature-flags": {
+		"platform.design-system-team.avatar-item-font-size_830x6": {
+			"type": "boolean"
+		},
+		"avatar-custom-border": {
+			"type": "boolean"
+		},
+		"platform-dst-motion-uplift": {
+			"type": "boolean"
+		},
+		"platform_editor_agent_mentions_drop_one_fixes": {
+			"type": "boolean"
+		}
+	}
+}

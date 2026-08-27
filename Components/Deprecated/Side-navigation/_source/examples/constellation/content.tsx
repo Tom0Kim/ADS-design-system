@@ -1,0 +1,32 @@
+import React from 'react';
+
+// eslint-disable-next-line @atlaskit/design-system/no-deprecated-imports
+import {
+	ButtonItem,
+	Header,
+	NavigationContent,
+	NavigationHeader,
+	Section,
+	SideNavigation,
+} from '@atlaskit/side-navigation';
+
+import AppFrame from '../common/app-frame';
+
+const ContentExample = (): React.JSX.Element => {
+	return (
+		<AppFrame shouldHideAppBar>
+			<SideNavigation label="project">
+				<NavigationHeader>
+					<Header>Design System Project</Header>
+				</NavigationHeader>
+				<NavigationContent showTopScrollIndicator>
+					<Section>
+						<ButtonItem>Tasks</ButtonItem>
+					</Section>
+				</NavigationContent>
+			</SideNavigation>
+		</AppFrame>
+	);
+};
+
+export default ContentExample;

@@ -1,0 +1,96 @@
+---
+order: 0
+---
+
+import SectionMessage, { SectionMessageAction } from '@atlaskit/section-message';
+import Link from '@atlaskit/link';
+
+import Default from '../../examples/constellation/link-default';
+import Subtle from '../../examples/constellation/link-subtle';
+import Inverse from '../../examples/constellation/link-inverse';
+import Visited from '../../examples/constellation/link-visited';
+import NewWindow from '../../examples/constellation/link-new-window';
+import BodyCopy from '../../examples/constellation/link-body-copy';
+import FontStyleInheritance from '../../examples/constellation/link-font-style-inheritance';
+import HtmlAttributes from '../../examples/constellation/link-html-attributes';
+
+<SectionMessage
+	appearance="information"
+	actions={[
+		<SectionMessageAction href="/components/primitives/anchor/examples">
+			View anchor documentation
+		</SectionMessageAction>,
+	]}
+>
+	Link is for use in text. If you need a non-text element to behave like a link, such as a card, use
+	the <Link href="/components/primitives/anchor/examples">anchor primitive</Link>.
+</SectionMessage>
+
+## Default
+
+The default appearance of a link.
+
+<Example Component={Default} packageName="@atlaskit/link" />
+
+## Subtle
+
+Use a subtle link if the default link appearance is too prominent. There is no underline in resting
+state, but one appears on hover.
+
+Ensure the surrounding context makes it clear that the link is interactive, such as in navigation or
+breadcrumbs. Avoid using subtle links in body copy because they're hard to distinguish from the
+surrounding text.
+
+<Example Component={Subtle} packageName="@atlaskit/link" />
+
+## Inverse
+
+Use an inverse link when displaying it on a bold background.
+
+<Example Component={Inverse} packageName="@atlaskit/link" backgroundColor="blue" />
+
+## Visited
+
+Links that have been visited will display in a different color. This is not supported for inverse
+links due to color contrast limitations.
+
+<Example Component={Visited} packageName="@atlaskit/link" />
+
+## Links that open in a new window or tab
+
+It's important to indicate when links open in new windows or tabs. An icon will display next to the
+link, as well as visually hidden text "(opens new window)" for screen reader users.
+
+Opening links in a new window can be disorienting for people, so only do it when necessary. For more
+information see
+['G200: Opening new windows and tabs from a link only when necessary'](https://www.w3.org/TR/WCAG20-TECHS/G200.html).
+
+<Example Component={NewWindow} packageName="@atlaskit/link" />
+
+## In body text
+
+Links work in body copy, and will wrap onto new lines if necessary.
+
+<Example Component={BodyCopy} packageName="@atlaskit/link" />
+
+## Inheriting font styles
+
+Links will inherit font styles of surrounding text.
+
+<Example Component={FontStyleInheritance} packageName="@atlaskit/link" />
+
+## HTML attributes
+
+Link passes through all valid HTML attributes to the underlying `<a>` element.
+
+<Example Component={HtmlAttributes} packageName="@atlaskit/link" />
+
+## Router links
+
+Link supports automatic configuration of router link components through the `AppProvider`. Here's an
+[example of the router link configuration for the anchor primitive](/components/primitives/anchor/examples#router-links).
+
+## Event tracking
+
+Link has utilities to make tracking events easier. Here's
+[an example of tracking events with the anchor primitive](/components/primitives/anchor/examples#event-tracking).

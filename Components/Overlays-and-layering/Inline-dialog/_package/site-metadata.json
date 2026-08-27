@@ -1,0 +1,36 @@
+{
+  "path": "/components/inline-dialog",
+  "workspaceInfo": {
+    "title": "Inline dialog",
+    "description": "An inline dialog is a pop-up container for small amounts of information. It can also contain controls.",
+    "slug": "inline-dialog",
+    "status": {
+      "type": "intent-to-deprecate",
+      "description": "We are planning on deprecating Inline dialog. We recommend using the Popup component instead.",
+      "actions": [
+        {
+          "text": "View Popup documentation",
+          "href": "https://atlassian.design/components/popup/examples"
+        }
+      ]
+    },
+    "name": "@atlaskit/inline-dialog",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "inline-dialog",
+    "definition": "[{\"name\":\"children\",\"deprecated\":false,\"required\":true,\"description\":\"The elements that the InlineDialog will be positioned relative to.\",\"type\":\"string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal\",\"isInternal\":false},{\"name\":\"content\",\"deprecated\":false,\"required\":true,\"description\":\"The elements to be displayed within the InlineDialog.\",\"type\":\"ReactNode | (() => ReactNode)\",\"isInternal\":false},{\"name\":\"createAnalyticsEvent\",\"deprecated\":false,\"required\":false,\"description\":\"You should not be accessing this prop under any circumstances.\\nIt is provided by `@atlaskit/analytics-next` and integrated in the component\",\"type\":\"(payload: AnalyticsEventPayload) => UIAnalyticsEvent\",\"isInternal\":false},{\"name\":\"fallbackPlacements\",\"deprecated\":false,\"required\":false,\"description\":\"This is a list of backup placements to try.\\nWhen the preferred placement doesn't have enough space,\\nthe modifier will test the ones provided in the list, and use the first suitable one.\\nIf no fallback placements are suitable, it reverts back to the original placement.\",\"type\":\"Placement[]\",\"isInternal\":false},{\"name\":\"isOpen\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether to show or hide the dialog.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"onClose\",\"deprecated\":false,\"required\":false,\"description\":\"Function called when the dialog is open and a click occurs anywhere outside\\nthe dialog.\",\"type\":\"(obj: { isOpen: boolean; event: Event; }) => void\",\"isInternal\":false},{\"name\":\"onContentBlur\",\"deprecated\":false,\"required\":false,\"description\":\"Function called when you lose focus on the object.\",\"type\":\"() => void\",\"isInternal\":false},{\"name\":\"onContentClick\",\"deprecated\":false,\"required\":false,\"description\":\"Function called when user clicks on the open dialog.\",\"type\":\"() => void\",\"isInternal\":false},{\"name\":\"onContentFocus\",\"deprecated\":false,\"required\":false,\"description\":\"Function called when user focuses on the open dialog.\",\"type\":\"() => void\",\"isInternal\":false},{\"name\":\"placement\",\"deprecated\":false,\"required\":false,\"description\":\"Where the dialog should appear, relative to the contents of the children.\",\"type\":\"\\\"auto-start\\\" | \\\"auto\\\" | \\\"auto-end\\\" | \\\"top-start\\\" | \\\"top\\\" | \\\"top-end\\\" | \\\"right-start\\\" | \\\"right\\\" | \\\"right-end\\\" | \\\"bottom-end\\\" | \\\"bottom\\\" | \\\"bottom-start\\\" | \\\"left-end\\\" | \\\"left\\\" | \\\"left-start\\\"\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"type\":\"((instance: any) => void) | RefObject<any>\",\"isInternal\":false},{\"name\":\"strategy\",\"deprecated\":false,\"required\":false,\"description\":\"Placement strategy used. Can be 'fixed' or 'absolute'. Defaults to 'fixed'.\",\"type\":\"\\\"fixed\\\" | \\\"absolute\\\"\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/inline-dialog",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/inline-dialog/constellation/index/*",
+    "slug": "inline-dialog",
+    "sortKey": "inline-dialog",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/inline-dialog"
+  }
+}

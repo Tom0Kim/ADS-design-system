@@ -1,0 +1,28 @@
+{
+  "path": "/components/spotlight",
+  "workspaceInfo": {
+    "title": "Spotlight",
+    "description": "A spotlight introduces users to points of interest, from focused messages to multi-step tours.",
+    "slug": "spotlight",
+    "status": null,
+    "name": "@atlaskit/spotlight",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "spotlight",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/spotlight",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/spotlight/constellation/index/*",
+    "slug": "spotlight",
+    "sortKey": "spotlight",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/spotlight/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/spotlight"
+  }
+}

@@ -1,0 +1,127 @@
+# Storybook addon
+Design token storybook addon
+Source page: https://atlassian.design/components/storybook-addon-design-system
+Source package: `@atlaskit/storybook-addon-design-system@4.0.2`
+
+## Usage
+
+The Design System Storybook Addon allows you to test your UI components in various themes, directly
+in Storybook. It allows you to visualize and compare component appearances across different themes,
+ensuring correct and consistent design token application.
+
+![Design tokens storybook addon screenshot](images/storybook-addon.png)
+
+## Features
+
+- **Theme Testing:** Test UI components in multiple themes to ensure they look good across various
+  styles and branding choices.
+- **Split View:** The split view functionality allows you compare components side-by-side in
+  different themes.
+
+## Props
+
+## Storybook v8
+
+1. Install a latest v1 version of the addon (e.g., `1.1.0`).
+2. Register the addon with your Storybook configuration in the `.storybook/main.js` file.
+
+   ```diff
+   module.exports = {
+     addons: [
+   +    '@atlaskit/storybook-addon-design-system'
+     ]
+   };
+   ```
+
+By default, the theme is set to auto (which matches the browser's theme). However, you can easily
+override this default by specifying a custom theme using the adsTheme parameter in your
+`.storybook/preview.js` file.
+
+### Example Usage
+
+In your `.storybook/preview.js` file, you can set the adsTheme parameter to either 'light' or
+'dark':
+
+```js
+const preview: Preview = {
+	parameters: {
+		adsTheme: 'light' | 'dark',
+	}
+	// ... other parameters
+}
+export default preview;
+```
+
+## Storybook v7
+
+1. Install a pre-1.0 version of the addon (e.g., `0.8.0`).
+2. Register the addon with your Storybook configuration in the `.storybook/main.js` file.
+
+   ```diff
+   module.exports = {
+     addons: [
+   +    '@atlaskit/storybook-addon-design-system'
+     ]
+   };
+   ```
+
+3. Initialise the `globalTypes.adsTheme` property in the global context
+4. Disable the
+   [built in `backgrounds` add on](https://storybook.js.org/docs/essentials/backgrounds#disable-backgrounds),
+   as it conflicts with the ADS theming
+
+Both step 3 and step 4 can be done in
+[the `preview.js` file](https://storybook.js.org/docs/configure#configure-story-rendering):
+
+```diff
++ import { withDesignTokens } from '@atlaskit/storybook-addon-design-system';
+
+const preview = {
+  globalTypes: {
++     adsTheme: {
++       description: 'Atlassian Design System theming options',
++       defaultValue: 'light',
+    },
+  },
+  decorators: [
++     withDesignTokens
+  ],
+  parameters: {
++     /**
++      * Disabling the builtin backgrounds addon so it doesn't override the ADS theming
++      * See: https://storybook.js.org/docs/essentials/backgrounds#disable-backgrounds
++      */
++     backgrounds: { disable: true },
+  },
+};
+
+export default preview;
+```
+
+## Storybook v6 and below
+
+1. Install a pre-1.0 version of the addon (e.g., `0.8.0`).
+2. Register the addon with your Storybook configuration in the `.storybook/main.js` file.
+
+   ```diff
+   module.exports = {
+     addons: [
+   +    '@atlaskit/storybook-addon-design-system'
+     ]
+   };
+   ```
+
+3. Add the decorator to `.storybook/preview.js`, which is responsible for applying the logic which
+   has the ability to modify the DOM of your stories.
+
+   ```diff
+   + import { withDesignTokens } from '@atlaskit/storybook-addon-design-system';
+
+   const { addDecorator } = require('@storybook/react');
+
+   + addDecorator(withDesignTokens);
+   ```
+
+## Changelog
+
+The complete package changelog is preserved at [CHANGELOG.md](_package/CHANGELOG.md).

@@ -1,0 +1,28 @@
+{
+  "path": "/components/css-reset",
+  "workspaceInfo": {
+    "title": "CSS reset",
+    "description": "A base stylesheet for the Atlassian Design System.",
+    "slug": "css-reset",
+    "status": null,
+    "name": "@atlaskit/css-reset",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "css-reset",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/css-reset",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/css-reset/constellation/index/*",
+    "slug": "css-reset",
+    "sortKey": "css-reset",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/css-reset/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/css-reset"
+  }
+}

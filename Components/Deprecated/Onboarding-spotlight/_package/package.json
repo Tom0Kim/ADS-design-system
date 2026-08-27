@@ -1,0 +1,126 @@
+{
+	"name": "@atlaskit/onboarding",
+	"version": "15.1.5",
+	"description": "An onboarding spotlight introduces new features to users through focused messages or multi-step tours.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": "./src/index.tsx",
+		"./modal": "./src/entry-points/modal.tsx",
+		"./modal-transition": "./src/entry-points/modal-transition.tsx",
+		"./spotlight": "./src/entry-points/spotlight.tsx",
+		"./spotlight-card": "./src/entry-points/spotlight-card.tsx",
+		"./spotlight-manager": "./src/entry-points/spotlight-manager.tsx",
+		"./spotlight-target": "./src/entry-points/spotlight-target.tsx",
+		"./spotlight-transition": "./src/entry-points/spotlight-transition.tsx",
+		"./target": "./src/entry-points/target.tsx",
+		"./theme": "./src/entry-points/theme.tsx",
+		"./types": "./src/entry-points/types.tsx",
+		"./use-spotlight": "./src/entry-points/use-spotlight.tsx"
+	},
+	"homepage": "https://atlassian.design/components/onboarding/",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Onboarding (spotlight)",
+			"category": "Messaging",
+			"status": {
+				"type": "deprecated",
+				"description": "This package is deprecated. Use [@atlaskit/spotlight](https://atlassian.design/components/spotlight/examples)."
+			},
+			"subPages": [
+				{
+					"title": "Benefits modal",
+					"id": "benefits-modal",
+					"status": {
+						"type": "deprecated",
+						"description": "This package is deprecated. Use [@atlaskit/modal-dialog](https://atlassian.design/components/modal-dialog/examples)."
+					}
+				},
+				{
+					"title": "Spotlight card",
+					"id": "spotlight-card",
+					"status": {
+						"type": "deprecated",
+						"description": "This package is deprecated. Use [@atlaskit/spotlight](https://atlassian.design/components/spotlight/examples)."
+					}
+				}
+			]
+		}
+	},
+	"dependencies": {
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/heading": "workspace:^",
+		"@atlaskit/layering": "workspace:^",
+		"@atlaskit/modal-dialog": "workspace:^",
+		"@atlaskit/motion": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/popper": "workspace:^",
+		"@atlaskit/portal": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*",
+		"bind-event-listener": "root:*",
+		"exenv": "root:*",
+		"memoize-one": "root:*",
+		"react-focus-lock": "root:*",
+		"react-node-resolver": "root:*",
+		"react-scrolllock": "root:*",
+		"scroll-into-view-if-needed": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/theme": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/testing-library": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"@types/exenv": "root:*",
+		"@types/react-node-resolver": "root:*",
+		"raf-stub": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*",
+		"react-lorem-component": "root:*"
+	},
+	"platform-feature-flags": {
+		"platform_design_system_team_onboarding_noderesolve": {
+			"type": "boolean"
+		},
+		"scroll-lock-replacement": {
+			"type": "boolean"
+		},
+		"platform_design_system_team_transition_group_r18": {
+			"type": "boolean",
+			"referenceOnly": true
+		}
+	}
+}

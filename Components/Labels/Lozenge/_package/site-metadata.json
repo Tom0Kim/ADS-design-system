@@ -1,0 +1,31 @@
+{
+  "path": "/components/lozenge",
+  "workspaceInfo": {
+    "title": "Lozenge",
+    "description": "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
+    "slug": "lozenge",
+    "status": {
+      "type": "ready-for-ga",
+      "description": "The new lozenge is stable and ready for adoption. Visual updates are currently behind the `platform-dst-lozenge-tag-badge-visual-uplifts` feature flag."
+    },
+    "name": "@atlaskit/lozenge",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "lozenge",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/lozenge",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/lozenge/constellation/index/*",
+    "slug": "lozenge",
+    "sortKey": "lozenge",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/lozenge/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/lozenge"
+  }
+}

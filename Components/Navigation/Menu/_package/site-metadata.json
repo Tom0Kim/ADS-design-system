@@ -1,0 +1,28 @@
+{
+  "path": "/components/menu",
+  "workspaceInfo": {
+    "title": "Menu",
+    "description": "A list of options to help users navigate, or perform actions.",
+    "slug": "menu",
+    "status": null,
+    "name": "@atlaskit/menu",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "menu",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/menu",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/menu/constellation/index/*",
+    "slug": "menu",
+    "sortKey": "menu",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/menu/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/menu"
+  }
+}

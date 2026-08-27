@@ -1,0 +1,27 @@
+{
+  "path": "/components/tag-group",
+  "workspaceInfo": {
+    "title": "Tag group",
+    "description": "A tag group controls the layout and alignment for a collection of tags.",
+    "slug": "tag-group",
+    "status": null,
+    "name": "@atlaskit/tag-group",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "tag-group",
+    "definition": "[{\"name\":\"alignment\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the tags should be aligned to the start or the end of the component.\",\"type\":\"\\\"start\\\" | \\\"end\\\"\",\"isInternal\":false},{\"name\":\"children\",\"deprecated\":false,\"required\":true,\"description\":\"Tags to render within the tag group.\",\"type\":\"string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal\",\"isInternal\":false},{\"name\":\"label\",\"deprecated\":false,\"required\":false,\"description\":\"Refers to an `aria-label` attribute. Sets an accessible name for the tags group wrapper to announce it to users of assistive technology.\\nUsage of either this, or the `titleId` attribute is strongly recommended.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"description\":\"Allows getting a ref to the component instance.\\nOnce the component unmounts, React will set `ref.current` to `null`\\n(or call the ref with `null` if you passed a callback ref).\\n\\n@see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}\",\"type\":\"string | Ref<any>\",\"isInternal\":true},{\"name\":\"titleId\",\"deprecated\":false,\"required\":false,\"description\":\"ID referenced by the tag group wrapper's `aria-labelledby` attribute. This ID should be assigned to the group-button title element.\\nUsage of either this, or the `label` attribute is strongly recommended.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/tag-group",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tag-group/constellation/index/*",
+    "slug": "tag-group",
+    "sortKey": "tag-group",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/tag-group"
+  }
+}

@@ -1,0 +1,36 @@
+---
+title: Icon tile
+description: An icon with background, color and size determined by the Tile component.
+order: 1
+---
+
+import IconTileSize from '../../examples/constellation/icon-tile-size.tsx';
+import IconTileAppearance from '../../examples/constellation/icon-tile-appearance.tsx';
+
+Icon tile places an icon on a background of a specified size and color. It allows icons to be
+prominently highlighted in a layout, such as next to a heading.
+
+## Size
+
+Unlike standard icons, icons inside Icon Tiles can scale up and down for use in different layouts.
+
+All available sizes:
+
+- `xsmall` (20px)
+- `small` (24px)
+- `medium` (32px) – default
+- `large` (40px)
+- `xlarge` (48px)
+
+<Example Component={IconTileSize} packageName="@atlaskit/icon" hiddenSections={['iconography']} />
+
+## Appearance
+
+Appearance options exist for each hue of available accent token, including bold variants that
+provide more contrast.
+
+<Example
+	Component={IconTileAppearance}
+	packageName="@atlaskit/icon"
+	hiddenSections={['iconography']}
+/>

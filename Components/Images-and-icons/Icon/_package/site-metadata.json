@@ -1,0 +1,30 @@
+{
+  "path": "/components/icon",
+  "workspaceInfo": {
+    "title": "Icon",
+    "description": "An icon is a symbol representing a command, device, directory, or common action.",
+    "slug": "icon",
+    "status": null,
+    "name": "@atlaskit/icon",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "icon",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/icon",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/icon/constellation/index/*",
+    "slug": "icon",
+    "sortKey": "icon",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/icon/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [
+      "icon-explorer"
+    ],
+    "basePath": "/components/icon"
+  }
+}

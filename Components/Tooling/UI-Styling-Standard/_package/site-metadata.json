@@ -1,0 +1,28 @@
+{
+  "path": "/components/eslint-plugin-ui-styling-standard",
+  "workspaceInfo": {
+    "title": "UI Styling Standard",
+    "description": "The eslint plugin to enforce and educate on Atlassian's UI Styling Standard",
+    "slug": "eslint-plugin-ui-styling-standard",
+    "status": null,
+    "name": "@atlaskit/eslint-plugin-ui-styling-standard",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "eslint-plugin-ui-styling-standard",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/eslint-plugin-ui-styling-standard",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/eslint-plugin-ui-styling-standard/constellation/index/*",
+    "slug": "eslint-plugin-ui-styling-standard",
+    "sortKey": "eslint-plugin-ui-styling-standard",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/eslint-plugin-ui-styling-standard/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/eslint-plugin-ui-styling-standard"
+  }
+}

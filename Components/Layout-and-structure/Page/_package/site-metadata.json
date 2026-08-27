@@ -1,0 +1,36 @@
+{
+  "path": "/components/page",
+  "workspaceInfo": {
+    "title": "Page",
+    "description": "A page layout organizes sections on a page using a grid and grid columns.",
+    "slug": "page",
+    "status": {
+      "type": "intent-to-deprecate",
+      "description": "We are planning on deprecating Page component. We recommend using the Page layout component instead.",
+      "actions": [
+        {
+          "text": "View page layout documentation",
+          "href": "https://atlassian.design/components/page-layout"
+        }
+      ]
+    },
+    "name": "@atlaskit/page",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "page",
+    "definition": "[{\"name\":\"banner\",\"deprecated\":false,\"required\":false,\"description\":\"If you provide the banner or banners you are to use, page will help you\\ncoordinate the showing and hiding of them in conjunction with `isBannerOpen`.\\nThis is designed to take [banner](https://atlassian.design/components/banner/examples) component, and\\nmatches its animation timing.\\n\\nThe only time that two banners should be rendered are when an announcement\\nbanner is loaded alongside an error or warning banner.\",\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal\",\"isInternal\":false},{\"name\":\"bannerHeight\",\"defaultValue\":\"52\",\"deprecated\":false,\"required\":false,\"description\":\"`52` is line height `(20) + 4 * grid`. This is the height of all banners aside\\nfrom the dynamically heighted announcement banner.\\n\\nBanner height can be retrieved from banner using its `innerRef`, which always\\nreturns its height when expanded even when it's collapsed.\\n\\nIn addition to setting the height of the banner's container for dynamically\\nheighted banners, you will need to set the `pageOffset` in navigation. Since\\nthis is a lot to think about, [here](/components/page/examples#announcement-banners)\\nis an example that implements displaying both an announcement banner and a\\nwarning banner on a page, while matching the height of each.\\n\\nDefaults to `52`.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"children\",\"deprecated\":false,\"required\":false,\"description\":\"The contents of the page, to be rendered next to navigation. It will be\\ncorrectly position with relation to both any banner, as well as navigation.\",\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal\",\"isInternal\":false},{\"name\":\"isBannerOpen\",\"defaultValue\":\"false\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether to show or hide the banner. This is responsible for moving the\\npage contents down, as well as whether to render the banner component.\\n\\nDefaults to `false`.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"navigation\",\"deprecated\":false,\"required\":false,\"description\":\"Takes [side navigation component](/components/side-navigation/) and helps\\nposition it with consideration to rendered banners.\",\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A unique string that appears as a data attribute `data-testid` in the rendered code. Serves as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/page",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/page/constellation/index/*",
+    "slug": "page",
+    "sortKey": "page",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/page"
+  }
+}

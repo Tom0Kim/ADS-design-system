@@ -1,0 +1,31 @@
+{
+  "path": "/components/drawer",
+  "workspaceInfo": {
+    "title": "Drawer",
+    "description": "A drawer is a panel that slides in from the left side of the screen.",
+    "slug": "drawer",
+    "status": {
+      "type": "intent-to-deprecate",
+      "description": "We are planning on deprecating Drawer. Please use [Modal](/components/modal-dialog) instead. Drawer should not be used with our new [Navigation system](/components/navigation-system)"
+    },
+    "name": "@atlaskit/drawer",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "drawer",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/drawer",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/drawer/constellation/index/*",
+    "slug": "drawer",
+    "sortKey": "drawer",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/drawer/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/drawer"
+  }
+}

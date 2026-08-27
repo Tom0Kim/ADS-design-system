@@ -1,0 +1,27 @@
+{
+  "path": "/components/portal",
+  "workspaceInfo": {
+    "title": "Portal",
+    "description": "A wrapper for rendering components in React portals.",
+    "slug": "portal",
+    "status": null,
+    "name": "@atlaskit/portal",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "portal",
+    "definition": "[{\"name\":\"children\",\"deprecated\":false,\"required\":true,\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal\",\"isInternal\":false},{\"name\":\"isClosed\",\"defaultValue\":\"false\",\"deprecated\":false,\"required\":false,\"description\":\"Whether the portal is closed.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"mountStrategy\",\"defaultValue\":\"\\\"effect\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Specify the mount strategy: useEffect or useLayoutEffect.\\nNote: UseLayoutEffect can lead to performance issues and is discouraged.\",\"type\":\"\\\"effect\\\" | \\\"layoutEffect\\\"\",\"isInternal\":false},{\"name\":\"zIndex\",\"defaultValue\":\"0\",\"deprecated\":false,\"required\":false,\"type\":\"string | number\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/portal",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/portal/constellation/index/*",
+    "slug": "portal",
+    "sortKey": "portal",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/portal"
+  }
+}

@@ -1,0 +1,135 @@
+---
+order: 1
+---
+
+The UI Styling Standard is a set of principles to guide styling UI code across Atlassian's frontend
+codebases and ecosystem.
+
+These are the current ESLint rules that enforce and help comply with the UI Styling Standard today,
+but more are planned to support the standard over time.
+
+## Examples
+
+Check out the [migration guide](/components/eslint-plugin-ui-styling-standard/migration-guide) or
+[individual rule documentation](#rules) for examples.
+
+## Rules
+
+<!-- START_RULE_TABLE_CODEGEN -->
+<!-- @codegenCommand yarn workspace @atlaskit/eslint-plugin-ui-styling-standard codegen -->
+
+| Rule                                                                                                                                                                      | Description                                                                                                                                                                                                                                                                                | Recommended | Fixable | Suggestions |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- | ------- | ----------- |
+| <a href="/components/eslint-plugin-ui-styling-standard/atlaskit-theme/usage">atlaskit-theme</a>                                                                           | Ban certain usages of `@atlaskit/theme` that `@compiled/react` does not understand                                                                                                                                                                                                         | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/convert-props-syntax/usage">convert-props-syntax</a>                                                               | Convert props syntax that is unsupported by styled-components@<4 or @emotion/styled to props syntax that is supported. This is useful when used in conjunction with `no-styled-tagged-template-expression`, as output from the latter may use props syntax unsupported by those libraries. | Yes         | Yes     |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/enforce-style-prop/usage">enforce-style-prop</a>                                                                   | Disallows usage of static styles in the `style` attribute in components                                                                                                                                                                                                                    | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/local-cx-xcss/usage">local-cx-xcss</a>                                                                             | Ensures the cx() function, which is part of the XCSS API, is only used within the xcss prop. This aids tracking what styles are applied to a jsx element.                                                                                                                                  | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-array-arguments/usage">no-array-arguments</a>                                                                   | Prevents usage of array arguments to style declaration functions                                                                                                                                                                                                                           | Yes         | Yes     |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-classname-prop/usage">no-classname-prop</a>                                                                     | Disallows usage of the `className` prop in JSX                                                                                                                                                                                                                                             | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-container-queries/usage">no-container-queries</a>                                                               | Prevents usage of @container query within css styling                                                                                                                                                                                                                                      | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-dynamic-styles/usage">no-dynamic-styles</a>                                                                     | Disallows use of dynamic styles in CSS-in-JS calls                                                                                                                                                                                                                                         | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-exported-styles/usage">no-exported-styles</a>                                                                   | Disallows exports of css, keyframes, styled and xcss                                                                                                                                                                                                                                       | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-global-styles/usage">no-global-styles</a>                                                                       | Prevents global styles through CSS-in-JS or CSS module imports                                                                                                                                                                                                                             | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-important-styles/usage">no-important-styles</a>                                                                 | Disallows important style declarations                                                                                                                                                                                                                                                     | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-imported-style-values/usage">no-imported-style-values</a>                                                       | Disallows imports of style values                                                                                                                                                                                                                                                          | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-nested-selectors/usage">no-nested-selectors</a>                                                                 | Prevents usage of nested selectors within css styling                                                                                                                                                                                                                                      | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-styled/usage">no-styled</a>                                                                                     | Disallows usage of the `styled` imports                                                                                                                                                                                                                                                    | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-unsafe-selectors/usage">no-unsafe-selectors</a>                                                                 | Disallows use of nested styles in `css` functions.                                                                                                                                                                                                                                         | Yes         | Yes     | Yes         |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-unsafe-values/usage">no-unsafe-values</a>                                                                       | Disallows styles that are difficult/impossible to statically anaylze.                                                                                                                                                                                                                      | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-unused-cssmap-properties/usage">no-unused-cssmap-properties</a>                                                 | Detects unused properties in cssMap style objects that are not exported. Helps maintain clean code by identifying style variants that are defined but never used.                                                                                                                          | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/use-compiled/usage">use-compiled</a>                                                                               | Ensures usage of `@compiled/react` or `@atlaskit/css` instead of other CSS-in-JS libraries                                                                                                                                                                                                 | Yes         | Yes     |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/consistent-css-prop-usage/usage">@atlaskit/design-system/consistent-css-prop-usage</a>                             | Ensures consistency with `css` and `xcss` prop usages                                                                                                                                                                                                                                      | Yes         | Yes     |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-css-tagged-template-expression/usage">@atlaskit/design-system/no-css-tagged-template-expression</a>             | Disallows any `css` tagged template expressions that originate from Emotion, Styled Components or Compiled                                                                                                                                                                                 | Yes         | Yes     |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-keyframes-tagged-template-expression/usage">@atlaskit/design-system/no-keyframes-tagged-template-expression</a> | Disallows any `keyframe` tagged template expressions that originate from Emotion, Styled Components or Compiled                                                                                                                                                                            | Yes         | Yes     |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-styled-tagged-template-expression/usage">@atlaskit/design-system/no-styled-tagged-template-expression</a>       | Disallows any `styled` tagged template expressions that originate from Emotion, Styled Components or Compiled                                                                                                                                                                              | Yes         | Yes     |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-empty-styled-expression/usage">@atlaskit/design-system/no-empty-styled-expression</a>                           | Forbids any styled expression to be used when passing empty arguments to styled.div() (or other JSX elements).                                                                                                                                                                             | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-invalid-css-map/usage">@atlaskit/design-system/no-invalid-css-map</a>                                           | Checks the validity of a CSS map created through cssMap. This is intended to be used alongside TypeScript's type-checking.                                                                                                                                                                 | Yes         |         |             |
+| <a href="/components/eslint-plugin-ui-styling-standard/no-css-map-scoped/usage">@atlaskit/design-system/no-css-map-scoped</a>                                             | Disallows usage of the experimental `cssMapScoped` API from `@compiled/react`. This API is internal and is not part of the public Compiled CSS-in-JS interface.                                                                                                                            | Yes         |         |             |
+
+<!-- END_RULE_TABLE_CODEGEN -->
+
+## Purpose
+
+For Atlassians, refer to the
+[internal UI Styling Standard policy](https://go.atlassian.com/ui-styling-standard-policy).
+
+To enforce scoped encapsulation, type safety, and deterministic behavior in styling code that is
+present in other programming languages. This is a stepping stone to large performance improvements,
+reduced visual regressions, and enables testing and maintainability at scale. This approach improves
+readability and developer productivity via automation with tooling, testing, code migrations, and
+future advancements like generative AI.
+
+### Desired outcomes
+
+- We can make large visual changes and migrations safely and in a fraction of the time.
+- To have the vast majority of styling code be deterministic, immutable, and bound to its scope,
+  reducing unknown visual and UX regressions.
+- To enable teams to write tooling quicker that's better and more performant to lint, test, and
+  migrate UI code to improve current and future developer productivity and satisfaction.
+- To enable large performance improvements for customers and developers with a zero-runtime styling
+  solution.
+- To reduce the amount of overall custom styling code written while supporting customization without
+  the need for hacks and technical debt.
+- We aim to see a reduction of the “average styles per component”, reducing the effort to build and
+  maintain UIs.
+
+## Core principles
+
+We want the styling ecosystem (CSS, CSS-in-JS, and parts of JSX) at Atlassian and the wider
+ecosystem we support to be as mature as the other code we write, such as TypeScript/JavaScript,
+Java, Go, etc.
+
+Like other languages, styling code must be:
+
+- type-safe
+- static and locally analyzable
+- reusable and composable
+- restricted to an encapsulated scope
+- deterministic—with styling known in isolation
+- discoverable and readable without deep knowledge of the CSS spec
+
+As the W3C CSS spec and wider industry grows, having our styling code meet these principles will
+mean we can programmatically evolve that a better future state.
+
+## Style constraints
+
+Following our core principles, we've developed a set of style constraints.
+
+All styles must be:
+
+- applied with the `css` or `xcss` prop
+- declared as objects with the `css()` or `xcss()` function
+- declared at the top-most scope of the module
+- declared in the same module that they are used in
+- static, not dynamic
+
+Additionally, styles cannot be:
+
+- global (outside of a repo-wide reset like the [CSS Reset](/components/css-reset/examples))
+- exported or imported between modules
+- combined using the spread operator
+- declared with nested selectors
+
+These constraints unlock major performance improvements for [Compiled](https://compiledcssinjs.com/)
+and raise the floor for static analysis — enabling code evolution at scale.
+
+## Benefits
+
+The above style constraints provide numerous benefits:
+
+- Linters can exhaustively lint all declared styles (all styles have an associated element without
+  indirection).
+
+- All element styles can be statically known, unlocking code transformation at scale through
+  codemods.
+
+- Styles are typed end-to-end and can be narrowed, enabling safe, explicit and bounded style
+  overrides.
+
+- Improved runtime performance, especially by eliminating dynamic styles.
+
+- Allows for effective build-time optimization when using compile time CSS-in-JS libraries such as
+  [Compiled](https://compiledcssinjs.com/).
+
+- The impacts of style changes can be better understood by developers, preventing regressions and
+  incidents.

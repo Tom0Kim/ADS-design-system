@@ -1,0 +1,28 @@
+{
+  "path": "/components/modal-dialog",
+  "workspaceInfo": {
+    "title": "Modal dialog",
+    "description": "A modal dialog displays content that requires user interaction, in a layer above the page.",
+    "slug": "modal-dialog",
+    "status": null,
+    "name": "@atlaskit/modal-dialog",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "modal-dialog",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/modal-dialog",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/modal-dialog/constellation/index/*",
+    "slug": "modal-dialog",
+    "sortKey": "modal-dialog",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/modal-dialog/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/modal-dialog"
+  }
+}

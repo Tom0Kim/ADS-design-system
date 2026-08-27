@@ -1,0 +1,31 @@
+{
+  "path": "/components/table",
+  "workspaceInfo": {
+    "title": "Table",
+    "description": "A table is used to display data.",
+    "slug": "table",
+    "status": {
+      "type": "intent-to-deprecate",
+      "description": "This package was an experiment, and is currently deprioritized. It is not recommended for use in production, and we are not providing support for it at this time. Consider using [@atlaskit/dynamic-table](/components/dynamic-table) instead."
+    },
+    "name": "@atlaskit/table",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "table",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/table",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/table/constellation/index/*",
+    "slug": "table",
+    "sortKey": "table",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/table/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/table"
+  }
+}

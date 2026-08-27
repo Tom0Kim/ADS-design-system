@@ -1,0 +1,98 @@
+---
+order: 1
+---
+
+import link1Do from './images/link-01a-do.png';
+import link1Dont from './images/link-01b-dont.png';
+import link2Do from './images/link-02a-do.png';
+import link2Dont from './images/link-02b-dont.png';
+
+## Usage
+
+Links help users navigate to another page or sections of a page. They can also download files or
+provide contact information such as phone numbers or email addresses.
+
+## Parts
+
+![Link diagram. A caption follows this image.](./images/link-anatomy.png)
+
+1. **Label:** Text describing the link. Clearly describe where the link navigates or it's purpose.
+1. **Icon (optional):** If the the link opens in a new window, an icon will be automatically
+   displayed as an indicator.
+
+If the icon is not desired, reconsider if the link should open in a new window. Links that open new
+windows without warning can be disorienting for users.
+
+## Accessibility
+
+### Don't use subtle links when surrounded by regular text
+
+The default link appearance has an underline and color, making it distinguishable from regular text
+which is an accessibility requirement. Don't use 'subtle' appearance links in this context, as they
+are difficult to differentiate from regular text.
+
+<DoDontGrid>
+	<DoDont
+		type="do"
+		image={{
+			url: link1Do,
+			alt: 'A link using the default appearance, surrounded by regular text. The default appearance provides color and an underline to differentiate the link from regular text.',
+		}}
+	>
+		Use the default link appearance when surrounded by regular text.
+	</DoDont>
+	<DoDont
+		type="dont"
+		image={{
+			url: link1Dont,
+			alt: 'A link using the subtle appearance, surrounded by regular text. The subtle appearance is difficult to differentiate the link from regular text.',
+		}}
+	>
+		Use the subtle link appearance when surrounded by regular text.
+	</DoDont>
+</DoDontGrid>
+
+### Don't use subtle links unless other context already indicates it's a link
+
+Only use the 'subtle' appearance if the surrounding context makes it clear that it's a link, such as
+in navigation or breadcrumbs.
+
+<DoDontGrid>
+	<DoDont
+		type="do"
+		image={{
+			url: link2Do,
+			alt: 'Links in a navigation section. The links use the subtle appearance, which is appropriate because the surrounding context makes it clear that they are links.',
+		}}
+	>
+		Use the subtle appearance when surrounding context makes it clear it's a link.
+	</DoDont>
+	<DoDont
+		type="dont"
+		image={{
+			url: link2Dont,
+			alt: 'Links in a navigation section. The links use the default appearance, which is not required because the surrounding context makes it clear that they are links.',
+		}}
+	>
+		Use the default appearance when surrounding context already makes it clear it's a link.
+	</DoDont>
+</DoDontGrid>
+
+<Snippet name="links-descriptive-text" />
+
+<Snippet name="links-open-new-window" variables={{ componentName: 'link' }} />
+
+<Snippet name="links-minimum-size" />
+
+<Snippet name="links-dont-confuse-with-buttons" variables={{ componentName: 'link' }} />
+
+<Snippet name="links-content-guidelines" />
+
+## Related
+
+- For editable experiences, use smart links.
+- For navigational items, use
+  [Atlassian navigation buttons](/components/atlassian-navigation/examples#button) and
+  [menu link items](/components/menu/examples).
+- For links that look like buttons, use [link button](/components/button/link-button/examples).
+- This component is built using the [anchor primitive](/components/primitives/anchor/examples).

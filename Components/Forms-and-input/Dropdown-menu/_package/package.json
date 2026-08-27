@@ -1,0 +1,145 @@
+{
+	"name": "@atlaskit/dropdown-menu",
+	"version": "17.2.0",
+	"description": "A dropdown menu displays a list of actions or options to a user.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Dropdown menu",
+			"category": "Forms and input"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/layering": "workspace:^",
+		"@atlaskit/menu": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/popup": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/spinner": "workspace:^",
+		"@atlaskit/theme": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@atlaskit/top-layer": "workspace:^",
+		"@atlaskit/visually-hidden": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*",
+		"bind-event-listener": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/app-provider": "workspace:^",
+		"@atlaskit/atlassian-navigation": "workspace:^",
+		"@atlaskit/avatar": "workspace:^",
+		"@atlaskit/checkbox": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/heading": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/lozenge": "workspace:^",
+		"@atlaskit/modal-dialog": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/textfield": "workspace:^",
+		"@atlaskit/toggle": "workspace:^",
+		"@atlassian/a11y-jest-testing": "workspace:^",
+		"@atlassian/feature-flags-test-utils": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"jest-in-case": "root:*",
+		"raf-stub": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*",
+		"tiny-invariant": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"react",
+		"ui"
+	],
+	"platform-feature-flags": {
+		"platform_dst_popup-disable-focuslock": {
+			"type": "boolean"
+		},
+		"select-avoid-duplicated-registered-ref": {
+			"type": "boolean"
+		},
+		"platform_dst_dropdown_radio_default_selected_fix": {
+			"type": "boolean"
+		},
+		"platform_dst_menu_item_focus": {
+			"type": "boolean"
+		},
+		"platform-dst-motion-uplift-popup": {
+			"type": "boolean"
+		},
+		"platform-dst-top-layer": {
+			"type": "boolean"
+		}
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"ui-components": [
+				"primitives",
+				"lite-mode"
+			],
+			"design-system": "v1",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"styling": [
+				"static",
+				"compiled"
+			],
+			"analytics": "analytics-next",
+			"deprecation": "no-deprecated-imports"
+		}
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./dropdown-item-checkbox": "./src/checkbox/dropdown-item-checkbox.tsx",
+		"./dropdown-item-checkbox-group": "./src/checkbox/dropdown-item-checkbox-group.tsx",
+		"./dropdown-item-radio": "./src/radio/dropdown-item-radio.tsx",
+		"./dropdown-item-radio-group": "./src/radio/dropdown-item-radio-group.tsx",
+		"./dropdown-menu": "./src/dropdown-menu.tsx",
+		"./dropdown-menu-item": "./src/dropdown-menu-item.tsx",
+		"./dropdown-menu-item-group": "./src/dropdown-menu-item-group.tsx",
+		"./types": "./src/types.tsx"
+	},
+	"homepage": "https://atlassian.design/components/dropdown-menu/"
+}

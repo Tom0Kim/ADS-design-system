@@ -1,0 +1,28 @@
+{
+  "path": "/components/stylelint-design-system",
+  "workspaceInfo": {
+    "title": "Stylelint plugin",
+    "description": "Stylelint plugin for use with the Atlassian Design System.",
+    "slug": "stylelint-design-system",
+    "status": null,
+    "name": "@atlaskit/stylelint-design-system",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "stylelint",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/stylelint-design-system",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/stylelint/constellation/index/*",
+    "slug": "stylelint-design-system",
+    "sortKey": "stylelint-design-system",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/stylelint/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/stylelint-design-system"
+  }
+}

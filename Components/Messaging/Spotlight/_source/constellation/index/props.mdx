@@ -1,0 +1,136 @@
+---
+title: Spotlight
+order: 1
+description: A spotlight focuses attention on a specific part of the UI, like a button or an icon.
+props:
+  packageName: '@atlaskit/spotlight'
+  exports:
+    - SpotlightCard
+    - SpotlightActions
+    - SpotlightBody
+    - SpotlightControls
+    - SpotlightDismissControl
+    - SpotlightFooter
+    - SpotlightHeader
+    - SpotlightHeadline
+    - SpotlightMedia
+    - SpotlightPrimaryAction
+    - SpotlightPrimaryLink
+    - SpotlightSecondaryAction
+    - SpotlightSecondaryLink
+    - SpotlightShowMoreControl
+    - SpotlightStepCount
+    - PopoverContent
+    - PopoverProvider
+    - PopoverTarget
+---
+
+## PopoverContent props
+
+<TSMorphProps exportName="PopoverContent" packageName="@atlaskit/spotlight" />
+
+## PopoverProvider props
+
+<TSMorphProps exportName="PopoverProvider" packageName="@atlaskit/spotlight" />
+
+## PopoverTarget props
+
+<TSMorphProps exportName="PopoverTarget" packageName="@atlaskit/spotlight" />
+
+## SpotlightCard props
+
+<TSMorphProps exportName="SpotlightCard" packageName="@atlaskit/spotlight" />
+
+## SpotlightActions props
+
+<TSMorphProps exportName="SpotlightActions" packageName="@atlaskit/spotlight" />
+
+## SpotlightBody props
+
+<TSMorphProps exportName="SpotlightBody" packageName="@atlaskit/spotlight" />
+
+## SpotlightControls props
+
+<TSMorphProps exportName="SpotlightControls" packageName="@atlaskit/spotlight" />
+
+## SpotlightDismissControl props
+
+<TSMorphProps exportName="SpotlightDismissControl" packageName="@atlaskit/spotlight" />
+
+## SpotlightFooter props
+
+<TSMorphProps exportName="SpotlightFooter" packageName="@atlaskit/spotlight" />
+
+## SpotlightHeader props
+
+<TSMorphProps exportName="SpotlightHeader" packageName="@atlaskit/spotlight" />
+
+## SpotlightHeadline props
+
+<TSMorphProps exportName="SpotlightHeadline" packageName="@atlaskit/spotlight" />
+
+## SpotlightMedia props
+
+<TSMorphProps exportName="SpotlightMedia" packageName="@atlaskit/spotlight" />
+
+## SpotlightPrimaryAction props
+
+<TSMorphProps exportName="SpotlightPrimaryAction" packageName="@atlaskit/spotlight" />
+
+## SpotlightPrimaryLink props
+
+<TSMorphProps exportName="SpotlightPrimaryLink" packageName="@atlaskit/spotlight" />
+
+## SpotlightSecondaryAction props
+
+<TSMorphProps exportName="SpotlightSecondaryAction" packageName="@atlaskit/spotlight" />
+
+## SpotlightSecondaryLink props
+
+<TSMorphProps exportName="SpotlightSecondaryLink" packageName="@atlaskit/spotlight" />
+
+## SpotlightShowMoreControl props
+
+<TSMorphProps exportName="SpotlightShowMoreControl" packageName="@atlaskit/spotlight" />
+
+## SpotlightStepCount props
+
+<TSMorphProps exportName="SpotlightStepCount" packageName="@atlaskit/spotlight" />
+
+## usePreloadMedia
+
+A hook that preloads media (video or image) files so they are cached by the browser before being
+rendered. Once loaded, the browser cache will be used when the actual media element is displayed.
+This improves perceived performance when showing spotlight cards with media.
+
+### Supported MIME types
+
+- `video/mp4`
+- `video/webm`
+- `video/ogg`
+- `video/mpeg`
+- `video/x-matroska`
+- `image/jpeg`
+- `image/png`
+- `image/gif`
+- `image/webp`
+- `image/svg+xml`
+
+### Example
+
+```tsx
+import { SpotlightMedia } from '@atlaskit/spotlight/media';
+import { usePreloadMedia } from '@atlaskit/spotlight/use-preload-media';
+import Image from '@atlaskit/image';
+import imageSrc from './assets/image.png'
+
+//...
+
+usePreloadMedia(imageSrc, { mimetype: 'video/mp4' });
+
+// ...
+
+</SpotlightMedia>
+	<Image src={imageSrc} alt='description' />
+</SpotlightMedia>
+```

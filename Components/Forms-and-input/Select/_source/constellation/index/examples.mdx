@@ -1,0 +1,125 @@
+---
+order: 0
+---
+
+import SelectCreatable from '../../examples/constellation/select-creatable';
+import SelectSingle from '../../examples/constellation/select-single';
+import SelectSingleClearable from '../../examples/constellation/select-single-clearable';
+import SelectMulti from '../../examples/constellation/select-multi';
+import SelectRadio from '../../examples/constellation/select-radio';
+import SelectCheckbox from '../../examples/constellation/select-checkbox';
+import SelectPopup from '../../examples/constellation/select-popup';
+import SelectAsync from '../../examples/constellation/select-async';
+import SelectAsyncCreatable from '../../examples/constellation/select-async-creatable';
+import SelectCountry from '../../examples/constellation/select-country';
+import SelectGroupedOptions from '../../examples/constellation/select-grouped-options';
+import SelectPopupModalExample from '../../examples/constellation/select-popup-in-modal';
+import SelectAppearanceDefault from '../../examples/constellation/select-appearance-default';
+import SelectAppearanceSubtle from '../../examples/constellation/select-appearance-subtle';
+import SelectIndicatorsClear from '../../examples/constellation/select-indicators-clear';
+import SelectIndicatorsDropdown from '../../examples/constellation/select-indicators-dropdown';
+import SelectIndicatorsLoading from '../../examples/constellation/select-indicators-loading';
+import SelectControlStyleOverride from '../../examples/constellation/select-control-style-override';
+import SelectControlStyleOverrideLegacy from '../../examples/constellation/select-control-style-override-legacy';
+
+## Async select
+
+Select now supports to handle loading data from remote sources by default, please use `loadOptions`
+prop that can be given a promise or callback that will eventually resolve to its list of options
+instead of `options`.
+
+<Example Component={SelectAsync} packageName="@atlaskit/select" />
+
+## Single select
+
+Allows the user to select a single item from a dropdown list of options.
+
+<Example Component={SelectSingle} packageName="@atlaskit/select" />
+
+## Single select clearable
+
+Setting `isClearable` to true lets users clear their selection using the Backspace or Delete key.
+
+<Example Component={SelectSingleClearable} packageName="@atlaskit/select" />
+
+## Multi select
+
+Allows the user to select multiple items from a dropdown list of options.
+
+<Example Component={SelectMulti} packageName="@atlaskit/select" />
+
+## Grouped options
+
+Related options can be grouped together in both a single and multi select.
+
+<Example Component={SelectGroupedOptions} packageName="@atlaskit/select" />
+
+## Appearance
+
+### Default
+
+The default select appearance.
+
+<Example Component={SelectAppearanceDefault} packageName="@atlaskit/select" />
+
+### Subtle
+
+A select that's transparent until interaction or error.
+
+<Example Component={SelectAppearanceSubtle} packageName="@atlaskit/select" />
+
+## Style customization
+
+The Select component provides flexible styling options to customize its appearance and behavior.
+With the migration to Compiled CSS, we now offer enhanced styling capabilities through the
+`components` API with `xcss` prop support.
+
+### Recommended: Components API with xcss
+
+The preferred method for customizing Select styles is using the `components` API with the xcss prop.
+This approach provides type-safe, performant styling with Compiled CSS-in-JS.
+
+<Example Component={SelectControlStyleOverride} packageName="@atlaskit/select" />
+
+### Legacy: Styles Prop (Limited Support)
+
+The `styles` prop is still supported for backward compatibility, but has limitations with certain
+CSS selectors.
+
+<Example Component={SelectControlStyleOverrideLegacy} packageName="@atlaskit/select" />
+
+## Component customization
+
+The following components are customizable and switchable:
+
+### Clear indicator
+
+The indicator is presented to clear the values from a multi-select. The default component is a
+cross. The indicator will not render when:
+
+1. `isClearable` is false, or `isMulti` is false and `isClearable` is undefined
+2. the select is disabled
+3. the select has no value
+4. the select is loading
+
+The clear control has been intentionally removed from the tab order. It can confuse people across
+multiple disability cohorts and be cumbersome for sighted people who use keyboards.
+
+Instead, the clear control is optimized for pointer interactions, like mouse click or tap. And
+people using a keyboard will use the `DELETE` key to clear contents and `CTRL+A` to select all.
+
+<Example Component={SelectIndicatorsClear} packageName="@atlaskit/select" />
+
+### Dropdown indicator
+
+The indicator for opening the `Select` is designed to indicate to users that this is a `Select`
+component. By default, it is a chevron pointed down, but in this example we have replaced it with an
+emoji.
+
+<Example Component={SelectIndicatorsDropdown} packageName="@atlaskit/select" />
+
+### Loading indicator
+
+Loading indicator to be displayed in the Indicators Container when isLoading is true.
+
+<Example Component={SelectIndicatorsLoading} packageName="@atlaskit/select" />

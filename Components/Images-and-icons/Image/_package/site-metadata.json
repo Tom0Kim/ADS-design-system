@@ -1,0 +1,27 @@
+{
+  "path": "/components/image",
+  "workspaceInfo": {
+    "title": "Image",
+    "description": "An image that changes in light or dark themes.",
+    "slug": "image",
+    "status": null,
+    "name": "@atlaskit/image",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "image",
+    "definition": "[{\"name\":\"srcDark\",\"deprecated\":false,\"required\":false,\"description\":\"Image URL to use for dark mode. This overrides `src` when the user\\nhas selected dark mode either in the app or on their operating system.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements, which is a unique\\nstring that appears as a data attribute `data-testid` in the rendered code,\\nserving as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/image",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/image/constellation/index/*",
+    "slug": "image",
+    "sortKey": "image",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/image"
+  }
+}

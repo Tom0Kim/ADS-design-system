@@ -1,0 +1,27 @@
+{
+  "path": "/components/toggle",
+  "workspaceInfo": {
+    "title": "Toggle",
+    "description": "A toggle is used to view or switch between enabled or disabled states.",
+    "slug": "toggle",
+    "status": null,
+    "name": "@atlaskit/toggle",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "toggle",
+    "definition": "[{\"name\":\"analyticsContext\",\"deprecated\":false,\"required\":false,\"description\":\"Additional information to be included in the `context` of analytics events that come from button.\",\"type\":\"{ [x: string]: any; }\",\"isInternal\":false},{\"name\":\"createAnalyticsEvent\",\"deprecated\":false,\"required\":false,\"description\":\"You should not be accessing this prop under any circumstances.\\nIt is provided by `@atlaskit/analytics-next` and integrated in the component\",\"type\":\"(payload: AnalyticsEventPayload) => UIAnalyticsEvent\",\"isInternal\":false},{\"name\":\"defaultChecked\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the toggle is initially checked or not.\\nAfter the initial interaction, whether the component is checked or not is\\ncontrolled by the component.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"descriptionId\",\"deprecated\":false,\"required\":false,\"description\":\"Use this when you need to provide an extended description about how the toggle works using aria-describedby.\\n\\nIt's important to use this prop if the meaning of the toggle with the only a label would be unclear to people who use assistive technology.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"id\",\"deprecated\":false,\"required\":false,\"description\":\"Use a pairing label with your toggle using `id` and `htmlFor` props to set the relationship.\\nFor more information see [labels on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"isChecked\",\"deprecated\":false,\"required\":false,\"description\":\"If defined, it takes precedence over defaultChecked, and the toggle acts\\nas a controlled component.\\n\\nYou can provide a onChange function to be notified of checked value changes\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isDisabled\",\"deprecated\":false,\"required\":false,\"description\":\"Sets if the toggle is disabled or not. This prevents any interaction.\\nDisabled toggles will not appear in the tab order for assistive technology.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isLoading\",\"deprecated\":false,\"required\":false,\"description\":\"If defined, it displays a spinner within the toggle.\\nThis prop is useful when the toggle's state is being fetched or updated asynchronously.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"label\",\"deprecated\":false,\"required\":false,\"description\":\"Text value which will be associated with toggle input using aria-labelledby attribute.\\n\\nUse only when you can't use a visible label for the toggle.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"name\",\"deprecated\":false,\"required\":false,\"description\":\"Descriptive name for the value property, to be submitted in a form.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"onBlur\",\"deprecated\":false,\"required\":false,\"description\":\"Handler to be called when toggle is unfocused.\",\"type\":\"(event: FocusEvent<HTMLInputElement, Element>, analyticsEvent: UIAnalyticsEvent) => void\",\"isInternal\":false},{\"name\":\"onChange\",\"deprecated\":false,\"required\":false,\"description\":\"Handler to be called when native 'change' event happens internally.\",\"type\":\"(event: ChangeEvent<HTMLInputElement>, analyticsEvent: UIAnalyticsEvent) => void\",\"isInternal\":false},{\"name\":\"onFocus\",\"deprecated\":false,\"required\":false,\"description\":\"Handler to be called when toggle is focused.\",\"type\":\"(event: FocusEvent<HTMLInputElement, Element>, analyticsEvent: UIAnalyticsEvent) => void\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"type\":\"((instance: HTMLInputElement) => void) | RefObject<HTMLInputElement>\",\"isInternal\":true},{\"name\":\"size\",\"deprecated\":false,\"required\":false,\"description\":\"Toggle size.\",\"type\":\"\\\"regular\\\" | \\\"large\\\"\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests.\\nWe have added 2 `testIds`:\\n- `testId` that targets the Label component to interact with the component.\\n- `{testId}--input` to check if the toggle has been checked/unchecked.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"value\",\"deprecated\":false,\"required\":false,\"description\":\"Value to be submitted in a form.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/toggle",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/toggle/constellation/index/*",
+    "slug": "toggle",
+    "sortKey": "toggle",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/toggle"
+  }
+}

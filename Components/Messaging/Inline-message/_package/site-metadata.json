@@ -1,0 +1,27 @@
+{
+  "path": "/components/inline-message",
+  "workspaceInfo": {
+    "title": "Inline message",
+    "description": "An inline message lets users know when important information is available or when an action is required.",
+    "slug": "inline-message",
+    "status": null,
+    "name": "@atlaskit/inline-message",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "inline-message",
+    "definition": "[{\"name\":\"appearance\",\"defaultValue\":\"\\\"connectivity\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Set the icon to be used before the title. Options are: connectivity,\\nconfirmation, info, warning, and error.\",\"type\":\"\\\"connectivity\\\" | \\\"confirmation\\\" | \\\"info\\\" | \\\"warning\\\" | \\\"error\\\"\",\"isInternal\":false},{\"name\":\"children\",\"deprecated\":false,\"required\":false,\"description\":\"The elements to be displayed by the popup.\",\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<ReactNode> | React.ReactPortal\",\"isInternal\":false},{\"name\":\"fallbackPlacements\",\"deprecated\":true,\"required\":false,\"description\":\"This is a list of backup placements for the popup to try.\\nWhen the preferred placement doesn't have enough space,\\nthe modifier will test the ones provided in the list, and use the first suitable one.\\nIf no fallback placements are suitable, it reverts back to the original placement.\\n\\n@private\\n@deprecated No-op when `platform-dst-top-layer` is enabled — CSS Anchor Positioning\\ngenerates fallbacks automatically via `position-try-fallbacks`.\",\"type\":\"PopupPlacement[]\",\"isInternal\":false},{\"name\":\"iconLabel\",\"deprecated\":false,\"required\":false,\"description\":\"Text to be used as the label for the button icon. You must use this to provide information for people who use assistive technology when there is no title and/or secondaryText.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"placement\",\"defaultValue\":\"\\\"bottom-start\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"The placement to be passed to the popup. Determines where around\\nthe text the dialog is displayed.\",\"type\":\"AutoPlacement | BasePlacement | VariationPlacement\",\"isInternal\":false},{\"name\":\"secondaryText\",\"defaultValue\":\"\\\"\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Text to display second.\",\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<ReactNode> | React.ReactPortal\",\"isInternal\":false},{\"name\":\"spacing\",\"defaultValue\":\"\\\"spacious\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"The spacing of the underlying icon button. Options are: spacious and compact.\",\"type\":\"\\\"spacious\\\" | \\\"compact\\\"\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A unique string that appears as a data attribute, `data-testid`,\\nin the rendered code. It is provided to serve as a hook for automated tests.\\n\\nThe value of `testId` is attached to the different sub-components in Inline Message:\\n - `testId`: the top-level inline message component\\n - `testId--popup`: the content of the message\\n - `testId--button`: the button element that opens the dialog on press\\n - `testId--title`: the title of the message\\n - `testId--text`: the text of the message\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"title\",\"defaultValue\":\"\\\"\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Text to display first, bolded for emphasis.\",\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<ReactNode> | React.ReactPortal\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/inline-message",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/inline-message/constellation/index/*",
+    "slug": "inline-message",
+    "sortKey": "inline-message",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/inline-message"
+  }
+}

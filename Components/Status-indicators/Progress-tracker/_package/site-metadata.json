@@ -1,0 +1,27 @@
+{
+  "path": "/components/progress-tracker",
+  "workspaceInfo": {
+    "title": "Progress tracker",
+    "description": "A progress tracker displays the steps and progress through a journey.",
+    "slug": "progress-tracker",
+    "status": null,
+    "name": "@atlaskit/progress-tracker",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "progress-tracker",
+    "definition": "[{\"name\":\"animated\",\"defaultValue\":\"true\",\"deprecated\":false,\"required\":false,\"description\":\"Turns off transition animations if set to false.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"items\",\"defaultValue\":\"[]\",\"deprecated\":false,\"required\":true,\"description\":\"Ordered list of stage data.\",\"type\":\"Stage[]\",\"isInternal\":false},{\"name\":\"label\",\"defaultValue\":\"\\\"Progress\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Use this to provide an aria-label for the overall progress tracker, so that people who use assistive technology get an overview of the tracker's purpose. For example, \\\"Sign up progress\\\".\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"render\",\"defaultValue\":\"{\\n\\t\\tlink: ({ item }: LinkComponentProps) => (\\n\\t\\t\\t// Anchor content is coming from another location\\n\\t\\t\\t// eslint-disable-next-line @atlassian/a11y/anchor-has-content\\n\\t\\t\\t<Link {...item} />\\n\\t\\t),\\n\\t}\",\"deprecated\":true,\"required\":false,\"description\":\"@deprecated\\n\\nRender prop to specify custom implementations of components.\\n\\nNote this is deprecated and will be removed in a future version.\\nLinks inside progress tracker can be configured using [App Provider](https://atlassian.design/components/app-provider) instead.\",\"type\":\"ProgressTrackerStageRenderProp\",\"isInternal\":false},{\"name\":\"spacing\",\"defaultValue\":\"\\\"cozy\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the amount of spacing between the steps.\",\"type\":\"\\\"cozy\\\" | \\\"comfortable\\\" | \\\"compact\\\"\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/progress-tracker",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/progress-tracker/constellation/index/*",
+    "slug": "progress-tracker",
+    "sortKey": "progress-tracker",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/progress-tracker"
+  }
+}

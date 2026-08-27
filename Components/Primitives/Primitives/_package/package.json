@@ -1,0 +1,245 @@
+{
+	"name": "@atlaskit/primitives",
+	"version": "22.2.0",
+	"description": "Primitives are token-backed low-level building blocks.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Primitives",
+			"category": "Primitives",
+			"status": {
+				"type": "beta"
+			},
+			"pages": [
+				{
+					"title": "Overview",
+					"id": "@atlaskit/primitives",
+					"folder": "overview",
+					"slug": "primitives/overview"
+				},
+				{
+					"title": "Box",
+					"folder": "box",
+					"slug": "primitives/box",
+					"id": "@atlaskit/primitives/box"
+				},
+				{
+					"title": "Inline",
+					"folder": "inline",
+					"slug": "primitives/inline",
+					"id": "@atlaskit/primitives/inline"
+				},
+				{
+					"title": "Stack",
+					"folder": "stack",
+					"slug": "primitives/stack",
+					"id": "@atlaskit/primitives/stack"
+				},
+				{
+					"title": "Flex",
+					"folder": "flex",
+					"slug": "primitives/flex",
+					"id": "@atlaskit/primitives/compiled/flex"
+				},
+				{
+					"title": "Grid",
+					"folder": "grid",
+					"slug": "primitives/grid",
+					"id": "@atlaskit/primitives/compiled/grid"
+				},
+				{
+					"title": "Bleed",
+					"folder": "bleed",
+					"slug": "primitives/bleed",
+					"id": "@atlaskit/primitives/bleed"
+				},
+				{
+					"title": "XCSS",
+					"folder": "xcss",
+					"slug": "primitives/xcss",
+					"id": "@atlaskit/primitives/xcss",
+					"status": {
+						"type": "intent-to-deprecate",
+						"description": "We are planning on deprecating XCSS. We recommend using @atlaskit/css instead.",
+						"actions": [
+							{
+								"text": "View @atlaskit/css documentation",
+								"href": "https://atlassian.design/components/css/"
+							}
+						]
+					}
+				},
+				{
+					"title": "Responsive",
+					"folder": "responsive",
+					"slug": "primitives/responsive",
+					"id": "@atlaskit/primitives/responsive"
+				},
+				{
+					"title": "Text",
+					"folder": "text",
+					"slug": "primitives/text",
+					"id": "@atlaskit/primitives/text",
+					"status": {
+						"type": "beta"
+					}
+				},
+				{
+					"title": "MetricText",
+					"folder": "metric-text",
+					"slug": "primitives/metric-text",
+					"id": "@atlaskit/primitives/metric-text",
+					"status": {
+						"type": "beta"
+					}
+				},
+				{
+					"title": "Pressable",
+					"folder": "pressable",
+					"slug": "primitives/pressable",
+					"id": "@atlaskit/primitives/pressable"
+				},
+				{
+					"title": "Anchor",
+					"folder": "anchor",
+					"slug": "primitives/anchor",
+					"id": "@atlaskit/primitives/anchor"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"codegen-styles": "ts-node -r tsconfig-paths/register ./scripts/codegen-styles.tsx"
+	},
+	"dependencies": {
+		"@atlaskit/analytics-next": "workspace:^",
+		"@atlaskit/app-provider": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/interaction-context": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@atlaskit/visually-hidden": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*",
+		"@emotion/react": "root:*",
+		"@emotion/serialize": "root:*",
+		"bind-event-listener": "root:*",
+		"tiny-invariant": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0 || ^19.0.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/formatting": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/avatar": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/checkbox": "workspace:^",
+		"@atlaskit/code": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/dropdown-menu": "workspace:^",
+		"@atlaskit/flag": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/heading": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/image": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/logo": "workspace:^",
+		"@atlaskit/lozenge": "workspace:^",
+		"@atlaskit/motion": "workspace:^",
+		"@atlaskit/object": "workspace:^",
+		"@atlaskit/range": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/textfield": "workspace:^",
+		"@atlaskit/toggle": "workspace:^",
+		"@atlaskit/tooltip": "workspace:^",
+		"@atlassian/analytics-bridge": "workspace:^",
+		"@atlassian/codegen": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"csstype": "root:*",
+		"jscodeshift": "root:*",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-resource-router": "root:*",
+		"ts-node": "root:*"
+	},
+	"homepage": "https://atlassian.design/components/primitives/overview/",
+	"exports": {
+		".": "./src/index.tsx",
+		"./anchor": "./src/components/anchor.tsx",
+		"./bleed": "./src/components/bleed.tsx",
+		"./box": "./src/entry-points/box.tsx",
+		"./compiled/anchor": "./src/compiled/components/anchor.tsx",
+		"./compiled/bleed": "./src/compiled/components/bleed.tsx",
+		"./compiled/box": "./src/compiled/components/box.tsx",
+		"./compiled/components/types": "./src/entry-points/compiled-components-types.tsx",
+		"./compiled/flex": "./src/compiled/components/flex.tsx",
+		"./compiled/focusable": "./src/compiled/components/focusable.tsx",
+		"./compiled/grid": "./src/compiled/components/grid.tsx",
+		"./compiled/hide": "./src/compiled/responsive/hide.tsx",
+		"./compiled/inline": "./src/compiled/components/inline.tsx",
+		"./compiled/media-helper": "./src/compiled/responsive/media-helper.tsx",
+		"./compiled/metric-text": "./src/compiled/components/metric-text.tsx",
+		"./compiled/pressable": "./src/compiled/components/pressable.tsx",
+		"./compiled/show": "./src/compiled/responsive/show.tsx",
+		"./compiled/stack": "./src/compiled/components/stack.tsx",
+		"./compiled/surface-context": "./src/utils/unsafe-surface-context.tsx",
+		"./compiled/surface-provider": "./src/entry-points/compiled-surface-provider.tsx",
+		"./compiled/text": "./src/compiled/components/text.tsx",
+		"./compiled/types": "./src/compiled/responsive/types.tsx",
+		"./compiled/use-media-query": "./src/compiled/responsive/use-media-query.tsx",
+		"./compiled/utils/types": "./src/entry-points/compiled-utils-types.tsx",
+		"./compiled": "./src/compiled/index.tsx",
+		"./components/flex": "./src/components/flex.tsx",
+		"./constants": "./src/responsive/constants.tsx",
+		"./flex": "./src/entry-points/flex.tsx",
+		"./grid": "./src/components/grid.tsx",
+		"./inline": "./src/components/inline.tsx",
+		"./media-helper": "./src/entry-points/media-helper.tsx",
+		"./metric-text": "./src/components/metric-text.tsx",
+		"./pressable": "./src/components/pressable.tsx",
+		"./responsive/build-media-query-css": "./src/responsive/unsafe-build-above-media-query-css.tsx",
+		"./responsive/constants": "./src/entry-points/responsive-constants.tsx",
+		"./responsive/hide": "./src/responsive/hide.tsx",
+		"./responsive/media": "./src/responsive/media.tsx",
+		"./responsive/media-helper": "./src/entry-points/responsive-media-helper.tsx",
+		"./responsive/show": "./src/responsive/show.tsx",
+		"./responsive/types": "./src/responsive/types.tsx",
+		"./responsive/unsafe-build-above-media-query-css": "./src/responsive/unsafe-build-above-media-query-css.tsx",
+		"./responsive/use-media-query": "./src/responsive/use-media-query.tsx",
+		"./responsive": "./src/responsive/index.tsx",
+		"./stack": "./src/components/stack.tsx",
+		"./surface-provider": "./src/utils/unsafe-use-surface.tsx",
+		"./text": "./src/components/text.tsx",
+		"./tokens-map": "./src/xcss/tokens-map.tsx",
+		"./types": "./src/responsive/types.tsx",
+		"./xcss": "./src/entry-points/xcss.tsx"
+	}
+}

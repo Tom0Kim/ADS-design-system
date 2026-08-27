@@ -1,0 +1,28 @@
+{
+  "path": "/components/heading",
+  "workspaceInfo": {
+    "title": "Heading",
+    "description": "A heading is a typography component used to display text in different sizes and formats.",
+    "slug": "heading",
+    "status": null,
+    "name": "@atlaskit/heading",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "heading",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/heading",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/heading/constellation/index/*",
+    "slug": "heading",
+    "sortKey": "heading",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/heading/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/heading"
+  }
+}

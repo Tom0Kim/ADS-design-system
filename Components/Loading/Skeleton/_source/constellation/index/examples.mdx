@@ -1,0 +1,67 @@
+---
+order: 0
+---
+
+import BasicSkeleton from '../../examples/constellation/skeleton-basic';
+import ShimmeringSkeleton from '../../examples/constellation/skeleton-shimmering';
+import ColorCustomizedSkeleton from '../../examples/constellation/skeleton-customized-color.tsx';
+import ShapeCustomizedSkeleton from '../../examples/constellation/skeleton-customized-shape.tsx';
+import AnimationColorCustomizedSkeleton from '../../examples/constellation/skeleton-customized-animation-color.tsx';
+import InteractionTracingSkeleton from '../../examples/constellation/skeleton-interaction-tracing';
+
+A skeleton acts as a placeholder for content, usually while the content loads.
+
+## Basic
+
+<Example Component={BasicSkeleton} packageName="@atlaskit/skeleton" backgroundColor="white" />
+
+## Shimmering effect
+
+The shimmering animation can be controlled via the `isShimmering` prop.
+
+<Example Component={ShimmeringSkeleton} packageName="@atlaskit/skeleton" backgroundColor="white" />
+
+## Customized shape
+
+Use `width`, `height`, and `borderRadius` to control the shape.
+
+<Example
+	Component={ShapeCustomizedSkeleton}
+	packageName="@atlaskit/skeleton"
+	backgroundColor="white"
+/>
+
+## Customized color
+
+The default skeleton color can be overridden via the `color` prop.
+
+<Example
+	Component={ColorCustomizedSkeleton}
+	packageName="@atlaskit/skeleton"
+	backgroundColor="white"
+/>
+
+## Customized shimmering animation color
+
+The default shimmering animation `from` and `to` colors can be overridden via the `color` and
+`ShimmeringEndColor` prop.
+
+<Example
+	Component={AnimationColorCustomizedSkeleton}
+	packageName="@atlaskit/skeleton"
+	backgroundColor="white"
+/>
+
+## Interaction tracing
+
+When a `Skeleton` is given an `interactionName`, it holds the current UFO interaction while it is
+mounted and releases the hold when it unmounts. This keeps the interaction open while placeholder
+content is on screen, so performance metrics reflect the time users spend waiting for real content.
+This behaviour is enabled via the `InteractionContext` provided by UFO and is gated behind the
+`platform-dst-skeleton-ufo-hold` feature gate.
+
+<Example
+	Component={InteractionTracingSkeleton}
+	packageName="@atlaskit/skeleton"
+	backgroundColor="white"
+/>

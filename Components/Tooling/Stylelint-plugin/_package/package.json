@@ -1,0 +1,70 @@
+{
+	"name": "@atlaskit/stylelint-design-system",
+	"version": "5.0.2",
+	"description": "Stylelint plugin for use with the Atlassian Design System.",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"keywords": [
+		"stylelint-plugin"
+	],
+	"scripts": {
+		"build": "tsup src/index.tsx --format cjs --clean"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"atlassian": {
+		"team": "Design System Team",
+		"website": {
+			"name": "Stylelint plugin",
+			"category": "Tooling"
+		}
+	},
+	"files": [
+		"dist",
+		"CHANGELOG.md"
+	],
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": {
+			"types": "./src/index.tsx",
+			"publish": "./src/index.tsx",
+			"default": "./index.js"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"postcss-value-parser": "root:*"
+	},
+	"peerDependencies": {
+		"stylelint": "^14 || ^15 || ^16 || ^17"
+	},
+	"devDependencies": {
+		"jest-preset-stylelint": "root:*",
+		"tsup": "root:*"
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions",
+			"circular-dependencies": "file-and-folder-level"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"design-system": "v1",
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"emotion"
+			]
+		}
+	},
+	"homepage": "https://atlassian.design/components/stylelint-design-system"
+}

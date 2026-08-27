@@ -1,0 +1,49 @@
+# no-array-arguments
+
+Blocks passing array arguments to style declaration functions.
+
+## Examples
+
+### Incorrect
+
+```tsx
+import { css } from '@compiled/react';
+
+const styles = css([{ width: 100 }, { height: 100 }]);
+```
+
+```tsx
+import { styled } from '@compiled/react';
+
+const styles = css([{ width: 100 }, ...items]);
+```
+
+### Correct
+
+```tsx
+import { css } from '@compiled/react';
+
+const styles = css({ width: 100 }, { height: 100 });
+```
+
+```tsx
+import { css } from '@compiled/react';
+
+const styles = css({ width: 100 }, ...items);
+```
+
+## Options
+
+### `importSources: string[]`
+
+By default, this rule will check styles using:
+
+- `@atlaskit/css`
+- `@atlaskit/primitives`
+- `@compiled/react`
+- `@emotion/react`
+- `@emotion/core`
+- `@emotion/styled`
+- `styled-components`
+
+Override this list with the `importSources` option, which accepts an array of package names.

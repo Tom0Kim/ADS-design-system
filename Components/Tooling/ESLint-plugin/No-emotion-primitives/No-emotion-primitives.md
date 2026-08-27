@@ -1,0 +1,52 @@
+# No emotion primitives
+
+Source page: https://atlassian.design/components/eslint-plugin-design-system/no-emotion-primitives
+Source package: `@atlaskit/eslint-plugin-design-system@16.4.0`
+
+## Usage
+
+# no-emotion-primitives
+
+This rule ensures that imports from `@atlaskit/primitives` are replaced with their Compiled
+counterparts from `@atlaskit/primitives/compiled`. This helps ensure better performance and
+consistency across the codebase.
+
+## Examples
+
+This rule marks code as violations when it uses the Emotion Primitives import path.
+
+### Incorrect
+
+```jsx
+```
+
+### Correct
+
+```jsx
+```
+
+The rule will detect any imports from `@atlaskit/primitives` and suggest replacing them with the
+compiled version.
+
+## Options
+
+`autofix`: When enabled, the rule will automatically fix imports to use the Compiled entrypoint
+instead of just warning. Defaults to `false`.
+
+## Configuration
+
+Basic usage (warnings only):
+
+```js
+{
+  '@atlaskit/design-system/use-compiled-primitives': 'warn'
+}
+```
+
+With auto-fixing enabled:
+
+```js
+{
+  '@atlaskit/design-system/use-compiled-primitives': ['warn', { autofix: true }]
+}
+```

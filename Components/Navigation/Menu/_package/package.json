@@ -1,0 +1,129 @@
+{
+	"name": "@atlaskit/menu",
+	"version": "9.2.5",
+	"description": "A list of options to help users navigate, or perform actions.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Menu",
+			"subPages": [
+				{
+					"title": "Popup menu group",
+					"id": "popup-menu-group",
+					"status": {
+						"type": "deprecated",
+						"description": "PopupMenuGroup has been deprecated. We recommend using the MenuGroup component instead.",
+						"actions": [
+							{
+								"text": "View MenuGroup documentation",
+								"href": "https://atlassian.design/components/menu/menu-group/examples"
+							}
+						]
+					}
+				}
+			],
+			"category": "Navigation"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/app-provider": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/interaction-context": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/icon-file-type": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@testing-library/react": "root:*",
+		"ast-types": "root:*",
+		"jscodeshift": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"react",
+		"ui"
+	],
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"ui-components": "lite-mode",
+			"design-system": "v1",
+			"styling": [
+				"static",
+				"compiled"
+			],
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports"
+		}
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./button-item": "./src/entry-points/menu-item/button-item.tsx",
+		"./custom-item": "./src/entry-points/menu-item/custom-item.tsx",
+		"./heading-item": "./src/entry-points/menu-item/heading-item.tsx",
+		"./link-item": "./src/entry-points/menu-item/link-item.tsx",
+		"./menu-context": "./src/entry-points/menu-context.tsx",
+		"./menu-group": "./src/entry-points/menu-section/menu-group.tsx",
+		"./popup-menu-group": "./src/entry-points/menu-section/popup-menu-group.tsx",
+		"./section": "./src/entry-points/menu-section/section.tsx",
+		"./skeleton-heading-item": "./src/entry-points/menu-item/skeleton-heading-item.tsx",
+		"./skeleton-item": "./src/entry-points/menu-item/skeleton-item.tsx",
+		"./types": "./src/entry-points/types.tsx"
+	},
+	"platform-feature-flags": {
+		"platform-dst-top-layer": {
+			"type": "boolean"
+		},
+		"platform-dst-motion-uplift-list-item": {
+			"type": "boolean"
+		}
+	},
+	"homepage": "https://atlassian.design/components/menu/"
+}

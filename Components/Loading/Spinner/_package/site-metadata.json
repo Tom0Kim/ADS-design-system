@@ -1,0 +1,27 @@
+{
+  "path": "/components/spinner",
+  "workspaceInfo": {
+    "title": "Spinner",
+    "description": "A spinner is an animated spinning icon that lets users know content is being loaded.",
+    "slug": "spinner",
+    "status": null,
+    "name": "@atlaskit/spinner",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "spinner",
+    "definition": "[{\"name\":\"appearance\",\"deprecated\":false,\"required\":false,\"description\":\"You can use this to invert the current theme.\\nThis is useful when you are displaying a spinner on a background that is not the same background color scheme as the main content.\",\"type\":\"\\\"inherit\\\" | \\\"invert\\\"\",\"isInternal\":false},{\"name\":\"delay\",\"deprecated\":false,\"required\":false,\"description\":\"Delay the intro animation of `Spinner`.\\nThis is not to be used to avoid quick flickering of `Spinner`.\\n`Spinner` will automatically fade in and takes ~200ms to become partially visible.\\nThis prop can be helpful for **long delays** such as `500-1000ms` for when you want to not\\nshow a `Spinner` until some longer period of time has elapsed.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"interactionName\",\"deprecated\":false,\"required\":false,\"description\":\"An optional `interactionName` used to identify when this component is holding an interaction.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"label\",\"deprecated\":false,\"required\":false,\"description\":\"Describes what the spinner is doing for assistive technologies. For example, \\\"loading\\\", \\\"submitting\\\", or \\\"processing\\\".\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"type\":\"((instance: SVGSVGElement) => void) | RefObject<SVGSVGElement>\",\"isInternal\":true},{\"name\":\"size\",\"deprecated\":false,\"required\":false,\"description\":\"Size of the spinner. The available sizes are `xsmall`, `small`, `medium`, `large`, and `xlarge`. For most use cases, we recommend `medium`.\",\"type\":\"number | PresetSize\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements,\\nwhich is a unique string that appears as a data attribute `data-testid` in the rendered code,\\nserving as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/spinner",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/spinner/constellation/index/*",
+    "slug": "spinner",
+    "sortKey": "spinner",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/spinner"
+  }
+}

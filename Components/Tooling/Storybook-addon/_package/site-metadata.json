@@ -1,0 +1,28 @@
+{
+  "path": "/components/storybook-addon-design-system",
+  "workspaceInfo": {
+    "title": "Storybook addon",
+    "description": "Design token storybook addon",
+    "slug": "storybook-addon-design-system",
+    "status": null,
+    "name": "@atlaskit/storybook-addon-design-system",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "storybook-addon",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/storybook-addon-design-system",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/storybook-addon/constellation/index/*",
+    "slug": "storybook-addon-design-system",
+    "sortKey": "storybook-addon-design-system",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/storybook-addon/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/storybook-addon-design-system"
+  }
+}

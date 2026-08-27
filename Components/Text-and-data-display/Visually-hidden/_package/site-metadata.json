@@ -1,0 +1,27 @@
+{
+  "path": "/components/visually-hidden",
+  "workspaceInfo": {
+    "title": "Visually hidden",
+    "description": "A utility that hides content from the screen while retaining readability by screen readers for accessibility.",
+    "slug": "visually-hidden",
+    "status": null,
+    "name": "@atlaskit/visually-hidden",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "visually-hidden",
+    "definition": "[{\"name\":\"children\",\"deprecated\":false,\"required\":true,\"description\":\"The element or elements that should be hidden.\",\"type\":\"string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal\",\"isInternal\":false},{\"name\":\"id\",\"deprecated\":false,\"required\":false,\"description\":\"An id may be appropriate for this component if used in conjunction with `aria-describedby`\\non a paired element.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"role\",\"deprecated\":false,\"required\":false,\"description\":\"An ARIA role attribute to aid screen readers.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements, which is a unique\\nstring that appears as a data attribute `data-testid` in the rendered code,\\nserving as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/visually-hidden",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/visually-hidden/constellation/index/*",
+    "slug": "visually-hidden",
+    "sortKey": "visually-hidden",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/visually-hidden"
+  }
+}

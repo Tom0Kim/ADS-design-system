@@ -1,0 +1,39 @@
+import React from 'react';
+
+import { cssMap } from '@atlaskit/css';
+import ChartPieIcon from '@atlaskit/icon/core/chart-pie';
+import { Box, Inline, MetricText, Stack, Text } from '@atlaskit/primitives/compiled';
+import { token } from '@atlaskit/tokens';
+
+const styles = cssMap({
+	container: {
+		width: '300px',
+	},
+	statsCard: {
+		backgroundColor: token('elevation.surface'),
+		borderWidth: token('border.width.selected'),
+		borderColor: token('color.border'),
+		borderStyle: 'solid',
+		paddingBlockStart: token('space.150'),
+		paddingInlineEnd: token('space.150'),
+		paddingBlockEnd: token('space.150'),
+		paddingInlineStart: token('space.150'),
+		borderRadius: token('radius.small'),
+	},
+});
+
+export default (): React.JSX.Element => {
+	return (
+		<Box xcss={styles.container}>
+			<Inline space="space.200" xcss={styles.statsCard} grow="hug" alignBlock="center">
+				<ChartPieIcon label="" color={token('color.icon.subtle')} />
+				<Stack space="space.025">
+					<MetricText size="small">3 in review</MetricText>
+					<Text size="small" color="color.text.subtle">
+						3/5 projects in review
+					</Text>
+				</Stack>
+			</Inline>
+		</Box>
+	);
+};

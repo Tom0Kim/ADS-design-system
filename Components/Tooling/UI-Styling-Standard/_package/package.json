@@ -1,0 +1,68 @@
+{
+	"name": "@atlaskit/eslint-plugin-ui-styling-standard",
+	"version": "2.1.2",
+	"author": "Atlassian Pty Ltd",
+	"description": "The eslint plugin to enforce and educate on Atlassian's UI Styling Standard",
+	"license": "Apache-2.0",
+	"atlassian": {
+		"team": "Design System Team",
+		"website": {
+			"name": "UI Styling Standard",
+			"category": "Tooling"
+		},
+		"toolingLabels": [
+			"linting"
+		]
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"homepage": "https://atlassian.design/components/eslint-plugin-ui-styling-standard",
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": {
+			"types": "./src/index.tsx",
+			"publish": "./src/index.tsx",
+			"default": "./index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"dependencies": {
+		"@atlaskit/eslint-plugin-design-system": "workspace:^",
+		"@atlaskit/eslint-utils": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@typescript-eslint/utils": "root:*",
+		"ajv": "root:*",
+		"eslint-codemod-utils": "root:*",
+		"eslint-scope": "root:*",
+		"esquery": "root:*",
+		"estraverse": "root:*",
+		"json-schema-to-ts": "root:*",
+		"outdent": "root:*",
+		"postcss-selector-parser": "root:*"
+	},
+	"devDependencies": {
+		"@af/formatting": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlassian/codegen": "workspace:^",
+		"@atlassian/ts-loader": "workspace:^",
+		"@eslint/eslintrc": "root:*",
+		"@types/eslint": "root:*",
+		"@types/eslint__eslintrc": "root:*",
+		"@types/estraverse": "root:*",
+		"@types/json-schema": "root:*",
+		"eslint": "root:*",
+		"lodash": "root:*"
+	},
+	"scripts": {
+		"codegen": "run-ts ./scripts/codegen.tsx"
+	}
+}

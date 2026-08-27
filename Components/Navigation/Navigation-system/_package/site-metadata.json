@@ -1,0 +1,28 @@
+{
+  "path": "/components/navigation-system",
+  "workspaceInfo": {
+    "title": "Navigation system",
+    "description": "The latest navigation system for Atlassian apps.",
+    "slug": "navigation-system",
+    "status": null,
+    "name": "@atlaskit/navigation-system",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "navigation-system",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/navigation-system",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/navigation-system/constellation/index/*",
+    "slug": "navigation-system",
+    "sortKey": "navigation-system",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/navigation-system/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/navigation-system"
+  }
+}

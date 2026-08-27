@@ -1,0 +1,31 @@
+{
+  "path": "/components/tag",
+  "workspaceInfo": {
+    "title": "Tag",
+    "description": "A tag labels UI objects for quick recognition and navigation.",
+    "slug": "tag",
+    "status": {
+      "type": "ready-for-ga",
+      "description": "The new tag is stable and ready for adoption. Visual updates are currently behind the `platform-dst-lozenge-tag-badge-visual-uplifts` feature flag."
+    },
+    "name": "@atlaskit/tag",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "tag",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/tag",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tag/constellation/index/*",
+    "slug": "tag",
+    "sortKey": "tag",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tag/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/tag"
+  }
+}

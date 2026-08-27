@@ -1,0 +1,128 @@
+---
+title: Avatar tag
+description:
+  An avatar tag represents individuals, teams, or AI agents for tagging, quick recognition and
+  navigation.
+order: 2
+---
+
+import Image from '@atlaskit/image';
+
+import avatarTagAnatomyLight from './images/avatar-tag-anatomy-light.png';
+import avatarTagAnatomyDark from './images/avatar-tag-anatomy-dark.png';
+import avatarTagDoLight from './images/avatar-tag-do-light.png';
+import avatarTagDoDark from './images/avatar-tag-do-dark.png';
+import avatarTagDontLight from './images/avatar-tag-dont-light.png';
+import avatarTagDontDark from './images/avatar-tag-dont-dark.png';
+import avatarTag2DoLight from './images/avatar-tag-2-do-light.png';
+import avatarTag2DoDark from './images/avatar-tag-2-do-dark.png';
+import avatarTag2DontLight from './images/avatar-tag-2-dont-light.png';
+import avatarTag2DontDark from './images/avatar-tag-2-dont-dark.png';
+
+## Usage
+
+Use an avatar tag to label a person, agent, team, project or space for quick recognition and
+navigation. For other UI objects, use a [tag](/components/tag). Avatar tags can be rendered as flat,
+as links, or with a close button.
+
+Avatar tags support three types of avatars:
+
+- User (`type = 'user'`): Represent individual users.
+- Agent (`type = 'agent'`): Represent agents like Rovo.
+- Other (`type = 'other'`): Represent teams, projects or spaces. Use `isVerified` to represent
+  verified teams.
+
+Avatar tags are designed so they can be displayed within a [tag group](/components/tag-group). Use a
+tag group to control the layout and alignment for a collection of avatar tags.
+
+## Parts
+
+<Image
+	src={avatarTagAnatomyLight}
+	srcDark={avatarTagAnatomyDark}
+	alt="Avatar tag anatomy diagram showing three types: user (round avatar), agent (hexagonal avatar with close button), and other (square avatar with verified badge). Labels indicate: 1. Name, 2. Avatar, 3. Close button, 4. Verified badge"
+/>
+
+1. **Name:** Displays the name of the person, agent, team, space or project.
+2. **Avatar:** An image representing the entity. The shape varies by type: round for people,
+   hexagonal for agents and square for teams, projects and spaces.
+3. **Close button (optional):** Included if the tag has an `isRemovable` property. The button
+   enables the tag to be dismissed by the user.
+4. **Verified badge (optional):** Included if the tag has an `isVerified` property. Used to
+   represent verified teams. Do not use for other avatar tags.
+
+## Best practices
+
+### Use the correct type for your content
+
+Avatar tags are reserved for individuals, agents, teams, projects, and spaces. Human representations
+are differentiated from non-human representations by shape, so user avatar tags have a rounded
+appearance. Do not use avatar tags to represent any other type of content, and always apply them
+correctly to ensure the intended visual treatment.
+
+<DoDontGrid>
+	<DoDont
+		type="do"
+		image={{
+			url: avatarTagDoLight,
+			urlDarkMode: avatarTagDoDark,
+			alt: 'Avatar tags showing: Brian Lin (user), Design team with verified badge (other), Jira agent (agent), Project-atlas (other), and Design space (other)',
+		}}
+	>
+		Use avatar tags exclusively for people, agents, project, space or team avatars.
+	</DoDont>
+	<DoDont
+		type="dont"
+		image={{
+			url: avatarTagDontLight,
+			urlDarkMode: avatarTagDontDark,
+			alt: 'Tags incorrectly using avatar tags for general elements like spike, document, blog, design, and minor fix',
+		}}
+	>
+		Don't use avatar tags for other general elements like document categories.
+	</DoDont>
+</DoDontGrid>
+
+### Use avatar tags in moderation
+
+Avatar tags increase the amount of cognitive noise, particularly when combined with other labeling
+elements, so use them in moderation.
+
+### Don't use avatar tags within user-generated text
+
+Avatar tags are reserved for labelling and should not be used in place of content in user-generated
+long-form text or prompts, such as in editor.
+
+<DoDontGrid>
+	<DoDont
+		type="do"
+		image={{
+			url: avatarTag2DoLight,
+			urlDarkMode: avatarTag2DoDark,
+			alt: 'Avatar tags used correctly to label and categorise items in a details panel',
+		}}
+	>
+		Use avatar tag to label and categorise items.
+	</DoDont>
+	<DoDont
+		type="dont"
+		image={{
+			url: avatarTag2DontLight,
+			urlDarkMode: avatarTag2DontDark,
+			alt: 'Avatar tags incorrectly used inline with user generated text in an editor',
+		}}
+	>
+		Don't use avatar tags in line with user generated text.
+	</DoDont>
+</DoDontGrid>
+
+## Content guidelines
+
+Truncate names with an ellipsis if they exceed the component's maximum width and ensure the full
+text is revealed with a tooltip on hover.
+
+## Related
+
+- For descriptive metadata and information, use a [tag](/components/tag).
+- For status and other high importance attributes, use a [lozenge](/components/lozenge).
+- For tallies or scores, use a [badge](/components/badge).

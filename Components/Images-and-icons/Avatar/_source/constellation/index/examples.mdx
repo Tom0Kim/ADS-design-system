@@ -1,0 +1,183 @@
+---
+order: 0
+---
+
+import SectionMessage from '@atlaskit/section-message';
+import AvatarApproved from '../../examples/constellation/avatar-status-approved';
+import AvatarBusy from '../../examples/constellation/avatar-presence-busy';
+import AvatarCircle from '../../examples/constellation/avatar-circle';
+import AvatarDeclined from '../../examples/constellation/avatar-status-declined';
+import AvatarDecorative from '../../examples/constellation/avatar-decorative';
+import AvatarDefault from '../../examples/constellation/avatar-default';
+import AvatarDisabled from '../../examples/constellation/avatar-disabled';
+import AvatarSquare from '../../examples/constellation/avatar-square';
+import AvatarHexagon from '../../examples/constellation/avatar-hexagon';
+import AvatarTooltip from '../../examples/constellation/avatar-tooltip';
+import AvatarSmall from '../../examples/constellation/avatar-small';
+import AvatarXSmall from '../../examples/constellation/avatar-x-small';
+import AvatarMedium from '../../examples/constellation/avatar-medium';
+import AvatarLarge from '../../examples/constellation/avatar-large';
+import AvatarXLarge from '../../examples/constellation/avatar-x-large';
+import AvatarXXLarge from '../../examples/constellation/avatar-x-x-large';
+import AvatarFocus from '../../examples/constellation/avatar-presence-focus';
+import AvatarLocked from '../../examples/constellation/avatar-status-locked';
+import AvatarWarning from '../../examples/constellation/avatar-status-warning';
+import AvatarOffline from '../../examples/constellation/avatar-presence-offline';
+import AvatarOnline from '../../examples/constellation/avatar-presence-online';
+
+## Default
+
+When the image source is unavailable (for example, when there's a problem displaying the image due
+to an error), or the source is unspecified, the avatar component will display a default image.
+
+When an avatar is not given any useful context via the `name`, `presence`, or `status` attributes
+like in this example, it will be hidden for assistive technologies as it does not convey any
+meaningful information.
+
+<Example Component={AvatarDefault} packageName="@atlaskit/avatar" />
+
+## Accessibility
+
+If an image is decorative – i.e. it doesn’t add any information to a page or the information in the
+image is already on the page as text – remove the `name` prop or provide an empty string so it’s
+ignored by assistive technology.
+
+This reduces noise for people using assistive technology.
+
+<Example Component={AvatarDecorative} packageName="@atlaskit/avatar" />
+
+## Appearance
+
+### Circle
+
+Use `circle` avatars to represent a person.
+
+<Example Component={AvatarCircle} packageName="@atlaskit/avatar" />
+
+### Hexagon
+
+Use `hexagon` avatars to represent an agent entity, such as Rovodev or other AI-powered entities.
+
+<Example Component={AvatarHexagon} packageName="@atlaskit/avatar" />
+
+### Square
+
+Use `square` avatars to represent other entities, such as a project, repository or space.
+
+<Example Component={AvatarSquare} packageName="@atlaskit/avatar" />
+
+## States
+
+### Disabled
+
+Set `isDisabled` to disable an avatar that isn't usable. This sets the avatar image to 40% opacity
+using the `opacity.disabled` token.
+
+Avoid using disabled UI. This can cause accessibility problems, because disabled UI doesn't give
+enough information to the user about what went wrong and how to proceed, and will not appear in the
+tab order.
+
+<Example Component={AvatarDisabled} packageName="@atlaskit/avatar" />
+
+## Status
+
+Indicates contextual information by showing a small icon on the avatar. Takes precedence over
+presence.
+
+### Approved
+
+<Example Component={AvatarApproved} packageName="@atlaskit/avatar" />
+
+### Declined
+
+<Example Component={AvatarDeclined} packageName="@atlaskit/avatar" />
+
+### Locked
+
+<Example Component={AvatarLocked} packageName="@atlaskit/avatar" />
+
+### Warning
+
+<Example Component={AvatarWarning} packageName="@atlaskit/avatar" />
+
+## Presence
+
+Indicates a user's online status by showing a small icon on the avatar.
+
+### Busy
+
+<Example Component={AvatarBusy} packageName="@atlaskit/avatar" />
+
+### Focus
+
+<Example Component={AvatarFocus} packageName="@atlaskit/avatar" />
+
+### Offline
+
+<Example Component={AvatarOffline} packageName="@atlaskit/avatar" />
+
+### Online
+
+<Example Component={AvatarOnline} packageName="@atlaskit/avatar" />
+
+## Size
+
+### xxlarge
+
+Use `xxlarge` avatars in places where larger avatars are needed. For example, the Atlassian People
+Directory.
+
+<Example Component={AvatarXXLarge} packageName="@atlaskit/avatar" />
+
+### xlarge
+
+Use `xlarge` avatars where they're needed to display prominently on a page.
+
+<Example Component={AvatarXLarge} packageName="@atlaskit/avatar" />
+
+### large
+
+Use `large` circle avatars to represent people for main page titles, like a user's account settings.
+Use `large` square avatars to represent main entity titles like Jira projects or Confluence spaces.
+
+<Example Component={AvatarLarge} packageName="@atlaskit/avatar" />
+
+### medium
+
+Use `medium` circle avatars in activity streams or comments. Use `medium` square avatars in table
+views for project listings.
+
+<Example Component={AvatarMedium} packageName="@atlaskit/avatar" />
+
+### small
+
+Use `small` circle avatars in small areas like 40px text fields, and square avatars for use in
+things like [dropdown menus](/components/dropdown-menu).
+
+<Example Component={AvatarSmall} packageName="@atlaskit/avatar" />
+
+### xsmall
+
+Use `xsmall` circle and square avatars for onscreen metadata such as in Jira work items or dropdown
+menus.
+
+<Example Component={AvatarXSmall} packageName="@atlaskit/avatar" />
+
+## Displaying a tooltip
+
+<SectionMessage title="Motion in Early Access" appearance="warning">
+	The motion added into Avatar is in Early Access. The motion updates are currently behind the
+	feature flag: platform-dst-motion-uplift.
+</SectionMessage>
+
+You can display a tooltip with an avatar on focus or hover. The tooltip `content` should be set to
+the same value as the avatar `label`.
+
+Don't use a tooltip with an avatar unless it is interactive. For more information, see the
+[avatar component accessibilty guidelines](/components/avatar/usage#accessibility).
+
+<Example
+	Component={AvatarTooltip}
+	packageName="@atlaskit/avatar"
+	featureFlagSwitchers={['motion']}
+/>

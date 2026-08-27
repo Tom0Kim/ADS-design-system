@@ -1,0 +1,27 @@
+{
+  "path": "/components/radio",
+  "workspaceInfo": {
+    "title": "Radio",
+    "description": "A radio input allows users to select only one option from a number of choices. Radio is generally displayed in a radio group.",
+    "slug": "radio",
+    "status": null,
+    "name": "@atlaskit/radio",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "radio",
+    "definition": "[{\"name\":\"analyticsContext\",\"deprecated\":false,\"required\":false,\"description\":\"Additional information to be included in the `context` of analytics events that come from radio.\",\"type\":\"{ [x: string]: any; }\",\"isInternal\":false},{\"name\":\"ariaLabel\",\"deprecated\":false,\"required\":false,\"description\":\"The `aria-label` attribute associated with the radio element.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"createAnalyticsEvent\",\"deprecated\":false,\"required\":false,\"description\":\"You should not be accessing this prop under any circumstances.\\nIt is provided by `@atlaskit/analytics-next` and integrated in the component\",\"type\":\"(payload: AnalyticsEventPayload) => UIAnalyticsEvent\",\"isInternal\":false},{\"name\":\"isChecked\",\"deprecated\":false,\"required\":false,\"description\":\"Set the field as checked.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isDisabled\",\"deprecated\":false,\"required\":false,\"description\":\"Makes a `Radio` field unselectable when true. Overridden by `isDisabled` prop of `RadioGroup`.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isInvalid\",\"deprecated\":false,\"required\":false,\"description\":\"Marks this as an invalid field.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isRequired\",\"deprecated\":false,\"required\":false,\"description\":\"Marks this as a required field.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"label\",\"deprecated\":false,\"required\":false,\"description\":\"The label value for the input rendered to the DOM.\",\"type\":\"string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal\",\"isInternal\":false},{\"name\":\"labelId\",\"deprecated\":false,\"required\":false,\"description\":\"This sets the `aria-labelledby` attribute. It sets an accessible name for\\nthe radio, for people who use assistive technology. Use of a visible label\\nis highly recommended for greater accessibility support.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"onChange\",\"deprecated\":false,\"required\":false,\"description\":\"`onChange` event handler, passed into the props of each `Radio` Component instantiated within `RadioGroup`.\",\"type\":\"(e: ChangeEvent<HTMLInputElement>, analyticsEvent: UIAnalyticsEvent) => void\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"type\":\"((instance: HTMLInputElement) => void) | RefObject<HTMLInputElement>\",\"isInternal\":true},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests\\nwe have 2 different testid generated based on the one you pass to the Radio component:\\n- `{testId}--radio-input` to check if it got changed to checked/unchecked.\\n- `{testId}--radio-label` to click the input.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"value\",\"deprecated\":false,\"required\":false,\"description\":\"Field value.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/radio",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/radio/constellation/index/*",
+    "slug": "radio",
+    "sortKey": "radio",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/radio"
+  }
+}

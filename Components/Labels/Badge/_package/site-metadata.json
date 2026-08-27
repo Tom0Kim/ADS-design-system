@@ -1,0 +1,31 @@
+{
+  "path": "/components/badge",
+  "workspaceInfo": {
+    "title": "Badge",
+    "description": "A badge is a visual indicator for numeric values such as tallies and scores.",
+    "slug": "badge",
+    "status": {
+      "type": "ready-for-ga",
+      "description": "The new badge appearances are stable and ready for adoption. Visual updates are currently behind the `platform-dst-lozenge-tag-badge-visual-uplifts` feature flag."
+    },
+    "name": "@atlaskit/badge",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "badge",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/badge",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/badge/constellation/index/*",
+    "slug": "badge",
+    "sortKey": "badge",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/badge/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/badge"
+  }
+}

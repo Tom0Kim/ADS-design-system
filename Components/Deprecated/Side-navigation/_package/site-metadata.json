@@ -1,0 +1,31 @@
+{
+  "path": "/components/side-navigation",
+  "workspaceInfo": {
+    "title": "Side navigation",
+    "description": "A highly composable side navigation component that supports nested views.",
+    "slug": "side-navigation",
+    "status": {
+      "type": "deprecated",
+      "description": "This package is deprecated. Use our new [navigation system](/components/navigation-system)."
+    },
+    "name": "@atlaskit/side-navigation",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "side-navigation",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/side-navigation",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/side-navigation/constellation/index/*",
+    "slug": "side-navigation",
+    "sortKey": "side-navigation",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/side-navigation/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/side-navigation"
+  }
+}

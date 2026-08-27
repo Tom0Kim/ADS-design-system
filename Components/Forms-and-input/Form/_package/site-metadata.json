@@ -1,0 +1,28 @@
+{
+  "path": "/components/form",
+  "workspaceInfo": {
+    "title": "Form",
+    "description": "A form allows people to input information.",
+    "slug": "form",
+    "status": null,
+    "name": "@atlaskit/form",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "form",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/form",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/form/constellation/index/*",
+    "slug": "form",
+    "sortKey": "form",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/form/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/form"
+  }
+}

@@ -1,0 +1,62 @@
+{
+	"name": "@atlaskit/pragmatic-drag-and-drop-react-beautiful-dnd-autoscroll",
+	"version": "3.0.0",
+	"description": "An optional package for Pragmatic drag and drop that enables automatic scrolling during a drag operation. This package is a port of the react-beautiful-dnd auto scroller",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"atlassian": {
+		"team": "Design System Team",
+		"website": {
+			"name": "react-beautiful-dnd autoscroll",
+			"category": "Libraries"
+		}
+	},
+	"repository": "https://github.com/atlassian/pragmatic-drag-and-drop",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": false,
+	"atlaskit:src": "src/index.ts",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"dependencies": {
+		"@atlaskit/pragmatic-drag-and-drop": "workspace:^",
+		"@babel/runtime": "root:*",
+		"css-box-model": "root:*"
+	},
+	"devDependencies": {
+		"@atlassian/a11y-jest-testing": "workspace:^",
+		"@emotion/react": "root:*",
+		"raf-stub": "root:*",
+		"wait-for-expect": "root:*"
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": [
+				"atlassian-conventions"
+			],
+			"circular-dependencies": [
+				"file-and-folder-level"
+			]
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"emotion",
+				"static"
+			]
+		}
+	},
+	"homepage": "https://atlassian.design/components/pragmatic-drag-and-drop/"
+}

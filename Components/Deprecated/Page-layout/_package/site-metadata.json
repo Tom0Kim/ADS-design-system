@@ -1,0 +1,31 @@
+{
+  "path": "/components/page-layout",
+  "workspaceInfo": {
+    "title": "Page layout",
+    "description": "A collection of components which let you compose an application's page layout.",
+    "slug": "page-layout",
+    "status": {
+      "type": "deprecated",
+      "description": "This package is deprecated. Use our new [navigation system](/components/navigation-system)."
+    },
+    "name": "@atlaskit/page-layout",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "page-layout",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/page-layout",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/page-layout/constellation/index/*",
+    "slug": "page-layout",
+    "sortKey": "page-layout",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/page-layout/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/page-layout"
+  }
+}

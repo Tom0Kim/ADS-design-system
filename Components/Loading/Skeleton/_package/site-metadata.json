@@ -1,0 +1,28 @@
+{
+  "path": "/components/skeleton",
+  "workspaceInfo": {
+    "title": "Skeleton",
+    "description": "A skeleton acts as a placeholder for content, usually while the content loads.",
+    "slug": "skeleton",
+    "status": null,
+    "name": "@atlaskit/skeleton",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "skeleton",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/skeleton",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/skeleton/constellation/index/*",
+    "slug": "skeleton",
+    "sortKey": "skeleton",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/skeleton/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/skeleton"
+  }
+}

@@ -1,0 +1,104 @@
+{
+	"name": "@atlaskit/popper",
+	"version": "8.4.0",
+	"description": "A wrapper for React Popper for situations which require a bespoke popup where other ADS components are deemed unsuitable",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Popper",
+			"category": "Libraries"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/browser-apis": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@atlaskit/top-layer": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*",
+		"@popperjs/core": "root:*",
+		"bind-event-listener": "root:*",
+		"react-popper": "root:*"
+	},
+	"platform-feature-flags": {
+		"platform-dst-top-layer": {
+			"type": "boolean"
+		}
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlassian/feature-flags-test-utils": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@atlassian/testing-library": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*",
+		"react-lorem-component": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"ui"
+	],
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"design-system": "v1",
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"static",
+				"emotion"
+			]
+		}
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./popper": "./src/entry-points/popper.tsx",
+		"./react-popper": "./src/entry-points/react-popper.tsx",
+		"./manager": "./src/entry-points/manager.tsx",
+		"./reference": "./src/entry-points/reference.tsx"
+	},
+	"homepage": "https://atlassian.design/components/popper"
+}

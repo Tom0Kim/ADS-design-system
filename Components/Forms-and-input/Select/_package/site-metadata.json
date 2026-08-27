@@ -1,0 +1,28 @@
+{
+  "path": "/components/select",
+  "workspaceInfo": {
+    "title": "Select",
+    "description": "Select allows users to make a single selection or multiple selections from a list of options.",
+    "slug": "select",
+    "status": null,
+    "name": "@atlaskit/select",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "select",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/select",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/select/constellation/index/*",
+    "slug": "select",
+    "sortKey": "select",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/select/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/select"
+  }
+}

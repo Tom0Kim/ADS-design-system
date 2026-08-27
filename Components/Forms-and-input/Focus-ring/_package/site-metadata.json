@@ -1,0 +1,36 @@
+{
+  "path": "/components/focus-ring",
+  "workspaceInfo": {
+    "title": "Focus ring",
+    "description": "Deprecated. Use Focusable from @atlaskit/primitives/compiled/focusable instead.",
+    "slug": "focus-ring",
+    "status": {
+      "type": "deprecated",
+      "description": "Focus ring is deprecated. Use Focusable from [Primitives](/components/primitives/focusable) instead.",
+      "actions": [
+        {
+          "text": "View Focusable primitive documentation",
+          "href": "https://atlassian.design/components/primitives/focusable"
+        }
+      ]
+    },
+    "name": "@atlaskit/focus-ring",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "focus-ring",
+    "definition": "[{\"name\":\"children\",\"deprecated\":false,\"required\":true,\"description\":\"The focusable element to be rendered within the `FocusRing`.\",\"type\":\"ReactElement<any, string | JSXElementConstructor<any>>\",\"isInternal\":false},{\"name\":\"focus\",\"deprecated\":false,\"required\":false,\"description\":\"Makes the `FocusRing` a controlled component (opting out of native focus behavior). The focus ring\\nwill apply the visual focus indicator when the `focus` prop is set to `on`. This prop should be used\\nin conjunction with `useFocusRing`.\",\"type\":\"\\\"on\\\" | \\\"off\\\"\",\"isInternal\":false},{\"name\":\"isInset\",\"deprecated\":false,\"required\":false,\"description\":\"Controls whether the focus ring should be applied around or within the composed element.\",\"type\":\"boolean\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/focus-ring",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/focus-ring/constellation/index/*",
+    "slug": "focus-ring",
+    "sortKey": "focus-ring",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/focus-ring"
+  }
+}

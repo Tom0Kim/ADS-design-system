@@ -1,0 +1,63 @@
+---
+order: 1
+---
+
+import SectionMessage from '@atlaskit/section-message';
+import PremiumIcon from '@atlaskit/icon/core/premium';
+
+import IconDefault from '../../examples/constellation/icon-default.tsx';
+import IconSmallExample from '../../examples/constellation/icon-small.tsx';
+import IconColor from '../../examples/constellation/icon-color.tsx';
+import IconLabel from '../../examples/constellation/icon-label.tsx';
+import IconSpacing from '../../examples/constellation/icon-spacing.tsx';
+
+## Default (16px)
+
+Icons default to a `medium` `size` of 16px.
+
+<Example Component={IconDefault} packageName="@atlaskit/icon" hiddenSections={['iconography']} />
+
+## Small (12px)
+
+<SectionMessage appearance="discovery" title="New" icon={PremiumIcon}>
+	Small icons are now available, providing a fully downscaled set of icons.{' '}
+	<strong>These replace utility icons</strong>, which are deprecated.
+</SectionMessage>
+
+Small icons are 12px, for use next to `small` size text, such as in bylines, and inside small
+components such as lozenges.
+
+<Example
+	Component={IconSmallExample}
+	packageName="@atlaskit/icon"
+	hiddenSections={['iconography']}
+/>
+
+## Label
+
+If an icon doesn’t have an existing text label or accessible text, provide a clear label with the
+`label` prop.
+
+If an icon is associated with a button or element that also has a text label, you don’t need to
+provide alternative text for the icon, because the label clarifies the meaning of the icon. You can
+do this by setting the `label` prop to an empty string (`""`).
+
+<Example Component={IconLabel} packageName="@atlaskit/icon" hiddenSections={['iconography']} />
+
+## Color
+
+Icons can use color tokens for icons, text, links, or the current text color.
+
+<Example Component={IconColor} packageName="@atlaskit/icon" hiddenSections={['iconography']} />
+
+## Spacing props (deprecated)
+
+The spacing prop is deprecated because icons work best when they're spacing-neutral — padding
+belongs in the layout around them, not built into the icon itself. Remove spacing from your icons
+and add padding to the surrounding component or frame instead. Engineers can use the
+`32.0.2-icon-spacing-to-flex-primitive` codemod via `npx @atlaskit/codemod-cli` or use the
+`@atlaskit/design-system/no-icon-spacing-prop`
+[ESLint rule](https://atlassian.design/components/eslint-plugin-design-system/no-icon-spacing-prop)
+rule will flag and suggest fixes for any remaining usages.
+
+<Example Component={IconSpacing} packageName="@atlaskit/icon" hiddenSections={['iconography']} />

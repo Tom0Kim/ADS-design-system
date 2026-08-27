@@ -1,0 +1,28 @@
+{
+  "path": "/components/table-tree",
+  "workspaceInfo": {
+    "title": "Table tree",
+    "description": "A table tree is an expandable table for showing nested hierarchies of information.",
+    "slug": "table-tree",
+    "status": null,
+    "name": "@atlaskit/table-tree",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "table-tree",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/table-tree",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/table-tree/constellation/index/*",
+    "slug": "table-tree",
+    "sortKey": "table-tree",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/table-tree/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/table-tree"
+  }
+}

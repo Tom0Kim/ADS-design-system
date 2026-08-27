@@ -1,0 +1,22 @@
+{
+  "path": "/components/pragmatic-drag-and-drop",
+  "workspaceInfo": {
+    "title": "Pragmatic drag and drop",
+    "description": "Flexible and fast drag and drop for any experience on any tech stack",
+    "slug": "pragmatic-drag-and-drop"
+  },
+  "pageContext": {
+    "name": "@atlaskit/pragmatic-drag-and-drop-docs",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/pragmatic-drag-and-drop/documentation/constellation/index/*",
+    "slug": "pragmatic-drag-and-drop",
+    "sortKey": "pragmatic-drag-and-drop",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": false,
+    "hasProps": true,
+    "hideChangelog": true,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/pragmatic-drag-and-drop/documentation/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/pragmatic-drag-and-drop"
+  }
+}

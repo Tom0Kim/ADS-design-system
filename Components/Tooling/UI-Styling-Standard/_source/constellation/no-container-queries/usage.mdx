@@ -1,0 +1,101 @@
+# no-container-queries
+
+Blocks `@container` at-rules
+([container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@container)), which are
+unsafe.
+
+Container queries are unsafe because they:
+
+- break the rules of scope
+- aren't deterministic
+- aren't type-safe
+- aren't fully supported across our frontend tech stacks
+
+Use [media queries](https://atlassian.design/components/primitives/responsive/breakpoints/examples),
+a
+[WidthObserver](https://atlaskit.atlassian.com/packages/design-system/width-detector/docs/migration-guide),
+or a custom [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)
+instead.
+
+## Examples
+
+### Incorrect
+
+```tsx
+import { css } from '@compiled/react';
+import { token } from '@atlaskit/tokens';
+
+const headingStyles = css({
+	'@container (width > 400px)': {
+		font: token('font.heading.large'),
+	},
+});
+```
+
+### Correct
+
+#### Media queries
+
+```tsx
+import { css } from '@compiled/react';
+import { media } from '@atlaskit/primitives/responsive';
+import { token } from '@atlaskit/tokens';
+
+const headingStyles = css({
+	[media.above.sm]: {
+		font: token('font.heading.large'),
+	},
+});
+```
+
+#### WidthObserver
+
+```tsx
+import { useState } from 'react';
+import { css, cssMap } from '@compiled/react';
+import throttle from 'lodash/throttle';
+import { WidthObserver } from '@atlaskit/width-detector';
+import { token } from '@atlaskit/tokens';
+
+const containerStyles = css({
+	// Required for the `WidthObserver`, which is absolutely positioned
+	position: 'relative',
+});
+
+const headingStyles = cssMap({
+	small: {
+		font: token('font.heading.small'),
+	},
+	large: {
+		font: token('font.heading.large'),
+	},
+});
+
+const ResponsiveH2 = () => {
+	const [width = 0, setWidth] = useState<number | undefined>(undefined);
+	const throttledSetWidth = throttle(setWidth, 50);
+
+	return (
+		<div css={containerStyles}>
+			<WidthObserver setWidth={throttledSetWidth} />
+			<h2 css={width < 400 ? headingStyles.small : headingStyles.large}>Title</h2>
+		</div>
+	);
+};
+```
+
+## Options
+
+### `importSources: string[]`
+
+By default, this rule will check styles using:
+
+- `@atlaskit/css`
+- `@atlaskit/primitives`
+- `@compiled/react`
+- `@emotion/react`
+- `@emotion/core`
+- `@emotion/styled`
+- `styled-components`
+
+Override this list with the `importSources` option, which accepts an array of package names.

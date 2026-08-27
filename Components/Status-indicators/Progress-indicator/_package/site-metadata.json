@@ -1,0 +1,27 @@
+{
+  "path": "/components/progress-indicator",
+  "workspaceInfo": {
+    "title": "Progress indicator",
+    "description": "A progress indicator shows the user where they are along the steps of a journey.",
+    "slug": "progress-indicator",
+    "status": null,
+    "name": "@atlaskit/progress-indicator",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "progress-indicator",
+    "definition": "[{\"name\":\"appearance\",\"defaultValue\":\"\\\"default\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the color of the indicators.\",\"type\":\"\\\"default\\\" | \\\"help\\\" | \\\"inverted\\\" | \\\"primary\\\"\",\"isInternal\":false},{\"name\":\"ariaControls\",\"defaultValue\":\"\\\"panel\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"If interaction is enabled, use `ariaControls` to tell assistive technology what elements are controlled by the progress indicator.\\n\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"ariaLabel\",\"defaultValue\":\"\\\"tab\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Describes what the indicator represents to assistive technology. The selected index number will be appended to the label.\\n\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"getAriaLabel\",\"deprecated\":false,\"required\":false,\"description\":\"Returns the accessible label for each selectable indicator.\",\"type\":\"(index: number) => string\",\"isInternal\":false},{\"name\":\"onSelect\",\"deprecated\":false,\"required\":false,\"description\":\"Function called when an indicator is selected.\",\"type\":\"(eventData: { event: React.MouseEvent<HTMLButtonElement, MouseEvent>; index: number; }, analyticsEvent: UIAnalyticsEvent) => void\",\"isInternal\":false},{\"name\":\"selectedIndex\",\"deprecated\":false,\"required\":true,\"description\":\"Which indicator is currently selected.\",\"type\":\"number\",\"isInternal\":false},{\"name\":\"size\",\"defaultValue\":\"\\\"default\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the width and height of each indicator.\",\"type\":\"\\\"default\\\" | \\\"large\\\"\",\"isInternal\":false},{\"name\":\"spacing\",\"deprecated\":false,\"required\":false,\"description\":\"Specifies how much of a gutter there is between indicators.\",\"type\":\"\\\"comfortable\\\" | \\\"cozy\\\" | \\\"compact\\\"\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A hook for automated tests.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"values\",\"deprecated\":false,\"required\":true,\"description\":\"An array of values mapped over to create the indicators.\",\"type\":\"any[]\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/progress-indicator",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/progress-indicator/constellation/index/*",
+    "slug": "progress-indicator",
+    "sortKey": "progress-indicator",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/progress-indicator"
+  }
+}

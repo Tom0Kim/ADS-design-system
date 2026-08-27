@@ -1,0 +1,150 @@
+{
+	"name": "@atlaskit/popup",
+	"version": "5.2.0",
+	"description": "A popup displays brief content in an overlay.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": "./src/index.tsx",
+		"./compositional/popup-content": "./src/entry-points/compositional-popup-content.tsx",
+		"./compositional/popup-trigger": "./src/entry-points/compositional-popup-trigger.tsx",
+		"./compositional/popup": "./src/entry-points/compositional-popup.tsx",
+		"./experimental": "./src/entry-points/experimental/compositional.tsx",
+		"./popup": "./src/entry-points/popup.tsx",
+		"./types": "./src/entry-points/types.tsx"
+	},
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Popup",
+			"category": "Overlays and layering"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/layering": "workspace:^",
+		"@atlaskit/motion": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/popper": "workspace:^",
+		"@atlaskit/portal": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@atlaskit/top-layer": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*",
+		"bind-event-listener": "root:*",
+		"focus-trap": "root:*",
+		"memoize-one": "root:*",
+		"tiny-invariant": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/code": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/heading": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/modal-dialog": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/textfield": "workspace:^",
+		"@atlaskit/toggle": "workspace:^",
+		"@atlassian/feature-flags-test-utils": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@atlassian/testing-library": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"ast-types": "root:*",
+		"jscodeshift": "root:*",
+		"raf-stub": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"react",
+		"ui"
+	],
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"design-system": "v1",
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"static",
+				"emotion"
+			]
+		}
+	},
+	"platform-feature-flags": {
+		"cc_blocks_changeboarding": {
+			"type": "boolean"
+		},
+		"jsmgrowth_popup_fix": {
+			"type": "boolean"
+		},
+		"platform-dst-top-layer": {
+			"type": "boolean"
+		},
+		"platform_dst_popup-disable-focuslock": {
+			"type": "boolean"
+		},
+		"platform-design-system-popup-ref": {
+			"type": "boolean"
+		},
+		"platform-design-system-apply-popup-wrapper-focus": {
+			"type": "boolean"
+		},
+		"popup-onclose-fix": {
+			"type": "boolean"
+		},
+		"platform-dst-shape-theme-default": {
+			"type": "boolean"
+		},
+		"platform_dst_nested_escape": {
+			"type": "boolean"
+		},
+		"platform-dst-motion-uplift-popup": {
+			"type": "boolean"
+		}
+	},
+	"homepage": "https://atlassian.design/components/popup/"
+}

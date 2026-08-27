@@ -1,0 +1,27 @@
+{
+  "path": "/components/progress-bar",
+  "workspaceInfo": {
+    "title": "Progress bar",
+    "description": "A progress bar communicates the status of a system process.",
+    "slug": "progress-bar",
+    "status": null,
+    "name": "@atlaskit/progress-bar",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "progress-bar",
+    "definition": "[{\"name\":\"appearance\",\"defaultValue\":\"\\\"default\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"The visual style of the progress bar.\",\"type\":\"\\\"default\\\" | \\\"success\\\" | \\\"inverse\\\"\",\"isInternal\":false},{\"name\":\"ariaLabel\",\"deprecated\":false,\"required\":false,\"description\":\"This is the descriptive label that's associated with the progress bar.\\nAlways include useful information on the current state of the progress bar so that people who use assistive technology can understand what the current state of the progress bar is.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"isIndeterminate\",\"defaultValue\":\"false\",\"deprecated\":false,\"required\":false,\"description\":\"Shows the progress bar in an indeterminate state when `true`.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"testId\",\"defaultValue\":\"\\\"progress-bar\\\"\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is a unique string that appears as a data attribute `data-testid` in the rendered code,\\nserving as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"value\",\"defaultValue\":\"0\",\"deprecated\":false,\"required\":false,\"description\":\"Sets the value of the progress bar, between `0` and `1` inclusive.\",\"type\":\"number\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/progress-bar",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/progress-bar/constellation/index/*",
+    "slug": "progress-bar",
+    "sortKey": "progress-bar",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/progress-bar"
+  }
+}

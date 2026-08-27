@@ -1,0 +1,147 @@
+# Pagination
+Pagination allows you to divide large amounts of content into smaller chunks across multiple pages.
+Source page: https://atlassian.design/components/pagination
+Source package: `@atlaskit/pagination@17.1.5`
+
+## Examples
+
+## Default
+
+The default form of pagination.
+
+**Example source:** [pagination-default.tsx](./_source/examples/constellation/pagination-default.tsx)
+
+```tsx
+import React from 'react';
+
+import Pagination from '@atlaskit/pagination';
+
+export default function PaginationDefaultExample(): React.JSX.Element {
+	return (
+		<Pagination
+			nextLabel="Next"
+			label="Page"
+			pageLabel="Page"
+			pages={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+			previousLabel="Previous"
+		/>
+	);
+}
+```
+
+## Truncation
+
+When the number of pages exceeds the maximum display limit, an ellipsis is used to truncate the
+remaining pages.
+
+When the current page is separated by more than five pages from both the first and last page, we use
+double truncation.
+
+**Example source:** [pagination-truncation.tsx](./_source/examples/constellation/pagination-truncation.tsx)
+
+```tsx
+import React from 'react';
+
+import Pagination from '@atlaskit/pagination';
+
+export default function PaginationTruncationExample(): React.JSX.Element {
+	return (
+		<Pagination
+			nextLabel="Next"
+			label="Page"
+			pageLabel="Page"
+			pages={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+			previousLabel="Previous"
+		/>
+	);
+}
+```
+
+## Default selected index
+
+You can specify index of the page to be selected by default.
+
+**Example source:** [pagination-default-selected-index.tsx](./_source/examples/constellation/pagination-default-selected-index.tsx)
+
+```tsx
+import React from 'react';
+
+import Pagination from '@atlaskit/pagination';
+
+export default function PaginationDefaultSelectedIndexExample(): React.JSX.Element {
+	return (
+		<Pagination
+			defaultSelectedIndex={5}
+			pages={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+			nextLabel="Next"
+			label="Page"
+			pageLabel="Page"
+			previousLabel="Previous"
+		/>
+	);
+}
+```
+
+## Usage
+
+Use pagination when there are too many results to show on one page, so that people aren't
+overwhelmed by too much information. Pagination is a control that sits at the bottom of the page and
+allows the user to easily move between each page.
+
+## Parts
+
+![The pagination component is a horizontal list of page numbers with navigation arrows at each end.](images/pagination-anatomy.png)
+
+1. **Previous and next:** Arrow icons that people use to move backward and forward from the
+   currently selected page.
+2. **Page navigation:** Numbers that people can select to move to a specific page.
+3. **Truncation:** When a threshold of pages is reached, the list is truncated using an ellipsis.
+
+Pagination is commonly used for things like table listings, search results, and directories. What
+constitutes “too many results” can be influenced by:
+
+- system load times
+- the amount of data in each entry
+- the available screen space
+
+## Accessibility
+
+- Using `aria-label` attributes improves the experience for people who use assistive technologies,
+  like screen readers and speech recognition software.
+- Use the `label`, `pageLabel`, `nextLabel`, and `previousLabel` props to provide labels for the
+  pagination buttons. While the default label props are in English, passing these props will ensure
+  that assistive technologies in non-English languages can properly identify the content.
+- Be mindful of people using your app on small screen sizes and adjust the maximum number of pages
+  accordingly.
+
+## Best practices
+
+- For smaller screens, show a maximum of seven pages (including the ellipsis).
+- For larger screens, show a maximum of 14 pages (including the ellipsis).
+
+![Examples of pagination components with seven and 14 pages shown.](images/pagination-page-limits.png)
+
+## Behavior
+
+- The ellipsis representing truncated pages isn't interactive. To reach page numbers that are
+  truncated, people need to move to a page number that is closer to the number in the series. For
+  example, in a pagination component numbered 1-5, people need to select 5 to reveal page 6.
+- Double truncation is used when the current page is separated by more than five pages from both the
+  first and last page.
+
+## Data Center apps
+
+For all new features, we recommend using Atlassian Design System and other
+[Atlaskit components](https://atlaskit.atlassian.com/). For existing code, you can continue to use
+[Atlassian User Interface (AUI)](https://aui.atlassian.com/).
+
+## Related
+
+- Each page in the pagination control is a [button link](https://atlassian.design/components/button) that lets people
+  quickly navigate through the results.
+- This component is mostly used with tables, see [dynamic table](https://atlassian.design/components/dynamic-table/examples)
+  for examples.
+
+## Changelog
+
+The complete package changelog is preserved at [CHANGELOG.md](_package/CHANGELOG.md).

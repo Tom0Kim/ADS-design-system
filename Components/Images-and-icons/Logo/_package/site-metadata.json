@@ -1,0 +1,28 @@
+{
+  "path": "/components/logo",
+  "workspaceInfo": {
+    "title": "Logo",
+    "description": "A logo is a visual representation of a brand or app. It can be a word, an image, or a combination of both.",
+    "slug": "logo",
+    "status": null,
+    "name": "@atlaskit/logo",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "logo",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/logo",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/logo/constellation/index/*",
+    "slug": "logo",
+    "sortKey": "logo",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/logo/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/logo"
+  }
+}

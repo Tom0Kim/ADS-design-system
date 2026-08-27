@@ -1,0 +1,28 @@
+{
+  "path": "/components/tabs",
+  "workspaceInfo": {
+    "title": "Tabs",
+    "description": "Tabs are used to organize content by grouping similar information on the same page.",
+    "slug": "tabs",
+    "status": null,
+    "name": "@atlaskit/tabs",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "tabs",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/tabs",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tabs/constellation/index/*",
+    "slug": "tabs",
+    "sortKey": "tabs",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/tabs/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/tabs"
+  }
+}

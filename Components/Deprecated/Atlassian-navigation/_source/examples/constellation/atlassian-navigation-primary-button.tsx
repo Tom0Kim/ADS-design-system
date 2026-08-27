@@ -1,0 +1,18 @@
+import React from 'react';
+
+// eslint-disable-next-line @atlaskit/design-system/no-deprecated-imports
+import { AtlassianNavigation, PrimaryButton } from '@atlaskit/atlassian-navigation';
+
+const PrimaryButtonExample = (): React.JSX.Element => (
+	<AtlassianNavigation
+		label="site"
+		renderProductHome={() => null}
+		primaryItems={[
+			<PrimaryButton>Explore</PrimaryButton>,
+			<PrimaryButton>Work items</PrimaryButton>,
+			<PrimaryButton>Services</PrimaryButton>,
+		]}
+	/>
+);
+
+export default PrimaryButtonExample;

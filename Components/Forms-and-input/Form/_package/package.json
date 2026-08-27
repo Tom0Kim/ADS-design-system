@@ -1,0 +1,142 @@
+{
+	"name": "@atlaskit/form",
+	"version": "16.1.4",
+	"description": "A form allows people to input information.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlaskit:designLink": "https://atlassian.design/patterns/forms",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Form",
+			"category": "Forms and input"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/heading": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@atlaskit/visually-hidden": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*",
+		"final-form": "root:*",
+		"final-form-focus": "root:*",
+		"lodash": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/suppress-react-warnings": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/banner": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/checkbox": "workspace:^",
+		"@atlaskit/codemod-utils": "workspace:^",
+		"@atlaskit/datetime-picker": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/lozenge": "workspace:^",
+		"@atlaskit/modal-dialog": "workspace:^",
+		"@atlaskit/radio": "workspace:^",
+		"@atlaskit/range": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/select": "workspace:^",
+		"@atlaskit/textarea": "workspace:^",
+		"@atlaskit/textfield": "workspace:^",
+		"@atlaskit/toggle": "workspace:^",
+		"@atlassian/feature-flags-test-utils": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@atlassian/testing-library": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"@types/final-form-focus": "root:*",
+		"jest-in-case": "root:*",
+		"jscodeshift": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"react",
+		"ui"
+	],
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"theming": [
+				"react-context"
+			],
+			"styling": [
+				"static",
+				"emotion"
+			],
+			"design-system": "v1",
+			"deprecation": "no-deprecated-imports"
+		}
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./character-counter": "./src/entry-points/character-counter.tsx",
+		"./character-counter-field": "./src/entry-points/character-counter-field.tsx",
+		"./checkbox-field": "./src/entry-points/checkbox-field.tsx",
+		"./CheckboxField": "./src/entry-points/checkbox-field.tsx",
+		"./field": "./src/entry-points/field.tsx",
+		"./Field": "./src/entry-points/field.tsx",
+		"./fieldset": "./src/entry-points/fieldset.tsx",
+		"./Fieldset": "./src/entry-points/fieldset.tsx",
+		"./form": "./src/entry-points/form.tsx",
+		"./Form": "./src/entry-points/form.tsx",
+		"./form-footer": "./src/entry-points/form-footer.tsx",
+		"./form-header": "./src/entry-points/form-header.tsx",
+		"./form-section": "./src/entry-points/form-section.tsx",
+		"./FormFooter": "./src/entry-points/form-footer.tsx",
+		"./FormHeader": "./src/entry-points/form-header.tsx",
+		"./FormSection": "./src/entry-points/form-section.tsx",
+		"./label": "./src/entry-points/label.tsx",
+		"./Label": "./src/entry-points/label.tsx",
+		"./messages": "./src/entry-points/messages.tsx",
+		"./Messages": "./src/entry-points/messages.tsx",
+		"./range-field": "./src/entry-points/range-field.tsx",
+		"./RangeField": "./src/entry-points/range-field.tsx",
+		"./required-asterisk": "./src/entry-points/required-asterisk.tsx",
+		"./types": "./src/types.tsx",
+		"./use-form-state": "./src/entry-points/use-form-state.tsx"
+	},
+	"homepage": "https://atlassian.design/components/form/"
+}

@@ -1,0 +1,166 @@
+{
+	"name": "@atlaskit/tokens",
+	"version": "16.3.0",
+	"description": "Design tokens are the single source of truth to name and store design decisions.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Design tokens",
+			"category": "Libraries"
+		}
+	},
+	"scripts": {
+		"prebuilt": "yes | cp -R $(npx repo-root)/packages/design-system/tokens/dist/cjs/* $(npx repo-root)/packages/design-system/tokens/prebuilt/",
+		"ak-postbuild": "yarn prebuilt && yarn workspace @atlaskit/tokens codegen-tokens && yarn workspace @atlaskit/tokens check-clean-git",
+		"check-clean-git": "git diff --exit-code -- packages/design-system/tokens/ || (echo 'tokens are out of date, run yarn build tokens' && false)",
+		"codegen-tokens": "run-ts ./scripts/style-dictionary/build.tsx && run-ts ./scripts/style-dictionary/build-plugin-token-map.tsx && cd $(npx repo-root)/packages/design-system/primitives && yarn codegen-styles && cd $(npx repo-root)/packages/design-system/ds-explorations && yarn codegen-styles"
+	},
+	"dependencies": {
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@babel/traverse": "root:*",
+		"@babel/types": "root:*",
+		"bind-event-listener": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0 || ^19.0.0"
+	},
+	"devDependencies": {
+		"@af/formatting": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/avatar": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/calendar": "workspace:^",
+		"@atlaskit/checkbox": "workspace:^",
+		"@atlaskit/code": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/dropdown-menu": "workspace:^",
+		"@atlaskit/dynamic-table": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/heading": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/inline-message": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/lozenge": "workspace:^",
+		"@atlaskit/popup": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/radio": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/select": "workspace:^",
+		"@atlaskit/tag": "workspace:^",
+		"@atlaskit/textarea": "workspace:^",
+		"@atlaskit/textfield": "workspace:^",
+		"@atlaskit/theme": "workspace:^",
+		"@atlaskit/tooltip": "workspace:^",
+		"@atlassian/codegen": "workspace:^",
+		"@atlassian/feature-flags-test-utils": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@atlassian/ts-loader": "workspace:^",
+		"@babel/core": "root:*",
+		"@compiled/react": "root:*",
+		"@hypermod/utils": "root:*",
+		"@testing-library/react": "root:*",
+		"color-blend": "root:*",
+		"echarts": "root:*",
+		"echarts-for-react": "root:*",
+		"jscodeshift": "root:*",
+		"json5": "root:*",
+		"lodash": "root:*",
+		"postcss": "root:*",
+		"postcss-less": "root:*",
+		"react": "^19.0.0",
+		"react-window": "root:*",
+		"style-dictionary": "root:*"
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions",
+			"circular-dependencies": "file-and-folder-level"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"design-system": "v1",
+			"ui-components": "lite-mode",
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"compiled"
+			]
+		}
+	},
+	"hypermod": {
+		"dependencies": [
+			"@hypermod/utils",
+			"postcss",
+			"postcss-less"
+		]
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./artifacts/theme-import-map": "./src/entry-points/artifacts-theme-import-map.tsx",
+		"./artifacts/types": "./src/entry-points/artifacts-types.tsx",
+		"./babel-plugin": {
+			"types": "./src/entry-points/babel-plugin.tsx",
+			"publish": "./src/entry-points/babel-plugin.tsx",
+			"default": "./babel-plugin.js"
+		},
+		"./constants": "./src/entry-points/constants.tsx",
+		"./css-type-schema": "./src/entry-points/css-type-schema.codegen.tsx",
+		"./custom-themes": "./src/entry-points/custom-themes.tsx",
+		"./enable-global-theme": "./src/entry-points/enable-global-theme.tsx",
+		"./figma/atlassian-dark.json": "./figma/atlassian-dark.json",
+		"./figma/atlassian-light.json": "./figma/atlassian-light.json",
+		"./get-global-theme": "./src/entry-points/get-global-theme.tsx",
+		"./get-ssr-auto-script": "./src/entry-points/get-ssr-auto-script.tsx",
+		"./get-theme-html-attrs": "./src/entry-points/get-theme-html-attrs.tsx",
+		"./get-theme-styles": "./src/entry-points/get-theme-styles.tsx",
+		"./get-token-value": "./src/entry-points/get-token-value.tsx",
+		"./get-token": "./src/entry-points/get-token.tsx",
+		"./palettes-raw": "./src/entry-points/palettes-raw.tsx",
+		"./rename-mapping": "./src/entry-points/rename-mapping.tsx",
+		"./set-global-theme": "./src/entry-points/set-global-theme.tsx",
+		"./theme-config": "./src/entry-points/theme-config.tsx",
+		"./theme-mutation-observer": "./src/entry-points/theme-mutation-observer.tsx",
+		"./theme-state-transformer": "./src/entry-points/theme-state-transformer.tsx",
+		"./token-default-values": "./src/entry-points/token-default-values.tsx",
+		"./token-ids": "./src/entry-points/token-ids.tsx",
+		"./token-metadata": "./src/entry-points/token-metadata.codegen.tsx",
+		"./token-names": "./src/entry-points/token-names.tsx",
+		"./token-order": "./src/entry-points/token-order.tsx",
+		"./tokens-raw": "./src/entry-points/tokens-raw.tsx",
+		"./types": "./src/entry-points/types.tsx",
+		"./use-theme-observer": "./src/entry-points/use-theme-observer.tsx"
+	},
+	"platform-feature-flags": {
+		"platform_increased-contrast-themes": {
+			"type": "boolean"
+		},
+		"platform-dst-shape-theme-default": {
+			"type": "boolean"
+		}
+	},
+	"homepage": "https://atlassian.design/components/tokens"
+}

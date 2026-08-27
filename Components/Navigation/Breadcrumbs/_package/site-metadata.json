@@ -1,0 +1,28 @@
+{
+  "path": "/components/breadcrumbs",
+  "workspaceInfo": {
+    "title": "Breadcrumbs",
+    "description": "Breadcrumbs are a navigation system used to show a user's location in a site or app.",
+    "slug": "breadcrumbs",
+    "status": null,
+    "name": "@atlaskit/breadcrumbs",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "breadcrumbs",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/breadcrumbs",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/breadcrumbs/constellation/index/*",
+    "slug": "breadcrumbs",
+    "sortKey": "breadcrumbs",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/breadcrumbs/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/breadcrumbs"
+  }
+}

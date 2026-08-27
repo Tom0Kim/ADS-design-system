@@ -1,0 +1,138 @@
+# No styled tagged template expression
+
+Source page: https://atlassian.design/components/eslint-plugin-design-system/no-styled-tagged-template-expression
+Source package: `@atlaskit/eslint-plugin-design-system@16.4.0`
+
+## Usage
+
+# no-styled-tagged-template-expression
+
+Disallows any `styled` tagged template expressions that originate from a CSS-in-JS library,
+including `@atlaskit/css`, `@compiled/react`, Emotion, and `styled-components`.
+
+Tagged template expressions are difficult to parse correctly (which can lead to more frequent build
+failures or invalid CSS generation), have limited type safety, and lack syntax highlighting. These
+problems can be avoided by using the preferred call expression syntax instead.
+
+The `--fix` option on the command line automatically fixes problems reported by this rule.
+
+## Examples
+
+### Incorrect
+
+```js
+
+const InlinedStyles = styled.div`
+	color: blue;
+`;
+
+const MultilineStyles = styled.div`
+	color: blue;
+	font-weight: 500;
+`;
+
+const ComposedStyles = styled(InlinedStyles)`
+	font-weight: 500;
+`;
+
+const DynamicStyles = styled.div`
+	color: ${(props) => props.color};
+	${(props) => (props.disabled ? 'opacity: 0.8' : 'opacity: 1')}
+`;
+```
+
+### Correct
+
+```js
+
+const InlinedStyles = styled.div({
+	color: 'blue',
+});
+
+const MultilineStyles = styled.div({
+	color: 'blue',
+	fontWeight: 500,
+});
+
+const ComposedStyles = styled(InlinedStyles)({
+	fontWeight: 500,
+});
+
+const DynamicStyles = styled.div(
+	{
+		color: (props) => props.color,
+	},
+	(props) => (props.disabled ? 'opacity: 0.8' : 'opacity: 1'),
+);
+```
+
+## Options
+
+### importSources
+
+By default, this rule will check `styled` usages from:
+
+- `@atlaskit/css`
+- `@atlaskit/primitives`
+- `@compiled/react`
+- `@emotion/react`
+- `@emotion/core`
+- `@emotion/styled`
+- `styled-components`
+
+To change this list of libraries, you can define a custom set of `importSources`, which accepts an
+array of package names (strings).
+
+```tsx
+// [{ importSources: ['other-lib'] }]
+
+// Invalid!
+export const Component = styled.div``;
+```
+
+## Limitations
+
+- Comments are not fixable.
+- Component selectors are not fixable for `styled-components`.
+
+Do not migrate to this object syntax manually, it is invalid `styled-components`.
+
+```tsx
+const Button = styled.button``;
+const Wrapper = styled.div({
+  color: 'red',
+  [`${Button}`]: {
+    color: 'blue',
+  },
+});
+<Wrapper><Button /><Wrapper>
+```
+
+Instead, style the button directly—make it clear that you're styling that button.
+
+```tsx
+const buttonStyles = css({ color: 'blue' });
+const Wrapper = styled.div({
+	color: 'red',
+});
+
+<Wrapper>
+	<button css={buttonStyles} />
+</Wrapper>;
+```
+
+If that's not feasible, you can use data attributes, but these will result in failing the UI Styling
+Standard around nested styles, pushing the error down the road.
+
+```tsx
+const Wrapper = styled.div({
+	color: 'red',
+	'[data-component-selector="my.button"]': {
+		color: 'blue',
+	},
+});
+
+<Wrapper>
+	<button data-component-selector="my.button" />
+</Wrapper>;
+```

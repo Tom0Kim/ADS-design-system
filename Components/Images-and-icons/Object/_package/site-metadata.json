@@ -1,0 +1,31 @@
+{
+  "path": "/components/object",
+  "workspaceInfo": {
+    "title": "Object",
+    "description": "An object is an icon that represents an Atlassian-specific content type.",
+    "slug": "object",
+    "status": null,
+    "name": "@atlaskit/object",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "object",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/object",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/object/constellation/index/*",
+    "slug": "object",
+    "sortKey": "object",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/object/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [
+      "object-explorer",
+      "object-tile-explorer"
+    ],
+    "basePath": "/components/object"
+  }
+}

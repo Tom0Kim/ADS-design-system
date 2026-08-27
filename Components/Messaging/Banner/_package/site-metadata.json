@@ -1,0 +1,27 @@
+{
+  "path": "/components/banner",
+  "workspaceInfo": {
+    "title": "Banner",
+    "description": "A banner displays a prominent message at the top of the screen.",
+    "slug": "banner",
+    "status": null,
+    "name": "@atlaskit/banner",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "banner",
+    "definition": "[{\"name\":\"appearance\",\"deprecated\":false,\"required\":false,\"description\":\"Visual style to be used for the banner\",\"type\":\"\\\"warning\\\" | \\\"error\\\" | \\\"announcement\\\"\",\"isInternal\":false},{\"name\":\"children\",\"deprecated\":false,\"required\":false,\"description\":\"Content to be shown next to the icon. Typically text content but can contain links.\",\"type\":\"string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal\",\"isInternal\":false},{\"name\":\"icon\",\"deprecated\":false,\"required\":false,\"description\":\"Icon to be shown left of the main content. Typically an Atlaskit [@atlaskit/icon](packages/design-system/icon)\",\"type\":\"ReactElement<any, string | JSXElementConstructor<any>>\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"description\":\"Allows getting a ref to the component instance.\\nOnce the component unmounts, React will set `ref.current` to `null`\\n(or call the ref with `null` if you passed a callback ref).\\n\\n@see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}\",\"type\":\"string | Ref<HTMLDivElement>\",\"isInternal\":true},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/banner",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/banner/constellation/index/*",
+    "slug": "banner",
+    "sortKey": "banner",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/banner"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "path": "/components/popper",
+  "workspaceInfo": {
+    "title": "Popper",
+    "description": "A wrapper for React Popper for situations which require a bespoke popup where other ADS components are deemed unsuitable",
+    "slug": "popper",
+    "status": null,
+    "name": "@atlaskit/popper",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "popper",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/popper",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/popper/constellation/index/*",
+    "slug": "popper",
+    "sortKey": "popper",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/popper/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/popper"
+  }
+}

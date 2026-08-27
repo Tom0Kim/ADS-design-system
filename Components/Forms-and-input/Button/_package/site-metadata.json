@@ -1,0 +1,28 @@
+{
+  "path": "/components/button",
+  "workspaceInfo": {
+    "title": "Button",
+    "description": "A button triggers an event or action. They let users know what will happen next.",
+    "slug": "button",
+    "status": null,
+    "name": "@atlaskit/button",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "button",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/button",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/button/constellation/index/*",
+    "slug": "button",
+    "sortKey": "button",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/button/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/button"
+  }
+}

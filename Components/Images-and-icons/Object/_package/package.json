@@ -1,0 +1,156 @@
+{
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Object",
+			"category": "Images and icons"
+		}
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"homepage": "https://atlassian.design/components/tile/",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": "./src/index.tsx",
+		"./blog": "./src/components/object/components/blog.tsx",
+		"./branch": "./src/components/object/components/branch.tsx",
+		"./bug": "./src/components/object/components/bug.tsx",
+		"./calendar": "./src/components/object/components/calendar.tsx",
+		"./changes": "./src/components/object/components/changes.tsx",
+		"./code": "./src/components/object/components/code.tsx",
+		"./commit": "./src/components/object/components/commit.tsx",
+		"./database": "./src/components/object/components/database.tsx",
+		"./epic": "./src/components/object/components/epic.tsx",
+		"./idea": "./src/components/object/components/idea.tsx",
+		"./improvement": "./src/components/object/components/improvement.tsx",
+		"./incident": "./src/components/object/components/incident.tsx",
+		"./new-feature": "./src/components/object/components/new-feature.tsx",
+		"./page": "./src/components/object/components/page.tsx",
+		"./page-live-doc": "./src/components/object/components/page-live-doc.tsx",
+		"./problem": "./src/components/object/components/problem.tsx",
+		"./pull-request": "./src/components/object/components/pull-request.tsx",
+		"./question": "./src/components/object/components/question.tsx",
+		"./story": "./src/components/object/components/story.tsx",
+		"./subtask": "./src/components/object/components/subtask.tsx",
+		"./task": "./src/components/object/components/task.tsx",
+		"./whiteboard": "./src/components/object/components/whiteboard.tsx",
+		"./work-item": "./src/components/object/components/work-item.tsx",
+		"./tile/blog": "./src/components/object-tile/components/blog.tsx",
+		"./tile/branch": "./src/components/object-tile/components/branch.tsx",
+		"./tile/bug": "./src/components/object-tile/components/bug.tsx",
+		"./tile/calendar": "./src/components/object-tile/components/calendar.tsx",
+		"./tile/changes": "./src/components/object-tile/components/changes.tsx",
+		"./tile/code": "./src/components/object-tile/components/code.tsx",
+		"./tile/commit": "./src/components/object-tile/components/commit.tsx",
+		"./tile/database": "./src/components/object-tile/components/database.tsx",
+		"./tile/epic": "./src/components/object-tile/components/epic.tsx",
+		"./tile/idea": "./src/components/object-tile/components/idea.tsx",
+		"./tile/improvement": "./src/components/object-tile/components/improvement.tsx",
+		"./tile/incident": "./src/components/object-tile/components/incident.tsx",
+		"./tile/new-feature": "./src/components/object-tile/components/new-feature.tsx",
+		"./tile/page": "./src/components/object-tile/components/page.tsx",
+		"./tile/page-live-doc": "./src/components/object-tile/components/page-live-doc.tsx",
+		"./tile/problem": "./src/components/object-tile/components/problem.tsx",
+		"./tile/pull-request": "./src/components/object-tile/components/pull-request.tsx",
+		"./tile/question": "./src/components/object-tile/components/question.tsx",
+		"./tile/story": "./src/components/object-tile/components/story.tsx",
+		"./tile/subtask": "./src/components/object-tile/components/subtask.tsx",
+		"./tile/task": "./src/components/object-tile/components/task.tsx",
+		"./tile/whiteboard": "./src/components/object-tile/components/whiteboard.tsx",
+		"./tile/work-item": "./src/components/object-tile/components/work-item.tsx",
+		"./types": "./src/types.tsx",
+		"./metadata": "./src/metadata.tsx"
+	},
+	"dependencies": {
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/icon-lab": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tile": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*",
+		"tiny-invariant": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/formatting": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/ssr": "workspace:^",
+		"@atlassian/codegen": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@atlassian/testing-library": "workspace:^",
+		"fs-extra": "root:*",
+		"lodash": "root:*",
+		"pkg-dir": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*",
+		"ts-node": "root:*"
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": [
+				"atlassian-conventions"
+			],
+			"circular-dependencies": [
+				"file-and-folder-level"
+			]
+		},
+		"@repo/internal": {
+			"design-system": "v1",
+			"dom-events": "use-bind-event-listener",
+			"analytics": [
+				"analytics-next"
+			],
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"theming": [
+				"react-context"
+			],
+			"ui-components": [
+				"lite-mode"
+			],
+			"deprecation": [
+				"no-deprecated-imports"
+			],
+			"styling": [
+				"static",
+				"compiled"
+			],
+			"imports": [
+				"import-no-extraneous-disable-for-examples-and-docs"
+			]
+		}
+	},
+	"name": "@atlaskit/object",
+	"version": "2.2.4",
+	"description": "An object is an icon that represents an Atlassian-specific content type.",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"scripts": {
+		"codegen-objects": "ts-node --project ../../../tsconfig.node.json ./build/index.tsx"
+	}
+}

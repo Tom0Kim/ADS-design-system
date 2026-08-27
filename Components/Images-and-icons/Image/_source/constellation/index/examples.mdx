@@ -1,0 +1,24 @@
+---
+order: 0
+---
+
+import ImageDefault from '../../examples/constellation/image-default';
+import ImageThemed from '../../examples/constellation/image-themed';
+
+## Appearance
+
+### Default
+
+The image component works exactly like a native `img` element. It recognizes and accepts all `img`
+props, including `className`. Treat `className` and `css` as escape hatches only; style the image's
+container where possible.
+
+<Example Component={ImageDefault} packageName="@atlaskit/image" />
+
+### Dark mode
+
+Use the image component to provide a dark mode image source with `srcDark`. When provided, `srcDark`
+will automatically display when in dark mode and `src` in all other cases. If a theme hasn't been
+explicitly selected in the app, the `Image` component will check for operating system preferences.
+
+<Example Component={ImageThemed} packageName="@atlaskit/image" />

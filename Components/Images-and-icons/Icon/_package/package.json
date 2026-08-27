@@ -1,0 +1,134 @@
+{
+	"name": "@atlaskit/icon",
+	"version": "37.2.0",
+	"description": "An icon is a symbol representing a command, device, directory, or common action.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Icon",
+			"category": "Images and icons",
+			"subPages": [
+				{
+					"title": "Icon tile",
+					"id": "icon-tile",
+					"sortKey": 1
+				}
+			]
+		}
+	},
+	"scripts": {
+		"build-glyphs": "ts-node --project ../../../tsconfig.node.json ./build/index.tsx"
+	},
+	"dependencies": {
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tile": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/icon-build-process": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/code": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/heading": "workspace:^",
+		"@atlaskit/icon-file-type": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/logo": "workspace:^",
+		"@atlaskit/menu": "workspace:^",
+		"@atlaskit/modal-dialog": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/textfield": "workspace:^",
+		"@atlaskit/theme": "workspace:^",
+		"@atlaskit/toggle": "workspace:^",
+		"@atlaskit/tooltip": "workspace:^",
+		"@atlassian/feature-flags-test-utils": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@atlassian/testing-library": "workspace:^",
+		"@babel/core": "root:*",
+		"@babel/register": "root:*",
+		"@codeshift/utils": "root:*",
+		"@testing-library/react": "root:*",
+		"fs-extra": "root:*",
+		"globby": "root:*",
+		"jscodeshift": "root:*",
+		"lodash": "root:*",
+		"nullthrows": "root:*",
+		"pkg-dir": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*",
+		"ts-node": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"ui"
+	],
+	"techstack": {
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"design-system": "v1",
+			"styling": [
+				"static"
+			],
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports"
+		}
+	},
+	"homepage": "https://atlassian.design/components/icon/",
+	"exports": {
+		".": "./src/index.tsx",
+		"./base-new": "./src/entry-points/base-new.tsx",
+		"./components/icon-new": "./src/components/icon-new.tsx",
+		"./constants": "./src/entry-points/constants.tsx",
+		"./core": "./core",
+		"./core/*": {
+			"types": "./core/*.d.ts",
+			"default": "./core/*.js"
+		},
+		"./deprecated-core": "./src/deprecated-core.tsx",
+		"./deprecated-map": "./src/deprecated-core.tsx",
+		"./icon-new": "./src/entry-points/icon-new.tsx",
+		"./icon-tile": "./src/components/icon-tile/index.tsx",
+		"./metadata": "./src/entry-points/metadata.tsx",
+		"./metadata-core": "./src/metadata-core.tsx",
+		"./skeleton": "./src/components/skeleton.tsx",
+		"./src/constants": "./src/constants.tsx",
+		"./types": "./src/types.tsx"
+	}
+}

@@ -1,0 +1,910 @@
+# Element
+
+Source page: https://atlassian.design/components/pragmatic-drag-and-drop
+Source package: `@atlaskit/pragmatic-drag-and-drop-docs@2.0.2`
+
+## About
+
+The element adapter enables you to create rich drag and drop experiences, such as lists, boards,
+grids, resizing and so on.
+
+The element adapter contains the essential pieces for element operations:
+
+- [draggable](#draggable): enable dragging of an element.
+- [dropTargetForElements](#drop-target-for-elements): marking an element as a valid
+  [drop target](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/drop-targets)
+- [monitorForElements](#monitor-for-elements): create a
+  [monitor](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/monitors) to listen for element drag
+  operation events anywhere.
+- [types](#types): all types for this adapter.
+
+There are also a number of **optional** element utilities:
+
+- [setCustomNativeDragPreview](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews):
+  use a new element as the native drag preview
+- [pointerOutsideOfPreview](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews):
+  native drag preview function to place the users pointer outside of the drag preview
+- [centerUnderPointer](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews):
+  native drag preview function to place the center of the ntaive drag preview under the users
+  pointer
+- [preserveOffsetOnSource](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews):
+  native drag preview function to match the pointer position on a native drag preview as close as
+  possible to the pointer position on the draggable element
+- [disableNativeDragPreview](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews):
+  disable the native drag preview (helpful if you want to use your own custom drag preview or have
+  no drag preview)
+- [scrollJustEnoughIntoView](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews):
+  scroll an element just enough into view so it is visible (helpful when working with default native
+  drag previews)
+
+> **Note**
+>
+> It is likely that some
+> [top level utilities](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/utilities) will be helpful
+> for your experience as well
+
+## Draggable
+
+A `draggable` is an `HTMLElement` that can be dragged around by a user.
+
+A `draggable` can be located:
+
+- Outside of any drop targets
+- Inside any amount of levels of nested drop targets
+- So, anywhere!
+
+While a drag operation is occurring:
+
+- You can add new `draggable`s
+- You can remount a `draggable`. See
+  [Reconciliation](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/reconciliation)
+- You can change the dimensions of the dragging `draggable` during a drag. But keep in mind that
+  won't change the drag preview image, as that is collected only at the start of the drag (in
+  `onGenerateDragPreview()`)
+- You can remove the dragging `draggable` during a drag operation. When a `draggable` is removed
+  it's event functions (eg `onDrag`) will no longer be called. Being able to remove the dragging
+  `draggable` is a common requirement for virtual lists
+
+### Draggable argument overview
+
+- `element: HTMLElement`: a `HTMLElement` that will be draggable (using `HTMLElement` as that is the
+  interface that allows the `"draggable"` attribute)
+- `dragHandle?: Element`: an optional `Element` that can be used to designate the part of the
+  `draggable` that can exclusively used to drag the whole `draggable`
+- `canDrag?: (args: GetFeedbackArgs) => boolean`: used to conditionally allow dragging (see below)
+- `getInitialData?: (args: GetFeedbackArgs) => Record<string, unknown>`: a one time attaching of
+  data to a draggable as a drag is starting. If you want to understand the _type_ of data attached
+  to a drop target elsewhere in your application, see our
+  [typing data guide](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/recipes/typing-data).
+- `getInitialDataForExternal?: (args: GetFeedbackArgs) => {[Key in NativeMediaType]?: string;}`:
+  used to attach native data (eg `"text/plain"`) to other `window`s or applications.
+
+```ts
+type GetFeedbackArgs = {
+	/**
+	 * The user input as a drag is trying to start (the `initial` input)
+	 */
+	input: Input;
+	/**
+	 * The `draggable` element
+	 */
+	element: HTMLElement;
+	/**
+	 * The `dragHandle` element for the `draggable`
+	 */
+	dragHandle: Element | null;
+};
+```
+
+- [`onGenerateDragPreview`](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/events#event-ongeneratedragpreview)
+- [`onDragStart`](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/events#event-ondragstart)
+- [`onDrag`](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/events#event-ondrag)
+- [`onDropTargetChange`](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/events#event-ondroptargetchange)
+- [`onDrop`](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/events#event-ondrop)
+
+### Drag handles
+
+A _drag handle_ is the part of your `draggable` element that can be dragged in order to drag the
+whole `draggable`. By default, the entire `draggable` acts as a _drag handle_. However, you can
+optionally mark a child element of a `draggable` element as the _drag handle_.
+
+```ts
+draggable({
+	element: myElement,
+	dragHandle: myDragHandleElement,
+});
+```
+
+You can also implement a _drag handle_ by making a small part of an element the `draggable`, and
+then using
+[`setCustomNativeDragPreview`](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews)
+to generate a preview for the entire entity.
+
+### Conditional dragging (`canDrag()`)
+
+A `draggable` can conditionally allow dragging by using the `canDrag()` function. Returning `true`
+from `canDrag()` will allow the drag, and returning `false` will prevent a drag.
+
+```ts
+draggable({
+	element: myElement,
+	// disable dragging
+	canDrag: () => false,
+});
+```
+
+> Interactive example: `NestedDraggablesExample`. See the original MDX under `_source`.
+
+Disabling a drag by returning `false` from `canDrag()` will prevent any other `draggable` on the
+page from being dragged. `@atlaskit/pragmatic-drag-and-drop` calls `event.preventDefault()` under
+the hood when `canDrag()` returns `false`, which cancels the drag operation. Unfortunately, once a
+drag event has started, a `draggable` element cannot individually opt out of dragging and allow
+another element to be dragged.
+
+If you want to disable dragging for a `draggable`, but still want a parent `draggable` to be able to
+be dragged, then rather than using `canDrag()` you can conditionally apply `draggable()`
+
+Here is example of what that could look like using `react`:
+
+```ts
+
+function noop(){};
+
+function Item({isDraggingEnabled}: {isDraggingEnabled: boolean}) {
+  const ref = useRef();
+
+  useEffect({
+    // when disabled, don't make the element draggable
+    // this will allow a parent draggable to still be dragged
+    if(!isDraggingEnabled) {
+      return noop;
+    }
+    return draggable({
+      element: ref.current,
+    });
+  }, [isDraggingEnabled]);
+
+  return <div ref={ref}>Draggable item</div>
+};
+```
+
+## Data for external consumers (`getInitialDataForExternal()`)
+
+`getInitialDataForExternal()` allows you want to attach data to a drag operation that can be used by
+other `windows`s or applications (externally)
+
+```ts
+draggable({
+	element: myElement,
+	getInitialData: () => ({ taskId: task.id }),
+	getInitialDataForExternal: () => ({
+		'text/plain': task.description,
+		'text/uri-list': task.url,
+	}),
+});
+```
+
+We also have a helper `formatURLsForExternal(urls: string[]): string` that allows you to attach
+multiple urls for external consumers.
+
+```ts
+
+draggable({
+	element: myElement,
+	getInitialData: () => ({ taskId: task.id }),
+	getInitialDataForExternal: () => ({
+		'text/plain': task.description,
+		'text/uri-list': formatURLsForExternal([task.url, task.anotherUrl]),
+	}),
+});
+```
+
+> **warning**
+>
+> Data attached for external consumers can be accessed by _any_ external consumer that the user drops
+> on. It is important that you don't expose private data.
+
+Attaching external data from a `draggable` will not trigger the
+[external adapter](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/external) in the
+`window` that the `draggable` started in, but it will trigger the external adapter in other
+`window`s (eg in `<iframe>`s).
+
+## Drop target for elements
+
+A [drop target](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/drop-targets) for elements.
+
+The default `dropEffect` for this type of drop target is `"move"`. This lines up with our
+[design guides](https://atlassian.design/components/pragmatic-drag-and-drop/design-guidelines). You can override this
+default with `getDropEffect()`.
+
+```ts
+
+const cleanup = dropTargetForElements({
+  element: myElement,
+  onDragStart: () => console.log('Something started dragging in me!');
+});
+```
+
+## Monitor for elements
+
+A [monitor](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/monitors) for elements.
+
+```ts
+
+const cleanup = monitorForElements({
+  onDragStart: () => console.log('Dragging an element');
+});
+```
+
+## Types
+
+Generally you won't need to explicitly use our provided types, but we expose a number of TypeScript
+types if you would like to use them.
+
+All [events](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/events) on draggables, drop targets
+and monitors, are given the following base payload:
+
+```ts
+type ElementEventBasePayload = {
+	location: DragLocationHistory;
+	source: ElementDragPayload;
+};
+
+type ElementDragPayload = {
+	element: HTMLElement;
+	dragHandle: Element | null;
+	data: Record<string, unknown>;
+};
+```
+
+For all the arguments for all events, you can use our event map type:
+
+```ts
+type ElementEventPayloadMap = {
+	onDragStart: ElementEventBasePayload;
+	// .. the rest of the events
+};
+```
+
+Draggable feedback functions (`canDrag`, `getInitialData`, `getInitialDataForExternal`) are given
+the following:
+
+```ts
+type ElementGetFeedbackArgs = {
+	/**
+	 * The user input as a drag is trying to start (the `initial` input)
+	 */
+	input: Input;
+	/**
+	 * The `draggable` element
+	 */
+	element: HTMLElement;
+	/**
+	 * The `dragHandle` element for the `draggable`
+	 */
+	dragHandle: Element | null;
+};
+```
+
+Drop targets are given a little bit more information in each event:
+
+```ts
+type ElementDropTargetEventBasePayload = ElementEventBasePayload & {
+	/**
+	 * A convenance pointer to this drop targets values
+	 */
+	self: DropTargetRecord;
+};
+```
+
+For all arguments for all events on drop targets, you can use our event map type:
+
+```ts
+type ElementDropTargetEventPayloadMap = {
+	onDragStart: ElementDropTargetEventBasePayload;
+	// .. the rest of the events
+};
+```
+
+Drop target feedback functions (`canDrop`, `getData`, `getDropEffect`, `getIsSticky`) are given the
+following:
+
+```ts
+type ElementDropTargetGetFeedbackArgs = {
+	/**
+	 * The users _current_ input
+	 */
+	input: Input;
+	/**
+	 * The data associated with the entity being dragged
+	 */
+	source: ElementDragPayload;
+	/**
+	 * This drop target's element
+	 */
+	element: Element;
+};
+```
+
+The monitor feedback function (`canMonitor`), is given the following:
+
+```ts
+type ElementMonitorGetFeedbackArgs = {
+	/**
+	 * The users `initial` drag location
+	 */
+	initial: DragLocation;
+	/**
+	 * The data associated with the entity being dragged
+	 */
+	source: ElementDragPayload;
+};
+```
+
+You can get these type from the element adapter import:
+
+```ts
+```
+
+There are also some types (eg `DropTargetLocation`) that can be used for all adapters which can be
+found on our [top level utilities page](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/utilities)
+
+## Further reading
+
+- [Drag preview documentation](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews)
+  → how to control what the user drags around during a drag
+- [Typing data](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/recipes/typing-data) → how to
+  improve the types for `"data"`
+- [Unregistered elements](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/unregistered-elements)
+
+A **drag preview** is the thing that a user drags around during a drag operation. We have a number
+of supported techniques for controlling what the drag preview looks like.
+
+## Native drag previews
+
+> **success**
+>
+> We recommend using **native drag previews** where possible as they have great performance
+> characteristics (they are not rendered on the main thread) and they can be dragged between
+> applications
+
+Browsers have built in "native" mechanisms for rendering a drag preview
+
+There are a few techniques you can use to control what a native drag preview will look like:
+
+### Approach 1: Use a custom native drag preview
+
+You can ask the browser to take a photo of another visible element on the page and use that as the
+drag preview. There are some
+[design constraints when leveraging native drag previews](https://atlassian.design/components/pragmatic-drag-and-drop/web-platform-design-constraints).
+
+> **discovery**
+>
+> There are lots of platform gotchas when working with custom native drag previews. We recommend using
+> our `setCustomNativeDragPreview()` as it makes it safe and easy to work with custom native drag
+> previews.
+
+#### Mounting a new element with `setCustomNativeDragPreview`
+
+You can use `setCustomNativeDragPreview` to mount a new element to the page to be used as the drag
+preview. `setCustomNativeDragPreview` will call your `cleanup` function to remove the preview
+element from the page after the browser has taken a photo of the element.
+`setCustomNativeDragPreview` adds the `container` `Element` to the `document.body` and will remove
+the `container` `Element` after your `cleanup` function is called.
+
+`setCustomNativeDragPreview` has been designed to work with any view abstraction.
+
+Note: you are welcome to use the
+[`onGenerateDragPreview | nativeSetDragImage`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setDragImage)
+API directly. However, we recommend you use `setCustomNativeDragPreview` as it covers over a number
+of gotchas.
+
+#### Usage example: `react` portals
+
+This technique requires your component to be re-rendered, but maintains the current `react`
+`context`
+
+```tsx
+type State =
+	| {
+			type: 'idle';
+	  }
+	| {
+			type: 'preview';
+			container: HTMLElement;
+	  };
+
+function Item() {
+	const [state, setState] = useState<State>({ type: 'idle' });
+	const ref = useRef<HTMLDivElement | null>(null);
+
+	useEffect(() => {
+		invariant(ref.current);
+
+		return draggable({
+			element: ref.current,
+			onGenerateDragPreview({ nativeSetDragImage }) {
+				setCustomNativeDragPreview({
+					render({ container }) {
+						// Cause a `react` re-render to create your portal synchronously
+						setState({ type: 'preview', container });
+						// In our cleanup function: cause a `react` re-render to create remove your portal
+						// Note: you can also remove the portal in `onDragStart`,
+						// which is when the cleanup function is called
+						return () => setState({ type: 'idle' });
+					},
+					nativeSetDragImage,
+				});
+			},
+		});
+	}, []);
+
+	return (
+		<>
+			<div ref={ref}>Drag Me</div>
+			{state.type === 'preview' ? ReactDOM.createPortal(<Preview />, state.container) : null}
+		</>
+	);
+}
+```
+
+#### Usage example: A new `react` application
+
+This technique requires no re-rendering of your component, but does not maintain the current `react`
+`context`
+
+```tsx
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview: ({ nativeSetDragImage }) => {
+		setCustomNativeDragPreview({
+			render({ container }) {
+				ReactDOM.render(<Preview item={item} />, container);
+				return function cleanup() {
+					ReactDOM.unmountComponentAtNode(container);
+				};
+			},
+			nativeSetDragImage,
+		});
+	},
+});
+```
+
+#### Usage example: plain JavaScript
+
+```ts
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview: ({ nativeSetDragImage }) => {
+		setCustomNativeDragPreview({
+			render({ container }) {
+				// Create our preview element
+				const preview = document.createElement('div');
+
+				// Populate and style the preview element however you like
+				preview.textContent = 'My Preview';
+				Object.assign(preview.style, {
+					padding: '20px',
+					backgroundColor: 'lightpink',
+				});
+
+				// put the "preview" element into the container element
+				container.appendChild(preview);
+			},
+			nativeSetDragImage,
+		});
+	},
+});
+```
+
+#### Positioning the drag preview
+
+You can control where the custom native drag preview is placed by using the `getOffset()` argument.
+
+You can return an `{x: number, y: number}` object from `getOffset()` which will control where the
+native drag preview is rendered relative to the users pointer. `{x: 0, y: 0}` represents having the
+users pointer user the top left corner of the drag preview.
+
+For clarity:
+
+> `const rect = container.getBoundingClientRect()`
+
+- `{x: 0, y: 0}` → top left of the `container` will be under the users pointer **(default)**
+- `{x: rect.width, y: 0}` top right of the `container` will be under the users pointer
+- `{x: rect.width, y: rect.height}` bottom right of the `container` will be under the users pointer
+- `{x: 0, y: rect.height}` bottom left of the `container` will be under the users pointer
+
+```ts
+type GetOffsetFn = (args: { container: HTMLElement }) => {
+	x: number;
+	y: number;
+};
+```
+
+Notes:
+
+- `GetOffsetFn` needs to return `x` and `y` as numbers as that is what the platform requires
+- You cannot use negative values (not supported by browsers). If you want to push the drag preview
+  away from the users pointer, use `pointerOutsideOfPreview` (see below)
+- The max offset value for an axis is the `border-box`. Values greater than the `border-box` get
+  trimmed to be the `border-box` value
+- `getOffset` is called in the next
+  [`microtask`](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide) after
+  `setCustomNativeDragPreview:render`. This helps ensure that the drag preview element has finished
+  rendering into the `container` before `getOffset` is called. Some frameworks like `react@18` won't
+  render the element to be used for the drag preview into the `container` until the next
+  `microtask`.
+
+`{x: rect.width + 1, y: rect.height + 1}` effectively becomes `{x: rect.width, y: rect.height}`.
+
+```tsx
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview: ({ nativeSetDragImage }) => {
+		setCustomNativeDragPreview({
+			// place the (near) top middle of the `container` under the users pointer
+			getOffset: () => {
+				const rect = container.getBoundingClientRect();
+				return { x: rect.width / 2, y: 16 };
+			},
+			render({ container }) {
+				ReactDOM.render(<Preview item={item} />, container);
+				return function cleanup() {
+					ReactDOM.unmountComponentAtNode(container);
+				};
+			},
+			nativeSetDragImage,
+		});
+	},
+});
+```
+
+We have `getOffset()` helpers for `setCustomnativeDragPreview()`:
+
+1. `centerUnderPointer`: centers the custom native drag preview under the users cursor
+
+```ts
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview: ({ nativeSetDragImage }) => {
+		setCustomNativeDragPreview({
+			getOffset: centerUnderPointer,
+			render({ container }) {
+				/* ... */
+			},
+			nativeSetDragImage,
+		});
+	},
+});
+```
+
+2. `pointerOutsideOfPreview`: a cross browser mechanism to push the drag preview in front of the
+   users pointer.
+
+```ts
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview: ({ nativeSetDragImage }) => {
+		setCustomNativeDragPreview({
+			// `x` and `y` can be any CSS value
+			getOffset: pointerOutsideOfPreview({
+				x: '8px',
+				y: 'calc(var(--grid) * 2)',
+			}),
+			render({ container }) {
+				/* ... */
+			},
+			nativeSetDragImage,
+		});
+	},
+});
+```
+
+When in left to right (`ltr`) languages, the drag preview is pushed forward, to the right of the
+users pointer. For right to left (`rtl`) languages, the drag preview is also pushed forward, and the
+preview will be on the _left_ hand side of the users pointer. The direction (based on the `dir`
+attribute) will be looked up on the `container` element; so you can control the `dir` by setting it
+on the `body`; or on the `container` element itself.
+
+```ts
+onGenerateDragPreview({ nativeSetDragImage, source, location }) {
+	setCustomNativeDragPreview({
+		nativeSetDragImage,
+		getOffset: pointerOutsideOfPreview({
+			x: token('space.200'),
+			y: token('space.100'),
+		}),
+		render({ container }) {
+			// Forcing the direction for the container.
+			container.dir = 'ltr';
+
+			// By default, the `dir` inherited on `container` (which is a child of `body`) will be used.
+		},
+	});
+},
+```
+
+If you are using css variables inside of your `getOffset()` you need to be sure your css variables
+are available at the `<body>` element, as the `container` is temporarily mounted as a child of
+`<body>`.
+
+On iOS, iPad and Android `pointerOutsideOfPreview` will center the drag preview under the users
+pointer. Browsers on iOS, iPadOS and Android put the center of the drag preview under the users
+pointer during the drag, even when we try to "push" the drag preview away from the pointer.
+
+3. `preserveOffsetOnSource`: applies the initial cursor offset to the custom native drag preview for
+   a seamless experience
+
+```ts
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview: ({ nativeSetDragImage, location, source }) => {
+		setCustomNativeDragPreview({
+			getOffset: preserveOffsetOnSource({
+				element: source.element,
+				input: location.current.input,
+			}),
+			render({ container }) {
+				/* ... */
+			},
+			nativeSetDragImage,
+		});
+	},
+});
+```
+
+Notes:
+
+- This helper works best when the rendered preview has the same dimensions as the dragged element
+- On Android the center of the drag preview is always under the users pointer (platform limitation)
+- On iOS and iPadOS, the drag preview location will initially match the `source`, but during the
+  drag the native preview will perform an animated slide so that it is centered on the users
+  pointer. The centering of the drag preview during the drag on the users pointer is iOS and iPad
+  platform behaviour.
+
+#### Gotcha: CSS transforms
+
+When creating custom drag preview element with `setCustomNativeDragPreview`, there is mixed support
+for applying CSS transforms to the drag preview element.
+
+|                   | Scale                  | Rotate                 | Translate (avoid)      |
+| ----------------- | ---------------------- | ---------------------- | ---------------------- |
+| Chrome (`114.0`)  | > Embedded documentation component: `CheckIcon` (see the original MDX under `_source`).          | > Embedded documentation component: `CheckIcon` (see the original MDX under `_source`).          | > Embedded documentation component: `CheckIcon` (see the original MDX under `_source`).          |
+| Firefox (`115.0`) | > Embedded documentation component: `CheckIcon` (see the original MDX under `_source`).          | > Embedded documentation component: `CheckIcon` (see the original MDX under `_source`).          | > Embedded documentation component: `CheckIcon` (see the original MDX under `_source`).          |
+| Safari (`16.5.2`) | > Embedded documentation component: `CrossIcon` (see the original MDX under `_source`). (broken) | > Embedded documentation component: `CrossIcon` (see the original MDX under `_source`). (broken) | > Embedded documentation component: `CrossIcon` (see the original MDX under `_source`). (broken) |
+
+> **Note**
+>
+> Avoid using `translate` for positioning a drag preview (or pushing it away from the cursor). Please
+> use `setCustomNativeDragPreview > getOffset` for that (see above)
+
+You can use CSS transforms as a _progressive enhancement_. For Chrome and Firefox you can use CSS
+transforms, but for Safari you cannot. You will need do a browser check for Safari, and only add CSS
+transforms to your preview element when the browser is not Safari.
+
+```tsx
+const isSafari: boolean =
+	navigator.userAgent.includes('AppleWebKit') && !navigator.userAgent.includes('Chrome');
+
+const transformStyles = css({
+	transform: 'scale(4deg)',
+});
+
+function Preview() {
+	return <div css={isSafari ? transformStyles : undefined}>Drag preview</div>;
+}
+```
+
+### Approach 2: Change the appearance of a `draggable`
+
+> **Note**
+>
+> This approach has the best performance characteristics, but is subject to a number of gotchas. For
+> most consumers we recommend using `setCustomNativeDragPreview`
+
+If you do nothing, then the browser will use a picture of the `draggable` element as the drag
+preview. By leveraging event timings you can control the appearance of the drag preview that the
+browser generates:
+
+1. in `onGenerateDragPreview` make whatever visual changes you want to the `draggable` element and
+   those changes will be captured in the drag preview
+2. in `onDragStart`:
+
+   2a. revert changes of step 1. The user will never see the `draggable` element with the styles
+   applied in `onGenerateDragPreview` due to paint timings
+
+   2b. apply visual changes to the `draggable` element to make it clear to the user what element is
+   being dragged
+
+3. in `onDrop` remove any visual changes you applied to the `draggable` element during the drag
+
+> [More information about how this technique works 🧑‍🔬](https://twitter.com/alexandereardon/status/1510826920023248900)
+
+There are a few constraints imposed by browsers that you need to follow if you want to use this
+technique:
+
+- Your `draggable` needs to be _completely_ visible and unobfiscated at the start of the drag. This
+  can involve insuring that your `draggable` is not cut off by scroll (see
+  `scrollJustEnoughIntoView`), and has no layers currently on top of the `draggable` (for example,
+  you might need to close some popups)
+- The users pointer still needs to be over the `draggable` after the changes you make to the
+  `draggable` element in `onGenerateDragPreview`. Generally this means that you should not be
+  changing the dimensions of the `draggable` element.
+- Avoid CSS `transform` on your `draggable`. In Safari, CSS `transform`s that impact a `draggable`
+  can mess up native drag previews.
+  - [Bug 1](https://bugs.webkit.org/show_bug.cgi?id=246734) when a `transform` impacts a `draggable`
+    _before_ a drag starts:
+  - [Bug 2](https://twitter.com/alexandereardon/status/1511148574943240194) when CSS `transform` is
+    applied to a `draggable` element in `onGenerateDragPreview`
+
+## Non-native custom drag previews
+
+In some situations, you might want to completely disable the native drag preview and render your own
+drag preview. The advantage of this technique is that you can update the drag preview during a drag.
+The downsides of this approach is that it is not as fast, and you cannot drag the non-native drag
+preview outside of a browser window.
+
+To use this technique:
+
+1. disable the native drag preview
+
+```ts
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview({ nativeSetDragPreview }) {
+		disableNativeDragPreview({ nativeSetDragPreview });
+	},
+});
+```
+
+> This technique renders a `1x1` transparent image as the native drag preview. There are a few
+> alternative techniques for hiding the drag preview, but this technique yielded the best results
+> across many browsers and devices.
+
+2. render your own element in `onDragStart` (ideally in a portal), and under the user's pointer (you
+   can use `location.initial.input` to get the users initial position)
+3. move the new element around in response to `onDrag` events (use `location.current.input` to get
+   the users current pointer position)
+4. remove the new element in `onDrop`
+
+If you are doing this technique, you will likely want to use the
+[`preventUnhandled` utility](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/utilities). Using that
+addon will prevent the strange situation where when the user does not drop on a drop target there is
+a fairly large pause before the drop event. This is because the browser does a drop animation when
+the user does not drop on a drop target; a "return home" animation. Because you have hidden the
+native drag preview, the user won't see this return home drop animation, but will experience a
+delay. Using the
+[`preventUnhandled` utility](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/utilities) ensures
+that the return home drop animation won't run
+
+## No drag preview
+
+For some experiences you might not want any drag preview (for example, resizing). All you need to do
+is disable the native drag preview and you are good to go.
+
+```ts
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview({ nativeSetDragPreview }) {
+		disableNativeDragPreview({ nativeSetDragPreview });
+	},
+});
+```
+
+## `scrollJustEnoughIntoView`
+
+A little utility to quickly scroll something into view before a drag preview is captured. This is
+helpful if you are leveraging default drag previews (ie not using `setCustomNativeDragPreview`). If
+the `draggable` element is not completely in view, then the drag preview can be cut off.
+
+```ts
+
+draggable({
+	element: myElement,
+	onGenerateDragPreview({ source }) {
+		scrollJustEnoughIntoView({ element: source.element });
+	},
+});
+```
+
+Any `HTMLElement` can become draggable in the browser by adding the attribute `draggable="true"` to
+that element. Additionally, `<a>` and `<img>` elements are draggable by default (as if they had
+`draggable="true"` set on them).
+
+The element adapter is only activated by explicitly registered elements (ie `draggable({element})`).
+The element adapter will not be activated by other draggable elements on the page.
+
+If you want the element adapter to be activated by any element (including `<a>` or `<img>`
+elements), then you need to register it as a `draggable()`
+
+```ts
+
+draggable({
+	element: myAnchor,
+});
+```
+
+## Disable default dragging of anchors and images
+
+If you want to disable browsers default setting of `draggable="true"` on `<a>` and `<img>` elements,
+you can set `draggable="false"`
+
+```html
+<a href="/home" draggable="false">Home</a>
+```
+
+## External data for anchors and images
+
+When dragging a `<a>` or `<img>` element, they will automatically attach some data for external
+consumers. For example `<a>` will attach `"text/uri-list"` matching the dragging URL.
+
+Registering anchors or images as a `draggable()` does not impact this default assignment of external
+data
+
+```ts
+
+// "text/plain" and "text/uri-list" external data will automatically be attached
+// by the browser
+draggable({
+	element: myAnchor,
+});
+```
+
+You can change the default external data values by using `getInitialDataForExternal()`
+
+```ts
+
+draggable({
+	element: myAnchor,
+	getInitialDataForExternal: () => ({
+		// overiding the standard "text/uri-list" value
+		'text/uri-list': someOtherUrl,
+		// adding some new value
+		'application/x.something-custom': myCustomData,
+	}),
+});
+```
+
+## Drag previews for anchors and images
+
+Browsers will automatically generate a drag preview when dragging `<a>` or `<img>` elements, even
+when those elements are registered as a `draggable()`.
+
+You can control this drag preview in the same way you could any other element. See
+[drag previews](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters/element/drag-previews).
+
+## `blockDraggingToIFrames`
+
+This optional utility disables the ability for a user to drag into an `<iframe>` element.
+
+Scenarios where this can be helpful:
+
+- When you are shifting the interface around in reponse to a drag operation and you don't want the
+  drag to enter into an `<iframe>` (for example - when resizing)
+- When you don't want the user to be able to drag into a `<iframe>` on the page (there could be lots
+  of reasons why!)
+
+```ts
+
+const cleanup = combine(
+	blockDraggingToIFrames({ element }),
+	draggable({
+		element,
+	}),
+);
+```
+
+- This function sets `pointer-events:none !important` to all `<iframe>` elements for the duration of
+  the drag.
+- Once an `<iframe>` is disabled, it will only be re-enabled once the current drag interaction is
+  completed (and not when the `CleanupFn` is called)
+- This function currently does not watch for new `<iframe>` elements being adding during a drag
+  operation.

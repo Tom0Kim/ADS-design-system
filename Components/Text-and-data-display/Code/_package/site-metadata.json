@@ -1,0 +1,27 @@
+{
+  "path": "/components/code",
+  "workspaceInfo": {
+    "title": "Code",
+    "description": "Code highlights short strings of code snippets inline with body text.",
+    "slug": "code",
+    "status": null,
+    "name": "@atlaskit/code",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "code",
+    "definition": "[{\"name\":\"children\",\"deprecated\":false,\"required\":false,\"description\":\"Content to be rendered in the inline code block.\",\"type\":\"string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal\",\"isInternal\":false},{\"name\":\"codeBidiWarningLabel\",\"deprecated\":false,\"required\":false,\"description\":\"Label for the bidi warning tooltip.\\n\\nDefaults to `Bidirectional characters change the order that text is rendered.\\nThis could be used to obscure malicious code.`\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"codeBidiWarnings\",\"deprecated\":true,\"required\":false,\"description\":\"When set to `false`, disables code decorating with bidi warnings. Defaults to `true`.\\n@deprecated Use `hasBidiWarnings` instead\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"codeBidiWarningTooltipEnabled\",\"deprecated\":true,\"required\":false,\"description\":\"Sets whether to render tooltip with the warning or not. Intended to be\\ndisabled when used in a mobile view, such as in the editor via mobile\\nbridge, where the tooltip could end up being cut off or otherwise not work\\nas expected. Defaults to `true`.\\n@deprecated Use `isBidiWarningTooltipEnabled` instead\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"hasBidiWarnings\",\"deprecated\":false,\"required\":false,\"description\":\"When set to `false`, disables code decorating with bidi warnings. Defaults to `true`.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isBidiWarningTooltipEnabled\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether to render tooltip with the warning or not. Intended to be\\ndisabled when used in a mobile view, such as in the editor via mobile\\nbridge, where the tooltip could end up being cut off or otherwise not work\\nas expected. Defaults to `true`.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"type\":\"((instance: HTMLElement) => void) | RefObject<HTMLElement>\",\"isInternal\":true},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A unique string that appears as a data attribute `data-testid`\\nin the rendered code. Serves as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/code",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/code/constellation/index/*",
+    "slug": "code",
+    "sortKey": "code",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/code"
+  }
+}

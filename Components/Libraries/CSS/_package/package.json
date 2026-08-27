@@ -1,0 +1,100 @@
+{
+	"name": "@atlaskit/css",
+	"version": "1.0.2",
+	"description": "Style components backed by Atlassian Design System design tokens powered by Compiled CSS-in-JS.",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"atlassian": {
+		"team": "Design System Team",
+		"website": {
+			"name": "CSS",
+			"category": "Libraries",
+			"ignorePropTypes": true,
+			"status": {
+				"type": "beta",
+				"description": "The Atlassian Design System is migrating from Emotion to Compiled CSS-in-JS. This transition aims to improve performance and align with modern React features.",
+				"actions": [
+					{
+						"text": "View RFC",
+						"href": "https://community.developer.atlassian.com/t/rfc-73-migrating-our-components-to-compiled-css-in-js/85953"
+					}
+				]
+			}
+		}
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"dist/es2019/test-utils/index.js",
+		"dist/esm/test-utils/index.js"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": "./src/index.tsx",
+		"./test-utils": "./src/test-utils/index.tsx"
+	},
+	"dependencies": {
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@emotion/react": "root:*",
+		"@testing-library/react": "root:*",
+		"@types/jscodeshift": "root:*",
+		"jscodeshift": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"code-structure": [
+				"tangerine-next"
+			],
+			"import-structure": [
+				"atlassian-conventions"
+			],
+			"circular-dependencies": [
+				"file-and-folder-level"
+			]
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"analytics": [
+				"analytics-next"
+			],
+			"design-tokens": [
+				"color"
+			],
+			"theming": [
+				"react-context"
+			],
+			"ui-components": [
+				"lite-mode"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"emotion",
+				"emotion"
+			],
+			"imports": [
+				"import-no-extraneous-disable-for-examples-and-docs"
+			]
+		}
+	},
+	"homepage": "https://atlassian.design/components/css"
+}

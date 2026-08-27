@@ -1,0 +1,93 @@
+{
+	"name": "@atlaskit/storybook-addon-design-system",
+	"version": "4.0.2",
+	"description": "Design token storybook addon",
+	"author": "Atlassian Pty Ltd",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"atlassian": {
+		"team": "Design System Team",
+		"website": {
+			"name": "Storybook addon",
+			"category": "Tooling"
+		}
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"type": "module",
+	"main": "src/index.tsx",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": "./src/index.tsx",
+		"./preview": {
+			"publish": null,
+			"default": "./preview.js"
+		},
+		"./preset": {
+			"publish": null,
+			"default": "./preset.js"
+		},
+		"./manager": {
+			"publish": null,
+			"default": "./manager.js"
+		},
+		"./package.json": {
+			"publish": null,
+			"default": "./package.json"
+		}
+	},
+	"dependencies": {
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@storybook/components": "^8.4.7",
+		"@storybook/icons": "root:*",
+		"@storybook/manager-api": "root:*",
+		"@storybook/preview-api": "root:*",
+		"@storybook/types": "root:*",
+		"storybook": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"scripts": {
+		"ak-postbuild": "echo \"/* eslint-disable */\nimport './dist/esm/manager.js';\" > manager.js && echo \"/* eslint-disable */\nexport { default } from './dist/esm/preview.js';\" > preview.js && echo \"/* eslint-disable */\nexport { webpack } from './dist/esm/preset.js';\" > preset.js"
+	},
+	"bundler": {
+		"exportEntries": [
+			"src/index.tsx"
+		],
+		"managerEntries": [
+			"src/manager.tsx"
+		],
+		"previewEntries": [
+			"src/preview.tsx"
+		],
+		"nodeEntries": [
+			"src/preset.tsx"
+		]
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"design-system": "v1",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"emotion"
+			]
+		}
+	},
+	"homepage": "https://atlassian.design/components/storybook-addon-design-system",
+	"devDependencies": {
+		"react": "root:*"
+	}
+}

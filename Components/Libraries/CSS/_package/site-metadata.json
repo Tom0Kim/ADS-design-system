@@ -1,0 +1,21 @@
+{
+  "path": "/components/css",
+  "workspaceInfo": {
+    "title": "CSS",
+    "description": "Style components backed by Atlassian Design System design tokens powered by Compiled CSS-in-JS.",
+    "slug": "css"
+  },
+  "pageContext": {
+    "name": "@atlaskit/css",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/css/constellation/index/*",
+    "slug": "css",
+    "sortKey": "css",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": false,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/css"
+  }
+}

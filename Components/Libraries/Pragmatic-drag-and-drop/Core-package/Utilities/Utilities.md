@@ -1,0 +1,185 @@
+# Utilities
+
+Source page: https://atlassian.design/components/pragmatic-drag-and-drop
+Source package: `@atlaskit/pragmatic-drag-and-drop-docs@2.0.2`
+
+All of the utilities on this page are optional. You can also substitute them for your own similiar
+utilities if you want to.
+
+## `combine`
+
+_draggables_, _drop targets_ and _monitors_ return cleanup functions to remove their behaviour.
+
+```ts
+
+// You don't need to use this type explicitly, but including this import so you
+// know where you can get the type if you want it.
+
+const cleanupDraggable: CleanupFn = draggable({ element: myElement });
+const cleanupDropTarget: CleanupFn = dropTargetForElements({
+	element: myElement,
+});
+const cleanupMonitor: CleanupFn = monitorForElements({ element: myElement });
+
+// unbind all functionality:
+cleanupDraggable();
+cleanupDropTarget();
+cleanupMonitor();
+```
+
+`combine` is helpful to merge multiple cleanup functions into a single cleanup function.
+
+```ts
+const cleanup: CleanupFn = combine(
+	draggable({ element: myElement }),
+	dropTargetForElements({
+		element: myElement,
+	}),
+	monitorForElements({ element: myElement }),
+);
+
+// unbind all functionality
+cleanup();
+```
+
+Using `combine()` is helpful when working with `react` effects:
+
+```ts
+useEffect(() => {
+	const cleanup = combine(
+		draggable({ element: myElement }),
+		dropTargetForElements({
+			element: myElement,
+		}),
+		monitorForElements({ element: myElement }),
+	);
+	return cleanup;
+}, []);
+
+// or even simpler:
+useEffect(() => {
+	return combine(
+		draggable({ element: myElement }),
+		dropTargetForElements({
+			element: myElement,
+		}),
+		monitorForElements({ element: myElement }),
+	);
+}, []);
+```
+
+## `once`
+
+A function that will only allow the provided function to be called once.
+
+```ts
+```
+
+This is useful if your drop target `getData()` is expensive to calculate.
+
+```ts
+dropTargetForExternal({
+	getData: once(getExpensiveData),
+});
+```
+
+```ts
+// calculate your data outside of get data
+const data = getExpensiveData();
+dropTargetForExternal({
+	getData: () => data,
+});
+```
+
+```ts
+// have expensive data along with updated addons
+const getDataOnce = once(getExpensiveData);
+dropTargetForExternal({
+	getData: ({ input, element }) => {
+		const data = getDataOnce();
+		return attachClosestEdge(data, { input, element, allowedEdges: ['top'] });
+	},
+});
+```
+
+## `reorder`
+
+A function that will reorder an array. `reorder` returns a new array with reordered items and does
+not modify the original array. The items in the array are also not modified.
+
+```ts
+
+const reordered = reorder({
+	list: [A, B, C],
+	startIndex: 0,
+	finishIndex: 1,
+});
+
+console.log(reordered); // [B, A, C]
+```
+
+## `preventUnhandled`
+
+In some situations, you want to explicitly allow "drop" operations to occur, even if no drop target
+accepts the drag. This is helpful for the following cases:
+
+- Your are disabling a native drag preview and you want to prevent the default "cancel" animation on
+  a cancelled drag
+- You want to always prevent the default behaviour when dropping an external entity (eg prevent a
+  file drop from opening a new page)
+
+You can use `preventUnhandled` inside a monitor
+
+```ts
+
+monitorForExternal({
+	onDragStart: () => {
+		// when any drag starts for files block unhandled drags
+		preventUnhandled.start();
+	},
+});
+```
+
+`preventUnhandled.start()` only applies for the current drag operation. You need to call it again
+for each drag operation you want to use it for. You can use `prevenUnhandled.stop()` to stop
+blocking events during a drag operation if you like.
+
+## `types`
+
+Pragmatic drag and drop has a specific entry point just for shared TypeScript types. You don't need
+to use these types explicitly as you can leverage inference, or use `typeof` to pull out the types
+you need (eg `type CleanupFn = ReturnType<typeof draggable>`).
+
+In addition to these shared types,
+[adapters](https://atlassian.design/components/pragmatic-drag-and-drop/core-package/adapters) also expose adapter specific
+types.
+
+```ts
+export type {
+	// information about a drop target
+	DropTargetRecord,
+
+	// Used for coordinates
+	// {x: number, y: number}
+	Position,
+
+	// What the current user input is
+	Input,
+
+	// Information about the current state of a drag.
+	// Includes `Input` and `DropTargetRecord[]`
+	DragLocation,
+
+	// The `initial`, `current`, and `previous` `DragLocations`
+	DragLocationHistory,
+
+	// The type of our cleanup functions
+	CleanupFn,
+
+	// These types are not needed for consumers.
+	// They are mostly helpful for other packages
+	AllDragTypes,
+	MonitorArgs,
+	BaseEventPayload,
+} from '@atlaskit/pragmatic-drag-and-drop/types';
+```

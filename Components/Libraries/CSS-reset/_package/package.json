@@ -1,0 +1,79 @@
+{
+	"name": "@atlaskit/css-reset",
+	"version": "8.1.1",
+	"description": "A base stylesheet for the Atlassian Design System.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/bundle.css",
+	"module": "dist/bundle.css",
+	"module:es2019": "dist/bundle.css",
+	"types": "dist/types/index.d.ts",
+	"atlaskit:src": "src/index.tsx",
+	"atlassian": {
+		"team": "Design System Team",
+		"website": {
+			"name": "CSS reset",
+			"category": "Libraries"
+		}
+	},
+	"scripts": {
+		"ak-postbuild": "mkdir -p dist && cp src/bundle.css dist/bundle.css && ABS_PATH=$(pwd) && ln -sf $ABS_PATH/dist/bundle.css dist/cjs/bundle.css && ln -sf $ABS_PATH/dist/bundle.css dist/esm/bundle.css && ln -sf $ABS_PATH/dist/bundle.css dist/es2019/bundle.css",
+		"build-css": "run-ts build/js-to-css.tsx"
+	},
+	"dependencies": {
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/formatting": "workspace:^",
+		"@af/root-path": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlassian/ts-loader": "workspace:^",
+		"mkdirp": "root:*",
+		"react": "root:*"
+	},
+	"keywords": [
+		"atlaskit",
+		"css",
+		"ui"
+	],
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"design-system": "v1",
+			"ui-components": "lite-mode",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"emotion"
+			]
+		}
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./styles": "./src/index.tsx",
+		"./base": "./src/base.tsx",
+		"./browser-fixes": "./src/browser-fixes.tsx",
+		"./bundle.css": "./src/bundle.css",
+		"./reset": "./src/reset.tsx",
+		"./tables": "./src/tables.tsx",
+		"./utils": "./src/utils.tsx"
+	},
+	"homepage": "https://atlassian.design/components/css-reset",
+	"platform-feature-flags": {}
+}

@@ -1,0 +1,31 @@
+{
+  "path": "/components/onboarding",
+  "workspaceInfo": {
+    "title": "Onboarding (spotlight)",
+    "description": "An onboarding spotlight introduces new features to users through focused messages or multi-step tours.",
+    "slug": "onboarding",
+    "status": {
+      "type": "deprecated",
+      "description": "This package is deprecated. Use [@atlaskit/spotlight](https://atlassian.design/components/spotlight/examples)."
+    },
+    "name": "@atlaskit/onboarding",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "onboarding",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/onboarding",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/onboarding/constellation/index/*",
+    "slug": "onboarding",
+    "sortKey": "onboarding",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/onboarding/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/onboarding"
+  }
+}

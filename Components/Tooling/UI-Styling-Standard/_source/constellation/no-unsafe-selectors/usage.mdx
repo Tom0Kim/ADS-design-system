@@ -1,0 +1,370 @@
+# no-unsafe-selectors
+
+Blocks unsafe CSS selectors.
+
+Use alongside
+[no-nested-selectors](https://atlassian.design/components/eslint-plugin-ui-styling-standard/no-nested-selectors/usage)
+which blocks nested CSS selectors.
+
+Blocking unsafe selectors enables static analysis and also prevents regressions and incidents when
+migrating styles at scale.
+
+## Examples
+
+### Keyframes
+
+#### Incorrect
+
+Don't use `@keyframes` at-rules in styles.
+
+```tsx
+import { css } from '@compiled/react';
+
+css({
+	'@keyframes fadeIn': {
+		from: {
+			opacity: 0,
+		},
+		to: {
+			opacity: 1,
+		},
+	},
+	animation: '1s ease-in fadeIn',
+});
+```
+
+#### Correct
+
+Use the `keyframes` API.
+
+```tsx
+import { css, keyframes } from '@compiled/react';
+
+const fadeIn = keyframes({
+	from: {
+		opacity: 0,
+	},
+	to: {
+		opacity: 1,
+	},
+});
+
+css({
+	animation: `1s ease-in ${fadeIn}`,
+});
+```
+
+### Legacy pseudo-element syntax
+
+#### Incorrect
+
+Don't use the legacy single colon syntax for pseudo-elements.
+
+This issue is autofixable.
+
+```tsx
+import { css } from '@compiled/react';
+
+css({
+	'&:after': {
+		content: '""',
+	},
+});
+```
+
+#### Correct
+
+Use the double colon syntax for pseudo-elements.
+
+```tsx
+import { css } from '@compiled/react';
+
+css({
+	'&::after': {
+		content: '""',
+	},
+});
+```
+
+### Increased specificity selectors
+
+#### Incorrect
+
+Don't use the nesting selector to increase specificity of styles.
+
+```tsx
+import { css } from '@compiled/react';
+import { token } from '@atlaskit/tokens';
+
+css({
+	'&&': {
+		color: token('color.text'),
+	},
+});
+```
+
+#### Correct
+
+Use styles that do not require increased specificity.
+
+```tsx
+import { css } from '@compiled/react';
+import { token } from '@atlaskit/tokens';
+
+css({
+	color: token('color.text'),
+});
+```
+
+### At-rules
+
+#### Incorrect
+
+Don't use at-rules in styles (see **Correct** below for exceptions).
+
+```tsx
+import { css } from '@compiled/react';
+
+css({
+	'@scope (.article-body) to (figure)': {
+		img: {
+			display: 'block',
+		},
+	},
+});
+```
+
+#### Correct
+
+Use only allowed at-rules:
+
+- `@media` (through our
+  [breakpoints](https://atlassian.design/components/primitives/responsive/breakpoints/examples))
+- `@property`
+- `@supports`
+
+```tsx
+import { css } from '@compiled/react';
+import { media } from '@atlaskit/primitives/responsive';
+
+css({
+	[media.above.sm]: {
+		display: 'block',
+	},
+});
+```
+
+### Restricted pseudo-selectors
+
+#### Incorrect
+
+Don't use pseudo-classes which take arguments or implicitly rely on external context.
+
+```tsx
+import { css } from '@compiled/react';
+import { token } from '@atlaskit/tokens';
+
+css({
+	'&:hover': {
+		backgroundColor: token('color.background.neutral.hovered'),
+	},
+	'&:not(:hover)': {
+		backgroundColor: token('color.background.neutral'),
+	}
+	'&:first-child': {
+		fontWeight: token('font.weight.bold'),
+	},
+});
+```
+
+#### Correct
+
+```tsx
+import { css } from '@compiled/react';
+import { token } from '@atlaskit/tokens';
+
+type Props = { isFirstChild: boolean };
+
+const baseStyles = css({
+	backgroundColor: token('color.background.neutral'),
+	'&:hover': {
+		backgroundColor: token('color.background.neutral.hovered'),
+	},
+});
+
+const firstChildStyles = css({
+	fontWeight: token('font.weight.bold'),
+});
+
+const Component = ({ isFirstChild }: Props) => (
+	<div css={[baseStyles, isFirstChild && firstChildStyles]} />
+);
+```
+
+### Ambiguous pseudo-selectors
+
+#### Incorrect
+
+Don't use pseudo-selectors without a leading selector, as they are ambiguous and interpreted
+differently between contexts.
+
+For example some contexts will treat `:hover` as `&:hover` while others will treat it as `& :hover`
+(which targets descendants).
+
+This issue is autofixable. By default a nesting selector `&` is added unless the
+`shouldAlwaysInsertNestingSelectorForAmbiguousPseudos` option is disabled.
+
+```tsx
+import { css } from '@compiled/react';
+
+css({
+	/**
+	 * This pseudo-class has no leading selector and is ambiguous.
+	 */
+	':hover': {},
+
+	/**
+	 * In some contexts the above is treated as implicitly containing a nesting selector.
+	 */
+	'&:hover': {},
+
+	/**
+	 * In other contexts it is treated as a descendant selector.
+	 *
+	 * (The selectors below are equivalent.)
+	 */
+	'*:hover': {},
+	'& :hover': {},
+	'& *:hover': {},
+});
+```
+
+#### Correct
+
+Use explicit selectors. Do not rely on implicit or undefined behavior for pseudo-selectors.
+
+```tsx
+
+```
+
+### Grouped at-rules
+
+#### Incorrect
+
+Don't group at-rules with the `cssMap` API.
+
+````tsx
+import { cssMap } from '@compiled/react';
+
+```tsx
+cssMap({
+	success: {
+		'@media': {
+			'(min-width: 900px)': {},
+			'(min-width: 1200px)': {},
+		},
+	},
+});
+````
+
+#### Correct
+
+Write flattened at-rules instead.
+
+```tsx
+cssMap({
+	success: {
+		selectors: {
+			'&:not(:active)': {
+				backgroundColor: 'white',
+			},
+		},
+	},
+});
+```
+
+### Correct
+
+```tsx
+const fadeIn = keyframes({
+	from: {
+		opacity: 0,
+	},
+	to: {
+		opacity: 1,
+	},
+});
+
+css({
+	animationName: fadeIn,
+});
+```
+
+```tsx
+css({
+	'::after': {
+		content: '""',
+		width: 100,
+		height: 100,
+		backgroundColor: 'red',
+	},
+});
+```
+
+```tsx
+css({
+	'&:first-of-type': {
+		width: 100,
+	},
+});
+```
+
+```tsx
+css({
+	'&:hover': {},
+});
+```
+
+```tsx
+cssMap({
+	success: {
+		'@media (min-width: 900px)': {},
+		'@media (min-width: 1200px)': {},
+	},
+});
+```
+
+```tsx
+cssMap({
+	success: {
+		backgroundColor: 'white',
+		'&:active': {
+			backgroundColor: 'green',
+		},
+	},
+});
+```
+
+## Options
+
+### `importSources: string[]`
+
+By default, this rule will check styles using:
+
+- `@atlaskit/css`
+- `@atlaskit/primitives`
+- `@compiled/react`
+- `@emotion/react`
+- `@emotion/core`
+- `@emotion/styled`
+- `styled-components`
+
+Override this list with the `importSources` option, which accepts an array of package names.
+
+### `shouldAlwaysInsertNestingSelectorForAmbiguousPseudos: boolean`
+
+By default this rule will always fix ambiguous pseudo-selectors by inserting a leading `&` (nesting
+selector).
+
+Set `shouldAlwaysInsertNestingSelectorForAmbiguousPseudos` to `false` to disable this auto-fix. When
+disabled, a suggestion will be provided instead of an auto-fix.

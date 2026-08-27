@@ -1,0 +1,82 @@
+---
+order: 0
+---
+
+import TextFieldBasic from '../../examples/constellation/text-field-basic';
+import TextFieldForm from '../../examples/constellation/text-field-form';
+import TextFieldFormNativeValidation from '../../examples/constellation/text-field-form-native-validation';
+import TextFieldFormValidation from '../../examples/constellation/text-field-form-validation';
+import TextFieldMaxValue from '../../examples/constellation/text-field-max-value';
+import TextFieldAppearanceStandard from '../../examples/constellation/text-field-appearance-standard';
+import TextFieldAppearanceSubtle from '../../examples/constellation/text-field-appearance-subtle';
+import TextFieldElementsBeforeAndAfter from '../../examples/constellation/text-field-elements-before-and-after';
+import TextFieldOverrideStyles from '../../examples/constellation/text-field-customisation';
+
+## Basic
+
+A basic text field. If you use a text field outside of a form component, always use a label and
+associate the label to the field properly.
+
+<Example Component={TextFieldBasic} packageName="@atlaskit/textfield" />
+
+## Text field in a form component
+
+You'll often use text fields as a [form field](/components/form/examples#field), which must include
+a visible label.
+
+<Example Component={TextFieldForm} packageName="@atlaskit/textfield" />
+
+## Validation
+
+### Native
+
+Validation can display a native error message related to the restrictions of the pattern attribute.
+Keep this text as short as possible. Use the [writing guidelines](/foundations/content/voice-tone)
+for more help. For complicated information, provide a link to more information in a new browser tab.
+
+<Example Component={TextFieldFormNativeValidation} packageName="@atlaskit/textfield" />
+
+### Custom
+
+<Example Component={TextFieldFormValidation} packageName="@atlaskit/textfield" />
+
+## Appearance
+
+### Standard
+
+The default text field appearance.
+
+<Example Component={TextFieldAppearanceStandard} packageName="@atlaskit/textfield" />
+
+### Subtle
+
+A text field that's transparent until interaction or error.
+
+<Example Component={TextFieldAppearanceSubtle} packageName="@atlaskit/textfield" />
+
+## Character counter
+
+A character counter field provides real-time feedback about text length as people type, showing how
+many characters are remaining or have been exceeded.
+
+Use it when there are constraints on text length, such as database limits, technical requirements,
+or design constraints.
+
+View
+[details and examples of character counters](https://atlassian.design/components/form/examples#charactercounterfield).
+
+## Elements before and after input
+
+Text fields can include non-interactive elements before and after the input. This is useful for
+adding elements like icons into the text field.
+
+Don’t nest interactive elements in the text field, as it will cause accessibility and focus issues.
+
+<Example Component={TextFieldElementsBeforeAndAfter} packageName="@atlaskit/textfield" />
+
+## Customization
+
+Use the data attributes `data-ds--text-field--container` and `data-ds--text-field--input` to
+customize the style of the text field container and input element.
+
+<Example Component={TextFieldOverrideStyles} packageName="@atlaskit/textfield" />

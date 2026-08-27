@@ -1,0 +1,27 @@
+{
+  "path": "/components/checkbox",
+  "workspaceInfo": {
+    "title": "Checkbox",
+    "description": "A checkbox is an input control that allows a user to select one or more options from a number of choices.",
+    "slug": "checkbox",
+    "status": null,
+    "name": "@atlaskit/checkbox",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "checkbox",
+    "definition": "[{\"name\":\"analyticsContext\",\"deprecated\":false,\"required\":false,\"description\":\"Additional information to be included in the `context` of analytics events that come from radio.\",\"type\":\"{ [x: string]: any; }\",\"isInternal\":false},{\"name\":\"defaultChecked\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the checkbox begins as checked or unchecked.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"id\",\"deprecated\":false,\"required\":false,\"description\":\"The ID assigned to the input.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"isChecked\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the checkbox is checked or unchecked.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isDisabled\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the checkbox is disabled. Don’t use a disabled checkbox if it needs to remain in the tab order for assistive technologies.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isIndeterminate\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the checkbox is indeterminate. This only affects the\\nstyle and does not modify the isChecked property.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isInvalid\",\"deprecated\":false,\"required\":false,\"description\":\"Marks the field as invalid. Changes style of unchecked component.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"isRequired\",\"deprecated\":false,\"required\":false,\"description\":\"Marks the field as required & changes the label style.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"label\",\"deprecated\":false,\"required\":false,\"description\":\"The label to be displayed to the right of the checkbox. The label is part\\nof the clickable element to select the checkbox.\",\"type\":\"string | number | ReactElement<any, string | JSXElementConstructor<any>>\",\"isInternal\":false},{\"name\":\"name\",\"deprecated\":false,\"required\":false,\"description\":\"The name of the submitted field in a checkbox.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"onChange\",\"deprecated\":false,\"required\":false,\"description\":\"Function that is called whenever the state of the checkbox changes. It will\\nbe called with an object containing the react synthetic event. Use `currentTarget` to get value, name and checked.\",\"type\":\"(e: ChangeEvent<HTMLInputElement>, analyticsEvent: UIAnalyticsEvent) => void\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"type\":\"((instance: HTMLInputElement) => void) | RefObject<HTMLInputElement>\",\"isInternal\":true},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests\\nwe have generated testid based on the one you pass to the Checkbox component:\\n- `{testId}--hidden-checkbox` to check if it got changed to checked/unchecked.\",\"type\":\"string\",\"isInternal\":false},{\"name\":\"value\",\"deprecated\":false,\"required\":false,\"description\":\"The value to be used in the checkbox input. This is the value that will be returned on form submission.\",\"type\":\"string | number\",\"isInternal\":false},{\"name\":\"xcss\",\"deprecated\":false,\"required\":false,\"description\":\"Bounded style API. Defining allowed styles through this prop will be supported for future component\\niterations. Any styles that are not allowed by this API will result in type and land blocking violations.\",\"type\":\"false | (XCSSValue<\\\"alignItems\\\", DesignTokenStyles, \\\"\\\"> & {} & XCSSPseudo<\\\"alignItems\\\", never, never, DesignTokenStyles> & XCSSMediaQuery<...> & { ...; } & { ...; })\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/checkbox",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/checkbox/constellation/index/*",
+    "slug": "checkbox",
+    "sortKey": "checkbox",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/checkbox"
+  }
+}

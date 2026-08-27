@@ -1,0 +1,159 @@
+{
+	"name": "@atlaskit/atlassian-navigation",
+	"version": "6.1.5",
+	"description": "A horizontal navigation component for Atlassian apps.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"exports": {
+		".": "./src/index.tsx",
+		"./app-switcher": "./src/entry-points/app-switcher.tsx",
+		"./app-switcher/types": "./src/entry-points/app-switcher-types.tsx",
+		"./atlassian-navigation": "./src/entry-points/atlassian-navigation.tsx",
+		"./constants": "./src/entry-points/constants.tsx",
+		"./create": "./src/entry-points/create.tsx",
+		"./create/types": "./src/entry-points/create-types.tsx",
+		"./custom-product-home": "./src/entry-points/custom-product-home.tsx",
+		"./help": "./src/entry-points/help.tsx",
+		"./help/types": "./src/entry-points/help-types.tsx",
+		"./icon-button": "./src/entry-points/icon-button.tsx",
+		"./icon-button/types": "./src/entry-points/icon-button-types.tsx",
+		"./notifications": "./src/entry-points/notifications.tsx",
+		"./notifications/types": "./src/entry-points/notifications-types.tsx",
+		"./overflow": "./src/entry-points/overflow.tsx",
+		"./primary-button": "./src/entry-points/primary-button.tsx",
+		"./primary-button/types": "./src/entry-points/primary-button-types.tsx",
+		"./primary-dropdown-button": "./src/entry-points/primary-dropdown-button.tsx",
+		"./primary-dropdown-button/types": "./src/entry-points/primary-dropdown-button-types.tsx",
+		"./product-home": "./src/entry-points/product-home.tsx",
+		"./product-home/types": "./src/entry-points/product-home-types.tsx",
+		"./profile": "./src/entry-points/profile.tsx",
+		"./profile/types": "./src/entry-points/profile-types.tsx",
+		"./search": "./src/entry-points/search.tsx",
+		"./search/types": "./src/entry-points/search-types.tsx",
+		"./settings": "./src/entry-points/settings.tsx",
+		"./settings/types": "./src/entry-points/settings-types.tsx",
+		"./sign-in": "./src/entry-points/sign-in.tsx",
+		"./sign-in/types": "./src/entry-points/sign-in-types.tsx",
+		"./skeleton-base": "./src/entry-points/skeleton-base.tsx",
+		"./skeleton-base/types": "./src/entry-points/skeleton-base-types.tsx",
+		"./skeleton-create-button": "./src/entry-points/skeleton-create-button.tsx",
+		"./skeleton-create-button/types": "./src/entry-points/skeleton-create-button-types.tsx",
+		"./skeleton-help-button": "./src/entry-points/skeleton-help-button.tsx",
+		"./skeleton-icon-button": "./src/entry-points/skeleton-icon-button.tsx",
+		"./skeleton-icon-button/types": "./src/entry-points/skeleton-icon-button-types.tsx",
+		"./skeleton-notification-button": "./src/entry-points/skeleton-notification-button.tsx",
+		"./skeleton-primary-button": "./src/entry-points/skeleton-primary-button.tsx",
+		"./skeleton-primary-button/types": "./src/entry-points/skeleton-primary-button-types.tsx",
+		"./skeleton-settings-button": "./src/entry-points/skeleton-settings-button.tsx",
+		"./skeleton-switcher-button": "./src/entry-points/skeleton-switcher-button.tsx",
+		"./skeleton": "./src/skeleton.tsx",
+		"./theme-generator": "./src/entry-points/theme-generator.tsx",
+		"./theme-provider": "./src/entry-points/theme-provider.tsx",
+		"./theme/types": "./src/entry-points/theme-types.tsx",
+		"./themes": "./src/entry-points/themes.tsx",
+		"./types": "./src/entry-points/types.tsx"
+	},
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Atlassian navigation",
+			"category": "Navigation",
+			"status": {
+				"type": "deprecated",
+				"description": "This package is deprecated. Use our new [navigation system](/components/navigation-system)."
+			}
+		}
+	},
+	"dependencies": {
+		"@atlaskit/analytics-namespaced-context": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/css": "workspace:*",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/logo": "workspace:^",
+		"@atlaskit/popup": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@atlaskit/tooltip": "workspace:^",
+		"@atlaskit/width-detector": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@emotion/react": "root:*",
+		"chromatism": "root:*",
+		"lodash": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/analytics-next": "workspace:^",
+		"@atlaskit/avatar": "workspace:^",
+		"@atlaskit/badge": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/drawer": "workspace:^",
+		"@atlaskit/dropdown-menu": "workspace:^",
+		"@atlaskit/form": "workspace:^",
+		"@atlaskit/menu": "workspace:^",
+		"@atlaskit/notification-indicator": "workspace:^",
+		"@atlaskit/notification-log-client": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/spinner": "workspace:^",
+		"@atlaskit/textfield": "workspace:^",
+		"@atlassian/switcher": "workspace:^",
+		"@atlassian/switcher-test-utils": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"jest-emotion": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*",
+		"react-intl": "root:*"
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"design-system": "v1",
+			"dom-events": "use-bind-event-listener",
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"styling": [
+				"emotion",
+				"static"
+			],
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports"
+		}
+	},
+	"homepage": "https://atlassian.design/components/atlassian-navigation/",
+	"platform-feature-flags": {
+		"platform-team25-app-icon-tiles": {
+			"type": "boolean"
+		}
+	}
+}

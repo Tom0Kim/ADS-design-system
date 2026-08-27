@@ -1,0 +1,30 @@
+{
+  "path": "/components/app-provider",
+  "workspaceInfo": {
+    "title": "App provider",
+    "description": "A top level provider for the Design System.",
+    "slug": "app-provider",
+    "status": {
+      "type": "beta"
+    },
+    "name": "@atlaskit/app-provider",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "app-provider",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/app-provider",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/app-provider/constellation/index/*",
+    "slug": "app-provider",
+    "sortKey": "app-provider",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/app-provider/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/app-provider"
+  }
+}

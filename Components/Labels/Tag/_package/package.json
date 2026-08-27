@@ -1,0 +1,135 @@
+{
+	"name": "@atlaskit/tag",
+	"version": "15.4.1",
+	"description": "A tag labels UI objects for quick recognition and navigation.",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+	"author": "Atlassian Pty Ltd",
+	"license": "Apache-2.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"module:es2019": "dist/es2019/index.js",
+	"types": "dist/types/index.d.ts",
+	"sideEffects": [
+		"**/*.compiled.css"
+	],
+	"atlaskit:src": "src/index.tsx",
+	"homepage": "https://atlassian.design/components/tag/",
+	"atlassian": {
+		"react-compiler": {
+			"enabled": true,
+			"gating": {
+				"source": "@atlaskit/react-compiler-gating",
+				"importSpecifierName": "isReactCompilerActivePlatform"
+			}
+		},
+		"team": "Design System Team",
+		"website": {
+			"name": "Tag",
+			"category": "Labels",
+			"status": {
+				"type": "ready-for-ga",
+				"description": "The new tag is stable and ready for adoption. Visual updates are currently behind the `platform-dst-lozenge-tag-badge-visual-uplifts` feature flag."
+			},
+			"subPages": [
+				{
+					"title": "Tag",
+					"id": "tag",
+					"status": {
+						"type": "intent-to-deprecate",
+						"description": "We're planning to deprecate this component. If you have the Atlassian feature flag integration, use the new tag. Otherwise, the old experience will switch to the new one automatically when we clean up the feature flag."
+					}
+				},
+				{
+					"title": "AvatarTag",
+					"id": "avatar-tag"
+				}
+			]
+		}
+	},
+	"exports": {
+		".": "./src/index.tsx",
+		"./avatar-tag": "./src/tag-new/avatar-tag.tsx",
+		"./color-mapping": "./src/tag-new/color-mapping.tsx",
+		"./new": "./src/tag-new/entrypoint.tsx",
+		"./removable-tag": "./src/tag/internal/removable/index.tsx",
+		"./simple-tag": "./src/entry-points/simple-tag.tsx",
+		"./tag": "./src/entry-points/tag.tsx",
+		"./tag-dropdown-trigger": "./src/tag-new/tag-dropdown-trigger.tsx",
+		"./tag-new/types": "./src/tag-new/types.tsx",
+		"./tag-new": "./src/tag-new/tag-new.tsx",
+		"./tag/types": "./src/tag/internal/shared/types.tsx",
+		"./types": "./src/types.tsx"
+	},
+	"dependencies": {
+		"@atlaskit/analytics-next": "workspace:^",
+		"@atlaskit/avatar": "workspace:^",
+		"@atlaskit/css": "workspace:^",
+		"@atlaskit/ds-lib": "workspace:^",
+		"@atlaskit/icon": "workspace:^",
+		"@atlaskit/link": "workspace:^",
+		"@atlaskit/lozenge": "workspace:^",
+		"@atlaskit/motion": "workspace:^",
+		"@atlaskit/platform-feature-flags": "workspace:^",
+		"@atlaskit/primitives": "workspace:^",
+		"@atlaskit/react-compiler-gating": "workspace:^",
+		"@atlaskit/spinner": "workspace:^",
+		"@atlaskit/teams-avatar": "workspace:^",
+		"@atlaskit/tokens": "workspace:^",
+		"@babel/runtime": "root:*",
+		"@compiled/react": "root:*"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@af/accessibility-testing": "workspace:^",
+		"@af/integration-testing": "workspace:^",
+		"@af/visual-regression": "workspace:^",
+		"@atlaskit/button": "workspace:^",
+		"@atlaskit/code": "workspace:^",
+		"@atlaskit/docs": "workspace:^",
+		"@atlaskit/section-message": "workspace:^",
+		"@atlaskit/tag-group": "workspace:^",
+		"@atlassian/feature-flags-test-utils": "workspace:^",
+		"@atlassian/ssr-tests": "workspace:^",
+		"@atlassian/structured-docs-types": "workspace:^",
+		"@atlassian/testing-library": "workspace:^",
+		"@testing-library/react": "root:*",
+		"@testing-library/user-event": "root:*",
+		"raf-stub": "root:*",
+		"react": "root:*",
+		"react-dom": "root:*"
+	},
+	"techstack": {
+		"@atlassian/frontend": {
+			"import-structure": "atlassian-conventions"
+		},
+		"@repo/internal": {
+			"dom-events": "use-bind-event-listener",
+			"design-system": "v1",
+			"ui-components": "lite-mode",
+			"analytics": "analytics-next",
+			"design-tokens": [
+				"color",
+				"spacing"
+			],
+			"deprecation": "no-deprecated-imports",
+			"styling": [
+				"emotion",
+				"static"
+			]
+		}
+	},
+	"platform-feature-flags": {
+		"platform-dst-lozenge-tag-badge-visual-uplifts": {
+			"type": "boolean"
+		},
+		"parent-field-switcher-missing-info-image-text": {
+			"type": "boolean",
+			"referenceOnly": true
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+  "path": "/components/grid",
+  "workspaceInfo": {
+    "title": "Layout grid",
+    "description": "A responsive layout grid is a component designed to manage the content of a page.",
+    "slug": "grid",
+    "status": {
+      "type": "deprecated",
+      "description": "This package is deprecated.\n\nUse [grid primitive](https://atlassian.design/components/primitives/grid/examples)."
+    },
+    "name": "@atlaskit/grid",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "grid",
+    "definition": "{\"types\":[]}"
+  },
+  "pageContext": {
+    "name": "@atlaskit/grid",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/grid/constellation/index/*",
+    "slug": "grid",
+    "sortKey": "grid",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": true,
+    "hideChangelog": false,
+    "propsPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/grid/constellation/index/props.mdx",
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/grid"
+  }
+}

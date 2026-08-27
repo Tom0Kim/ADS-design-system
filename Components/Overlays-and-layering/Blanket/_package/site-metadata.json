@@ -1,0 +1,27 @@
+{
+  "path": "/components/blanket",
+  "workspaceInfo": {
+    "title": "Blanket",
+    "description": "A blanket covers the underlying UI for a layered component, such as a modal dialog or a tooltip.",
+    "slug": "blanket",
+    "status": null,
+    "name": "@atlaskit/blanket",
+    "group": "design-system",
+    "repository": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
+    "directoryName": "blanket",
+    "definition": "[{\"name\":\"analyticsContext\",\"deprecated\":false,\"required\":false,\"description\":\"Additional information to be included in the `context` of analytics events.\",\"type\":\"{ [x: string]: any; }\",\"isInternal\":false},{\"name\":\"children\",\"deprecated\":false,\"required\":false,\"description\":\"The children to be rendered within the blanket.\",\"type\":\"string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal\",\"isInternal\":false},{\"name\":\"isTinted\",\"deprecated\":false,\"required\":false,\"description\":\"Sets whether the blanket has a tinted background color.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"onBlanketClicked\",\"deprecated\":false,\"required\":false,\"description\":\"Handler function to be called when the blanket is clicked.\",\"type\":\"(event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>, analyticsEvent: UIAnalyticsEvent) => void\",\"isInternal\":false},{\"name\":\"ref\",\"deprecated\":false,\"required\":false,\"type\":\"((instance: HTMLDivElement) => void) | RefObject<HTMLDivElement>\",\"isInternal\":true},{\"name\":\"shouldAllowClickThrough\",\"deprecated\":false,\"required\":false,\"description\":\"Whether mouse events can pass through the blanket. If `true`, `onBlanketClicked` will not be called.\",\"type\":\"boolean\",\"isInternal\":false},{\"name\":\"testId\",\"deprecated\":false,\"required\":false,\"description\":\"A `testId` prop is provided for specified elements,\\nwhich is a unique string that appears as a data attribute `data-testid` in the rendered code,\\nserving as a hook for automated tests.\",\"type\":\"string\",\"isInternal\":false}]"
+  },
+  "pageContext": {
+    "name": "@atlaskit/blanket",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/blanket/constellation/index/*",
+    "slug": "blanket",
+    "sortKey": "blanket",
+    "hasMdx": true,
+    "hasTabs": true,
+    "hasCodeDocs": true,
+    "hasProps": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/blanket"
+  }
+}

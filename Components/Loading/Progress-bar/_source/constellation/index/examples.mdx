@@ -1,0 +1,39 @@
+---
+order: 0
+---
+
+import ProgressBarDefaultExample from '../../examples/constellation/progress-bar-default';
+import ProgressBarSuccessExample from '../../examples/constellation/progress-bar-success';
+import ProgressBarInverseExample from '../../examples/constellation/progress-bar-inverse';
+import ProgressBarIndeterminateExample from '../../examples/constellation/progress-bar-indeterminate';
+
+## Appearance
+
+### Default
+
+The default appearance of a progress bar.
+
+<Example Component={ProgressBarDefaultExample} packageName="@atlaskit/progress-bar" />
+
+### Inverse
+
+Use the inverse appearance on bold backgrounds to maintain suitable contrast.
+
+<Example
+	Component={ProgressBarInverseExample}
+	packageName="@atlaskit/progress-bar"
+	backgroundColor="blue"
+/>
+
+### Success
+
+The success appearance lets people know that the process is complete.
+
+<Example Component={ProgressBarSuccessExample} packageName="@atlaskit/progress-bar" />
+
+## Indeterminate
+
+Indeterminate progress bars display movement along the container until the process is finished. Use
+this when the percentage amount of the progress bar is unknown.
+
+<Example Component={ProgressBarIndeterminateExample} packageName="@atlaskit/progress-bar" />

@@ -1,0 +1,330 @@
+---
+order: 0
+---
+
+import LogoIcon from '../../examples/constellation/logo-icon';
+import LogoXxsmall from '../../examples/constellation/logo-xxsmall';
+import LogoXsmall from '../../examples/constellation/logo-xsmall';
+import LogoSmall from '../../examples/constellation/logo-small';
+import LogoMedium from '../../examples/constellation/logo-medium';
+import LogoLarge from '../../examples/constellation/logo-large';
+import LogoXlarge from '../../examples/constellation/logo-xlarge';
+import LogoBrand from '../../examples/constellation/logo-brand';
+import LogoInverse from '../../examples/constellation/logo-inverse';
+import LogoNeutral from '../../examples/constellation/logo-neutral';
+import LogoDefault from '../../examples/constellation/logo-default';
+import LogoAtlassian from '../../examples/constellation/generated/logo-atlassian';
+import LogoAtlassianAccess from '../../examples/constellation/generated/logo-atlassian-access';
+import LogoAtlassianMarketplace from '../../examples/constellation/generated/logo-atlassian-marketplace';
+import LogoHome from '../../examples/constellation/generated/logo-home';
+import LogoHub from '../../examples/constellation/generated/logo-hub';
+import LogoConfluence from '../../examples/constellation/generated/logo-confluence';
+import LogoJira from '../../examples/constellation/generated/logo-jira';
+import LogoLoom from '../../examples/constellation/generated/logo-loom';
+import LogoLoomAttribution from '../../examples/constellation/generated/logo-loom-attribution';
+import LogoRovo from '../../examples/constellation/generated/logo-rovo';
+import LogoAlign from '../../examples/constellation/generated/logo-align';
+import LogoFeedback from '../../examples/constellation/generated/logo-feedback';
+import LogoFocus from '../../examples/constellation/generated/logo-focus';
+import LogoTalent from '../../examples/constellation/generated/logo-talent';
+import LogoJiraProductDiscovery from '../../examples/constellation/generated/logo-jira-product-discovery';
+import LogoBitbucket from '../../examples/constellation/generated/logo-bitbucket';
+import LogoCompass from '../../examples/constellation/generated/logo-compass';
+import LogoDx from '../../examples/constellation/generated/logo-dx';
+import LogoRovoDev from '../../examples/constellation/generated/logo-rovo-dev';
+import LogoJiraServiceManagement from '../../examples/constellation/generated/logo-jira-service-management';
+import LogoAssets from '../../examples/constellation/generated/logo-assets';
+import LogoCustomerServiceManagement from '../../examples/constellation/generated/logo-customer-service-management';
+import LogoOpsgenie from '../../examples/constellation/generated/logo-opsgenie';
+import LogoStatuspage from '../../examples/constellation/generated/logo-statuspage';
+import LogoTrello from '../../examples/constellation/generated/logo-trello';
+import LogoAdmin from '../../examples/constellation/generated/logo-admin';
+import LogoAnalytics from '../../examples/constellation/generated/logo-analytics';
+import LogoChat from '../../examples/constellation/generated/logo-chat';
+import LogoGoals from '../../examples/constellation/generated/logo-goals';
+import LogoGuard from '../../examples/constellation/generated/logo-guard';
+import LogoProjects from '../../examples/constellation/generated/logo-projects';
+import LogoSearch from '../../examples/constellation/generated/logo-search';
+import LogoStudio from '../../examples/constellation/generated/logo-studio';
+import LogoTeams from '../../examples/constellation/generated/logo-teams';
+import LogoJiraDataCenter from '../../examples/constellation/generated/logo-jira-data-center';
+import LogoJiraServiceManagementDataCenter from '../../examples/constellation/generated/logo-jira-service-management-data-center';
+import LogoConfluenceDataCenter from '../../examples/constellation/generated/logo-confluence-data-center';
+import LogoBitbucketDataCenter from '../../examples/constellation/generated/logo-bitbucket-data-center';
+import LogoBamboo from '../../examples/constellation/generated/logo-bamboo';
+import LogoCrowd from '../../examples/constellation/generated/logo-crowd';
+import LogoRovoDevAgent from '../../examples/constellation/generated/logo-rovo-dev-agent';
+import LogoJiraCodingAgent from '../../examples/constellation/generated/logo-jira-coding-agent';
+
+import { Code } from '@atlaskit/code';
+import SectionMessage from '@atlaskit/section-message';
+
+<SectionMessage appearance="discovery">
+	We are in the process of rolling out updated Logo designs to apps behind a feature flag. <br />
+	To display the new designs early, set the <Code>shouldUseNewLogoDesign</Code> prop to{' '}
+	<Code>true</Code>.
+</SectionMessage>
+
+## Types
+
+### Icon
+
+An icon is an image or symbol that represents a brand or app. It generally does not contain the name
+of the brand or app.
+
+<Example Component={LogoIcon} packageName="@atlaskit/logo" />
+
+### Lockup
+
+A lockup is the combination of wordmark (the brand or app name) and its icon, generally referred
+altogether as a logo.
+
+<Example Component={LogoBrand} packageName="@atlaskit/logo" />
+
+## Appearance
+
+By default, the lockup and icon inherit their colors from the parent element, however, this can lead
+to incorrect color combinations. Moving forward, all usages of `@atlaskit/logo` should use the
+`appearance` prop to choose between three brand-approved appearances: brand, neutral, and inverse.
+
+### Brand
+
+Brand app logos are used in situations that demand a bold brand presence against a neutral
+background.
+
+<Example Component={LogoBrand} packageName="@atlaskit/logo" backgroundColor="white" />
+
+### Neutral
+
+Neutral app logos can be used when the hierarchy calls for the logo to recede, but should always be
+evaluated for adequate contrast.
+
+<Example Component={LogoNeutral} packageName="@atlaskit/logo" backgroundColor="neutral" />
+
+### Inverse
+
+Inverse app logos should be used to contrast against bold backgrounds.
+
+<Example Component={LogoInverse} packageName="@atlaskit/logo" backgroundColor="blue" />
+
+## Size
+
+### Xxsmall
+
+The `xxsmall` size (16px) is the smallest available size.
+
+<Example Component={LogoXxsmall} packageName="@atlaskit/logo" />
+
+### Xsmall
+
+The `xsmall` size (20px) can be used in compact UI elements.
+
+<Example Component={LogoXsmall} packageName="@atlaskit/logo" />
+
+### Small
+
+The `small` size (24px) can be used in areas with minimal space or that contain many logos in close
+proximity. For example, the icon component, the marketing footer, or the emoji picker.
+
+<Example Component={LogoSmall} packageName="@atlaskit/logo" />
+
+### Medium
+
+The `medium` size (32px) is the default size.
+
+<Example Component={LogoMedium} packageName="@atlaskit/logo" />
+
+### Large
+
+The `large` size (40px) can be used for prominent placements.
+
+<Example Component={LogoLarge} packageName="@atlaskit/logo" />
+
+### Xlarge
+
+The `xlarge` size (48px) is rarely used. It may be used for a hero piece. For example, Statuspage's
+login.
+
+<Example Component={LogoXlarge} packageName="@atlaskit/logo" />
+
+## Company / Program logos
+
+### Atlassian
+
+<Example Component={LogoAtlassian} packageName="@atlaskit/logo" />
+
+### Atlassian Access
+
+<Example Component={LogoAtlassianAccess} packageName="@atlaskit/logo" />
+
+### Atlassian Marketplace
+
+<Example Component={LogoAtlassianMarketplace} packageName="@atlaskit/logo" />
+
+## App (Product) logos
+
+### Home
+
+<Example Component={LogoHome} packageName="@atlaskit/logo" />
+
+### Hub
+
+<Example Component={LogoHub} packageName="@atlaskit/logo" />
+
+### Confluence
+
+<Example Component={LogoConfluence} packageName="@atlaskit/logo" />
+
+### Jira
+
+<Example Component={LogoJira} packageName="@atlaskit/logo" />
+
+### Loom
+
+`Loom` can be displayed in either blue, or Loom Blurple.
+
+<Example Component={LogoLoom} packageName="@atlaskit/logo" />
+
+### Loom Attribution
+
+<Example Component={LogoLoomAttribution} packageName="@atlaskit/logo" />
+
+### Rovo
+
+<Example Component={LogoRovo} packageName="@atlaskit/logo" />
+
+### Align
+
+`Align` replaces the deprecated `Jira Align` logo components.
+
+<Example Component={LogoAlign} packageName="@atlaskit/logo" />
+
+### Focus
+
+<Example Component={LogoFocus} packageName="@atlaskit/logo" />
+
+### Talent
+
+<Example Component={LogoTalent} packageName="@atlaskit/logo" />
+
+### Jira Product Discovery
+
+<Example Component={LogoJiraProductDiscovery} packageName="@atlaskit/logo" />
+
+### Feedback
+
+<Example Component={LogoFeedback} packageName="@atlaskit/logo" />
+
+### Bitbucket
+
+<Example Component={LogoBitbucket} packageName="@atlaskit/logo" />
+
+### Compass
+
+<Example Component={LogoCompass} packageName="@atlaskit/logo" />
+
+### Dx
+
+<Example Component={LogoDx} packageName="@atlaskit/logo" />
+
+### Rovo Dev
+
+<Example Component={LogoRovoDev} packageName="@atlaskit/logo" />
+
+### Jira Service Management
+
+<Example Component={LogoJiraServiceManagement} packageName="@atlaskit/logo" />
+
+### Assets
+
+<Example Component={LogoAssets} packageName="@atlaskit/logo" />
+
+### Customer Service Management
+
+<Example Component={LogoCustomerServiceManagement} packageName="@atlaskit/logo" />
+
+### Opsgenie
+
+<Example Component={LogoOpsgenie} packageName="@atlaskit/logo" />
+
+### Statuspage
+
+<Example Component={LogoStatuspage} packageName="@atlaskit/logo" />
+
+### Trello
+
+<Example Component={LogoTrello} packageName="@atlaskit/logo" />
+
+### Admin
+
+`Admin` replaces the deprecated `Atlassian Administration` and `Atlassian Admin` logo components.
+
+<Example Component={LogoAdmin} packageName="@atlaskit/logo" />
+
+### Analytics
+
+`Analytics` replaces the deprecated `Atlassian Analytics` logo components.
+
+<Example Component={LogoAnalytics} packageName="@atlaskit/logo" />
+
+### Chat
+
+<Example Component={LogoChat} packageName="@atlaskit/logo" />
+
+### Goals
+
+<Example Component={LogoGoals} packageName="@atlaskit/logo" />
+
+### Guard
+
+<Example Component={LogoGuard} packageName="@atlaskit/logo" />
+
+### Projects
+
+<Example Component={LogoProjects} packageName="@atlaskit/logo" />
+
+### Search
+
+<Example Component={LogoSearch} packageName="@atlaskit/logo" />
+
+### Studio
+
+<Example Component={LogoStudio} packageName="@atlaskit/logo" />
+
+### Teams
+
+<Example Component={LogoTeams} packageName="@atlaskit/logo" />
+
+### Jira Data Center
+
+<Example Component={LogoJiraDataCenter} packageName="@atlaskit/logo" />
+
+### Jira Service Management Data Center
+
+<Example Component={LogoJiraServiceManagementDataCenter} packageName="@atlaskit/logo" />
+
+### Confluence Data Center
+
+<Example Component={LogoConfluenceDataCenter} packageName="@atlaskit/logo" />
+
+### Bitbucket Data Center
+
+<Example Component={LogoBitbucketDataCenter} packageName="@atlaskit/logo" />
+
+### Bamboo
+
+<Example Component={LogoBamboo} packageName="@atlaskit/logo" />
+
+### Crowd
+
+<Example Component={LogoCrowd} packageName="@atlaskit/logo" />
+
+## Agent logos
+
+### Rovo Dev Agent
+
+<Example Component={LogoRovoDevAgent} packageName="@atlaskit/logo" />
+
+### Jira Coding Agent
+
+<Example Component={LogoJiraCodingAgent} packageName="@atlaskit/logo" />

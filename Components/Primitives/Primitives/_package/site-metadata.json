@@ -1,0 +1,19 @@
+{
+  "path": "/components/primitives/overview",
+  "workspaceInfo": {
+    "title": "Primitives",
+    "description": "Primitives are token-backed low-level building blocks.",
+    "slug": "primitives"
+  },
+  "pageContext": {
+    "name": "@atlaskit/primitives",
+    "sortKey": "overview",
+    "title": "Overview",
+    "slug": "overview",
+    "mdxPath": "/opt/atlassian/pipelines/agent/build/platform/packages/design-system/primitives/constellation/overview/index.mdx",
+    "hasTabs": false,
+    "hideChangelog": false,
+    "hideLocalNavForTabs": [],
+    "basePath": "/components/primitives/overview"
+  }
+}
